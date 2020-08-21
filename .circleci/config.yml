@@ -6,18 +6,18 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-        - restore_cache:
+      - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
       - run:
-        name: install dependencies
-        command: |
-          bundle install --jobs=4 --retry=3 --path vendor/bundle
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
       - save_cache:
-        paths:
-          - ./vendor/bundle
-        key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run:
@@ -31,20 +31,20 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-        name: install aws cli
-        command: |
-          apk add --no-cache --update py-pip
-          pip install awscli
+          name: install aws cli
+          command: |
+            apk add --no-cache --update py-pip
+            pip install awscli
       - run:
-        name: build image
-        command: |
-          $(aws ecr get-login --no-include-email --region ap-northeast-1)
-          docker build -t ${ECR_DOMAIN}/s a m p l e - i m a g e : $ C I R C L E _ S H A 1 - t ${ECR_DOMAIN}/sample-image:latest - - b u i l d - a r g R A I L S _ M A S T E R _ K E Y =${RAILS_MASTER_KEY} --build-arg RAILS_ENV=production .
+          name: build image
+          command: |
+            $(aws ecr get-login --no-include-email --region ap-northeast-1)
+            docker build -t ${ECR_DOMAIN}/s a m p l e - i m a g e : $ C I R C L E _ S H A 1 - t ${ECR_DOMAIN}/sample-image:latest - - b u i l d - a r g R A I L S _ M A S T E R _ K E Y =${RAILS_MASTER_KEY} --build-arg RAILS_ENV=production .
       - run:
-        name: Push docker image
-        command: |
-          docker push ${ECR_DOMAIN}/sample-image:$CIRCLE_SHA1
-          docker push ${ECR_DOMAIN}/sample-image:latest
+          name: Push docker image
+          command: |
+            docker push ${ECR_DOMAIN}/sample-image:$CIRCLE_SHA1
+            docker push ${ECR_DOMAIN}/sample-image:latest
 workflows:
   version: 2
   test:
