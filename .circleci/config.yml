@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-    省略
   build_image:
     docker:
       - image: docker:18.09.0
