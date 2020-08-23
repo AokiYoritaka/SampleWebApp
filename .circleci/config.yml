@@ -38,7 +38,7 @@ jobs:
       - run:
           name: build image
           command: |
-            $(aws ecr get-login-password | docker login --username AWS --password-stdin https://<aws_account_id>.dkr.ecr.<region>.amazonaws.com) 
+            $(aws ecr get-login-password | docker login --username deploy-user --password-stdin MY_REGISTRY_URL) 
             docker build -t ${ECR_DOMAIN}/sample-image:$CIRCLE_SHA1 
             -t ${ECR_DOMAIN}/sample-image:latest --build-arg 
             RAILS_MASTER_KEY=${RAILS_MASTER_KEY} --build-arg 
