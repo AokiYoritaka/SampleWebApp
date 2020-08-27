@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :health_check, only: [:index]
-
+  root "top#index"
   #devise
   devise_for :users, controllers: {
     registrations: 'users/registrations',
