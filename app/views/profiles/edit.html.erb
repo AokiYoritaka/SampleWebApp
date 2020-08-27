@@ -1,0 +1,56 @@
+<% provide(:title, "プロフィール編集")  %>
+<div class="container">
+  <%= link_to profile_path(id: @profile.id), class:"btn-back" do %>
+  <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-8 rev-card webkit-center pb-4">
+      <h1 class="title-h1 pd-4">プロフィールを編集する</h1>
+      <%= render "profiles/error_messages", profile: @profile %>
+      <%= form_with model: @profile, local: true do |f| %>
+
+      <div class="form-group  x-400">
+        <p class="label-font">
+          <i class="fa fa-camera" aria-hidden="true"></i> プロフィール写真
+        </p>
+        <%= f.file_field :avatar, class:"btn-flat-simple", id: "edit_avatar" %>
+      </div>
+
+      <div class="form-group  x-400">
+        <p class="label-font">
+          <i class="fa fa-user-circle" aria-hidden="true"></i> ユーザー名
+        </p>
+        <%= f.text_field :name, class:"form-control", id: "edit_name" %>
+      </div>
+
+      <p class="label-font" style="padding-bottom: 0px;">
+        <i class="fa fa-user" aria-hidden="true"></i> 年齢
+      </p>
+      <div class="cp_ipselect cp_sl04 x-400">
+        <%= f.select :age, [["20~24歳", "20~24歳"], ["25~29歳", "25~29歳"], ["30~34歳", "30~34歳"], ["35~39歳", "35~39歳"], ["40~44歳", "40~44歳"], ["45~49歳", "45~49歳"], ["50~54歳", "50~54歳"], ["55~59歳", "55~59歳"]], include_blank: "年齢を選択して下さい", id: "edit_age" %>
+      </div>
+      
+      <p class="label-font" style="padding-bottom: 0px;">
+        <i class="fa fa-map-marker" aria-hidden="true"></i> 都道府県
+      </p>
+      <div class="cp_ipselect cp_sl04 x-400">
+        <%= f.collection_select :liveplace, JpPrefecture::Prefecture.all, :name, :name, id: "edit_liveplace" %>
+      </div>
+      
+      <p class="label-font">
+        <i class="fa fa-id-card" aria-hidden="true"></i> 自己紹介
+      </p>
+      <div class="form-group  x-400">
+        <%= f.text_area :introduce, size: "20x10", class:"form-control", id: "edit_introduce" %>
+      </div>
+      <div class="actions">
+        <%= button_tag type: "submit", class: "btn-submit-account" do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        更新
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

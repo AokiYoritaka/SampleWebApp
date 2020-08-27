@@ -1,0 +1,59 @@
+<% provide(:title, @profile.name)  %>
+<div class="container">
+  <%= link_to :back, class:"btn-back" do %>
+  <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
+  <% end %>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="profile-card">
+        <div class="profile-card__inner">
+          <div class="profile-thumb">
+            <%= render 'layouts/profile_image', profile: @profile %>
+          </div>
+          <div class="profile-content">
+            <span class="profile-name"><%= @profile.name %></span>
+            <div class="profile-details">
+              <div class="profile-intro-box">
+                <span class="profile-intro-label">年齢</span>
+                <span class="profile-intro">
+                  <% if @profile.age.present? %>
+                  <%= @profile.age %>
+                  <% else %>
+                  未登録
+                  <% end %>
+                </span>
+              </div>
+              <div class="profile-intro-box">
+                <span class="profile-intro-label">都道府県</span>
+                <span class="profile-intro">
+                  <% if @profile.liveplace.present? %>
+                  <%= @profile.liveplace %>
+                  <% else %>
+                  未登録
+                  <% end %>
+                </span>
+              </div>
+            </div>
+            <div class="box26">
+              <span class="box-title">
+                <i class="fa fa-address-card-o" aria-hidden="true"></i>自己紹介
+              </span>
+              <p>
+                <% if @profile.introduce.present? %>
+                <%= safe_join(@profile.introduce.split("\n"), tag(:br)) %>
+                <% else %>
+                まだ書かれていません
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% if @profile.user == current_user %>
+        <%=link_to edit_profile_path(id: @profile.id), class:"btn-edit m-1 float-right" do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 編集する
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
