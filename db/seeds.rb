@@ -1,7 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Pofile.create(name: 'yori', age: '5', liveplace: 'Tokyo', introduce: 'aaaaa')
+Pofile.create(name: 'yora', age: '3', liveplace: 'Tokyo', introduce: 'aaaaa')
+Pofile.create(name: 'yorf', age: '4', liveplace: 'Tokyo', introduce: 'aaaaa')
+Pofile.create(name: 'yord', age: '6', liveplace: 'Tokyo', introduce: 'aaaaa')
