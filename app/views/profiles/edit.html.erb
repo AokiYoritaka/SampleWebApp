@@ -32,7 +32,7 @@
       </div>
       
       <p class="label-font" style="padding-bottom: 0px;">
-        <i class="fa fa-map-marker" aria-hidden="true"></i> 住まい
+        <i class="fa fa-map-marker" aria-hidden="true"></i> 都道府県
       </p>
       <div class="cp_ipselect cp_sl04 x-400">
         <%= f.collection_select :liveplace, JpPrefecture::Prefecture.all, :name, :name, id: "edit_liveplace" %>
