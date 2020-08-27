@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
+    if @profile.update()
   end
 
 end
