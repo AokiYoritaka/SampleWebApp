@@ -11,7 +11,15 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find(params[:id])
-    if @profile.update()
+    if @profile.update(profile_params)
+      flash[:notice] = "更新しました"
+      redirect_to profile_path(id: @profile.id)
+    else
+      flash.now[:alert] = " 更新に失敗しました"
+      render :edit
+    end
   end
+
+  
 
 end
