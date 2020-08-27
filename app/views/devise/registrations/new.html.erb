@@ -14,7 +14,7 @@
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
     </div>
-    
+
         <div class="form-group">
       <%= f.label :password %>
       <% if @minimum_password_length %>
@@ -32,6 +32,9 @@
       <%= f.submit "登録" ,class:"btn btn-primary" %>
     </div>
     <% end %>
+
+    <%= link_to 'ゲストユーザーでログイン', users_guest_sign_in_path, method: :post, class: "guest-submit-btn" %>
+    <br>
 
     <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
       <%= link_to "確認メールが届かない", new_confirmation_path(resource_name) %><br />
