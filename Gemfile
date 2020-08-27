@@ -61,8 +61,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'therubyracer'
-gem 'libv8'
+#gem 'therubyracer'
+#gem 'mini_racer'
 
 gem 'devise'
 gem "devise-i18n"
@@ -70,3 +70,4 @@ gem "devise-i18n-views"
 gem "bootstrap"
 gem "font-awesome-rails"
 gem "kaminari"
+gem "jp_prefecture"
