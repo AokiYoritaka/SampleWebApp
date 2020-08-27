@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         :confirmable
+         :confirmable, :omniauthable, :omniauthable_providers: [:twitter]
   has_one :profile, dependent: :destroy
 
   def self.guest
