@@ -14,9 +14,14 @@
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
     </div>
-
-
-
+    
+        <div class="form-group">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 文字以上で入力)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+    </div>
 
     <div class="form-group">
       <%= f.label :password_confirmation %><br />
