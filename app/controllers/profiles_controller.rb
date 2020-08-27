@@ -21,14 +21,15 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit((:name, :age, :liveplace, :introduce)
+    params.require(:profile).permit(:name, :age, :liveplace, :introduce)
   end
 
   def validate_user
     @profile = Profile.find(params[:id])
     if @profile.user != current_user
       flash[:alert] = "無効なURLです"
-      redirect_back = (fallback_location: profile_path(id: @profile.id)
+      redirect_back(fallback_location: profile_path(id: @profile.id))
     end
   end
+
 end
