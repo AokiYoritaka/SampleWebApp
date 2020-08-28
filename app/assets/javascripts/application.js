@@ -18,3 +18,25 @@
 //= require turbolinks
 //= require_tree .
 
+$(function() {
+  $('#login-show').click(function() {
+    $('#login-modal').fadeIn();
+  });
+
+  $("#signup-show").click(function() {
+    $("#signup-modal").fadeIn();
+  });
+
+  $('#login-show-button').click(function() {
+    $('#login-modal').fadeIn();
+  });
+
+  $("#signup-show-button").click(function() {
+    $("#signup-modal").fadeIn();
+  });
+
+  $('.close-modal').click(function(){
+    $('#signup-modal').fadeOut();
+    $('#login-modal').fadeOut();
+  });
+});
