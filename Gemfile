@@ -72,4 +72,5 @@ gem "font-awesome-rails"
 gem "kaminari"
 gem "jp_prefecture"
 gem "omniauth-twitter"
+gem "jquery-rails"
 
