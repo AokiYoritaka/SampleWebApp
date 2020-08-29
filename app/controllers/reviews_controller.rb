@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     @review.school_id = @school.id
      if @review.save
       flash[:notice] = "作成できました"
-      redirect_to restaurant_review_path(id: @review.id)
+      redirect_to school_review_path(id: @review.id)
     else
       flash.now[:alert] = "作成に失敗しました。"
       render :new
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      redirect_to restaurant_review_path(id: @review.id), notice: "更新できました"
+      redirect_to school_review_path(id: @review.id), notice: "更新できました"
     else
       flash.now[:alert] = "更新に失敗しました。"
       render :edit
@@ -38,17 +38,21 @@ class ReviewsController < ApplicationController
       redirect_to root_path, notice: "削除に成功しました"
     else
       flash[:alert] = "削除に失敗しました。"
-      redirect_to restaurant_review_path(id: @review.id)
+      redirect_to school_review_path(id: @review.id)
     end
   end
 
   private
 
+  def review_params
+    params.require(:review).permit(:title, :body)
+  end
+
   def validate_user
     @review = Review.find(params[:id])
     if @review.user != current_user
       flash[:alert] = "無効なURLです"
-      redirect_back(fallback_location: restaurant_review_path)
+      redirect_back(fallback_location: school_review_path)
     end
   end
 end
