@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="rev-card col-12">
+    <div class="row">
+    <div class="col-12">
+      <h1 class="title-h1">
+        <%=link_to school.name, school_path(id: school.id)%>
+      </h1>
+      <div id="map"></div>
+    </div>
+    <div class="col-sm-6">
+      <%= render "schools/school_photo_slide", school: school %>
+    </div>
+
+    <div class="col-sm-6">
+      <p><i class="fa fa-home" aria-hidden="true"></i> <%= school.address %></p>
+      <p><i class="fa fa-phone" aria-hidden="true"></i> <%= school.tell %></p>
+      <p><%= render "schools/genre", school: school %></p>
+    </div>
+  </div>
+  </div>
+</div>
