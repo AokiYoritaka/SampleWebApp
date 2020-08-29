@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_084513) do
+ActiveRecord::Schema.define(version: 2020_08_29_041430) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 2020_08_27_084513) do
     t.string "liveplace"
     t.text "introduce"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "tell"
+    t.string "genre"
+    t.text "detail"
+    t.text "image_url_a"
+    t.text "image_url_b"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
