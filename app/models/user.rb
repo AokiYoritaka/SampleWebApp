@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_many :review, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+
 
 
   def self.from_omniauth(auth)
