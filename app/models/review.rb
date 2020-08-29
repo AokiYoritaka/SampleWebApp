@@ -7,4 +7,16 @@ class Review < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  def like_rev(user)
+    likes.create(user_id: user.id)
+  end
+
+  def un_like_rev(user)
+    likes.find_by(user_id: user.id).destroy
+  end
+
+  def like_rev?(user)
+    like_rev_users.include?(user)
+  end
+
 end
