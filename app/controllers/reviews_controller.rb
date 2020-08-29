@@ -41,4 +41,14 @@ class ReviewsController < ApplicationController
       redirect_to restaurant_review_path(id: @review.id)
     end
   end
+
+  private
+
+  def validate_user
+    @review = Review.find(params[:id])
+    if @review.user != current_user
+      flash[:alert] = "無効なURLです"
+      redirect_back(fallback_location: restaurant_review_path)
+    end
+  end
 end
