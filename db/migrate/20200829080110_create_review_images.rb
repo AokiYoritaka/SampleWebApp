@@ -3,6 +3,7 @@ class CreateReviewImages < ActiveRecord::Migration[5.2]
     create_table :review_images do |t|
       t.string :review_id
       t.string :image_id
+      t.integer :review_images
 
       t.timestamps
     end
