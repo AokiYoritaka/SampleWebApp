@@ -4,4 +4,20 @@
   <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
   <% end %>
 
-  
+
+  <!-- コメント -->
+  <div class="row">
+    <div class="col-md-8">
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>
+    <%= paginate @comments %>
+    <% if user_signed_in? %>
+    <div class="col-8">
+      <div id="error_area">
+        <%= render partial: 'comments/form', locals: { comment: @comment, review: @review } %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= render "restaurants/restaurant_details", restaurant: @restaurant %>
+</div>
