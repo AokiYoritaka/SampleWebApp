@@ -23,5 +23,21 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def update
+    if @review.update(review_params)
+      redirect_to restaurant_review_path(id: @review.id), notice: "更新できました"
+    else
+      flash.now[:alert] = "更新に失敗しました。"
+      render :edit
+    end
+  end
 
+  def destroy
+    if @review.destroy
+      redirect_to root_path, notice: "削除に成功しました"
+    else
+      flash[:alert] = "削除に失敗しました。"
+      redirect_to restaurant_review_path(id: @review.id)
+    end
+  end
 end

@@ -1,0 +1,11 @@
+<% provide(:title, "口コミ一覧")  %>
+<div class="container">
+  <%= link_to root_path, class:"btn-back" do %>
+  <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
+  <% end %>
+    <div class="row">
+    </div>
+
+    <%= render "layouts/review_index", reviews: @reviews %>
+    <%= paginate @reviews %>
+    
