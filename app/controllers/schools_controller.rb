@@ -12,8 +12,7 @@ class SchoolsController < ApplicationController
     @school = School.new
   end
 
-  
-
-
-
+  def create
+    
+  end
 end
