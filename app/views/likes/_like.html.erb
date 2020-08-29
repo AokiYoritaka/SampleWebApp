@@ -1,0 +1,16 @@
+<div class="like">
+  <% if review.like_rev?(current_user) %>
+    <%= form_for(review.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
+      <%= button_tag(class: "btn-flat-border") do %>
+        行きたい <i class="fa fa-heart" id="iine_like"></i>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= form_for(review.likes.build, remote: true) do |f| %>
+      <div><%= hidden_field_tag :review_id, review.id %></div>
+      <%= button_tag(class: "btn-flat-border") do %>
+        行きたい <i class="fa fa-heart-o" id="uniine_like"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
