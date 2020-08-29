@@ -4,6 +4,11 @@ class ReviewsController < ApplicationController
     @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(5)
   end
 
+  def show
+    @comments = @review.comments
+    @comment = Comment.new 
+  end
+
   def new
     @review = Review.new
   end
