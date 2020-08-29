@@ -1,0 +1,36 @@
+div class="signup-modal-wrapper col-12" id="signup-modal">
+  <div class="log-modal">
+    <div class="close-modal">
+      <i class="fa fa-2x fa-times"></i>
+    </div>
+    <div class="signup-form">
+      <h2 class="title-h1">ユーザー新規登録</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= f.text_field :username, class: "form-ctl", placeholder: "名前(ニックネーム)", id: "new_profile_name" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-ctl", placeholder: "メールアドレス", id: "new_user_email" %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上で入力)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-ctl", placeholder: "パスワード", id: "new_user_password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-ctl", placeholder: "パスワード(確認)", id: "new_user_password_confirmation" %>
+        <%= f.submit "新規登録する" ,id:"submit-btn" %>
+      <% end %>
+      <%= link_to 'ゲストユーザーでログイン', users_guest_sign_in_path, method: :post, class: "guest-submit-btn" %>
+      <br>
+      <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+        <%= link_to "確認メールが届かない", new_confirmation_path(resource_name) %><br />
+      <% end %>
+
+      <%- if devise_mapping.omniauthable? %>
+        <%- resource_class.omniauth_providers.each do |provider| %>
+          <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+            <div id="twitter-submit-btn">
+              <i class="fa fa-twitter" aria-hidden="true"></i> Twitterで新規登録
+            </div>
+          <% end %><br />
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
