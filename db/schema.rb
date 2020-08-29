@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_29_081940) do
+ActiveRecord::Schema.define(version: 2020_08_29_135904) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2020_08_29_081940) do
     t.datetime "updated_at", null: false
     t.index ["review_id"], name: "index_comments_on_review_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "review_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_likes_on_review_id"
+    t.index ["user_id", "review_id"], name: "index_likes_on_user_id_and_review_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
