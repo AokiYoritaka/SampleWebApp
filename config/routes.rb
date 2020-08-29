@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :likes, only: [:destroy, :create]
+  
   get 'reviews/index'
   root "top#index"
   #devise 
