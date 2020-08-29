@@ -8,6 +8,12 @@ class SchoolsController < ApplicationController
     @schools = Sshool.find(params[:id])
   end
 
+  def new
+    @school = School.new
+  end
+
+  
+
 
 
 end
