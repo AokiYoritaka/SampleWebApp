@@ -3,4 +3,8 @@ class LikesController < ApplicationController
     def create
       @review = Review.find(params[:review_id])
     end
+
+    def destroy
+      @review = Like.find(params[:id]).review
+    end
 end
