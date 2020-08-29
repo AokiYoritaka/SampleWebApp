@@ -4,6 +4,11 @@
   <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
   <% end %>
 
+<!-- いいね -->
+<div class="col-4 ">
+  <%= render "likes/like", review: @review %>
+</div>
+
 <!-- 編集・削除ボタン -->
     <div class="col-4 mb-3 float-right">
       <% if @review.user == current_user %>
