@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   resources :schools do
-    resources :reviews
+    resources :reviews do
+      resources :comments
+    end
   end
     
   resources :profiles, only: [:show, :edit, :update]
