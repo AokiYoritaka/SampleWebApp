@@ -3,4 +3,16 @@
     <h1 class="title-1">
       登録学校一覧
     </h1>
+    <div class="row">
+
+    </div>
+    <div class="row">
+      <% @schools.each do |school| %>
+        <%= link_to school_path(id: school.id) do %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="kaminari_paginate">
+      <%= paginate @schools %>
+  </div>
   </div>
