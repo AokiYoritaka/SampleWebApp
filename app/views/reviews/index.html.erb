@@ -1,33 +1,39 @@
 <% provide(:title, "口コミ一覧")  %>
-
 <div class="container">
-
   <%= link_to root_path, class:"btn-back" do %>
-    <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
+  <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
   <% end %>
-
   <div class="row">
     <div class="col-md-12">
       <h1 class="title-h1">口コミ一覧</h1>
-      
       <div class="row">
         <div class="col-md-4 pt-4">
           <div class="webkit-center hidden_box">
             <label for="label1">
               <i class="fa fa-search icon-link" id="icon-link" aria-hidden="true"></i>
+              <p class="pt-3 search_icon_text">キーワードから検索</p>
             </label>
             <input type="checkbox" id="label1"/>
             <div class="hidden_show pl-5">
-            <%= render "layouts/search_form" %>
-
+ 
             </div>
           </div>
         </div>
-
+        <div class="col-md-4 webkit-center">
+          <%= link_to alltags_path, class: "icon-link" do %>
+          <i class="fa fa-tags" aria-hidden="true"></i>
+          <% end %>
+          <p class="search_icon_text">口コミに登録されたタグから探す</p>
+        </div>
+        <div class="col-md-4 webkit-center">
+          <%= link_to schools_path, class:"icon-link" do %>
+          <i class="fa fa-cutlery" aria-hidden="true"></i>
+          <% end %>
+          <p class="search_icon_text">学校から探す</p>
+        </div>
         <div class="col-md-12">
           <%= render "layouts/review_index", reviews: @reviews %>
         </div>
-
       </div>
     </div>
   </div>
