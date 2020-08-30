@@ -8,6 +8,8 @@ class Review < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :categories, through: :review_category_relations
+  has_many :review_category_relations
 
   def like_rev(user)
     likes.create(user_id: user.id)
