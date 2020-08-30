@@ -1,0 +1,2 @@
+class ReviewCategoryRelationsController < ApplicationController
+end
