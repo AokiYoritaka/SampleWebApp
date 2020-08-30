@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :likes, only: [:destroy, :create]
   
   get 'reviews/index'
+  get "start", to: "static_pages#start"
   root 'static_pages#home'
   #devise 
   devise_for :users, controllers: {
