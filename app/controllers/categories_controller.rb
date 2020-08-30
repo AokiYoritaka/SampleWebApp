@@ -12,6 +12,4 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @category = Category.new
   end
-  
-
 end
