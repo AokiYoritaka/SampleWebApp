@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
     if user_signed_in?
       redirect_to root_path
     else
-      @reviews = Review.order(created_at "DESC").page(params[:page]).per(5)
+      @reviews = Review.order(created_at: "DESC").page(params[:page]).per(3)
     end
   end
 
@@ -20,6 +20,6 @@ class StaticPagesController < ApplicationController
   end
 
   def alltags
-    @reviews = Review.all.tag_coutns
+    @reviews = Review.all.tag_counts
   end
 end
