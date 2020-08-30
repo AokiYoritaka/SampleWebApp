@@ -2,15 +2,17 @@ class ReviewsController < ApplicationController
   before_action :validate_user, only:[:edit, :update, :destroy]
   def index
     @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(5)
+    
   end
 
   def show
-    @comments = @review.comments
     @comment = Comment.new 
+    @comments = @review.comments.page(params[:page]).per(5)
   end
 
   def new
     @review = Review.new
+    @review.review_images.build
   end
 
   def edit
@@ -58,7 +60,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :body, review_images_images: [])
+    params.require(:review).permit(:title, :body, :tag_list, review_images_images: [])
   end
 
   def validate_user
