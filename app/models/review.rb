@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  act_as_taggable
   belongs_to :user
   belongs_to :school
   validates :title, presence: true, length: { maximum: 50 }
