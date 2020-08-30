@@ -44,6 +44,6 @@ class SchoolsController < ApplicationController
   private
 
   def school_search_params
-    params.fetch(:search. {}).permit(:name, :prefecture, :genre)
+    params.fetch(:search, {}).permit(:name, :prefecture, :genre)
   end
 end

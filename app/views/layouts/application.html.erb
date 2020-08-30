@@ -8,15 +8,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body>
-  <%= render "layouts/header" %>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: key) %>
-    <% end %>
-  <%= render "layouts/signup" %>
-  <%= render "layouts/login" %>
-
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <div class="notifications">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: key) %>
+      <% end %>
+    </div>
+      <%= render "layouts/signup" %>
+      <%= render "layouts/login" %>
+      <%= yield %>
   </body>
 </html>
