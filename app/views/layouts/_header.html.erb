@@ -7,14 +7,14 @@
 
     <div class="collapse navbar-collapse" id="Navber">
       <ul class="navbar-nav mr-auto  text-white">
-        <li class="nav-item"><%= link_to "学校一覧", class:"nav-link text-white" %></li>
-        <li class="nav-item"><%= link_to "口コミ一覧", class:"nav-link text-white" %></li>
+        <li class="nav-item"><%= link_to "学校一覧", schools_path, class:"nav-link text-white" %></li>
+        <li class="nav-item"><%= link_to "口コミ一覧", reviews_index_path, class:"nav-link text-white" %></li>
       </ul>
 
       <ul class="navbar-nav">
         <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "#", class: "btn btn-warning nav-rev-btn text-white" do %>
+          <%= link_to new_school_path, class: "btn btn-warning nav-rev-btn text-white" do %>
           <i class="fa fa-pencil-square-o" aria-hidden="true"></i>口コミ投稿
           <% end %>
         </li>

@@ -1,0 +1,19 @@
+<% provide(:title, "学校検索")  %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="rev-card px-2 pb-2 pt-2">
+        <h1 class="title-h1"></h1>
+        <div class="result"></div>
+        <div class="webkit-center mt-5">
+          <input type="text" name="namae" id="name" class="form-control mr-sm-2 x-300 mt-4" placeholder="#">
+          <%= button_tag type: "submit", class: "btn btn-success inline mt-2 mb-4", id: "rest_search" do %>
+          <i class="fa fa-search" aria-hidden="true"></i>
+          #
+          <% end %>
+        </div>
+        <div class="row" id="rest_lists"></div>
+      </div>
+    </div>
+  </div>
+</div>
