@@ -6,6 +6,7 @@ class Review < ApplicationRecord
   has_many :review_images, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   def like_rev(user)
     likes.create(user_id: user.id)
