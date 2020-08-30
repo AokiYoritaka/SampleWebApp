@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @review.review_images.build
   end
 
   def edit
