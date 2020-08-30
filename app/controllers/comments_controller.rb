@@ -4,19 +4,26 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @review = @comment.review
     if @comment.save
-      redirect_back(fallback_location: reviews_path)
+      @review.create_notification_comment!(current_user, @comment.id)
+      render :index
     else
       redirect_back(fallback_location: reviews_path)
     end
+    render :error
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      render :index
+    else
+      redirect_back(fallback_location: school_review_path(id: @review.id))
+    end
   end
 
   private
   def comment_params
     params.require(:comment).permit(:body, :review_id)
   end
-
 
 end
