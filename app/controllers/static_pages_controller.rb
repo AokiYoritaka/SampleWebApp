@@ -19,5 +19,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-
+  def alltags
+    @reviews = Review.all.tag_coutns
+  end
 end
