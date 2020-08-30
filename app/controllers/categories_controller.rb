@@ -13,6 +13,17 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def create
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to new_category_path, notice: "作成できました"
+    else
+      render new_category_path, alert: "作成できませんでした"
+    end
+  end
+
+  
+
 
   private
 
