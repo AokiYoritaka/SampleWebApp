@@ -4,6 +4,38 @@
   <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
   <% end %>
 
+   <div class="rev-card row">
+    <h1 class="col-12"><%= @review.title %></h1>
+    <% if @review.review_images.present? %>
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <%= render "photo_slide", review: @review %>
+      <br>
+    </div>
+    <!-- タグと投稿者と本文 -->
+    <div class="col-sm-12 col-md-6 col-lg-8">
+      <div class="mt-4">
+        <%= render "reviews/tag_list", tag_list: @review.tag_list %>
+        <%= link_to profile_path(id: @review.user.profile.id) do %>
+        <%= render 'layouts/profile_icon', profile: @review.user.profile %>
+        <%= @review.user.profile.name %>さん
+        <% end %>
+        <p><%= safe_join(@review.body.split("\n"), tag(:br)) %></p>
+      </div>
+    </div>
+    <% else %>
+    <!-- 画像が添付されていない場合、本文を全表示 -->
+    <div class="col-12">
+      <div class="mt-4">
+        <%= render "reviews/tag_list", tag_list: @review.tag_list %>
+        <%= link_to profile_path(id: @review.user.profile.id) do %>
+        <%= render 'layouts/profile_icon', profile: @review.user.profile %>
+        <%= @review.user.profile.name %>さん
+        <% end %>
+        <p><%= safe_join(@review.body.split("\n"), tag(:br)) %></p>
+      </div>
+    </div>
+    <% end %>
+
 <!-- いいね -->
 <div class="col-4 ">
   <%= render "likes/like", review: @review %>
