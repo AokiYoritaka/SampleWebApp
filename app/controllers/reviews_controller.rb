@@ -60,7 +60,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :body, review_images_images: [])
+    params.require(:review).permit(:title, :body, :tag_list, review_images_images: [])
   end
 
   def validate_user
