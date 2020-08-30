@@ -1,0 +1,32 @@
+<%= form_with model: [@school, @review], local: true do |f| %>
+  
+  <div class="form-group mt-3">
+    <p class="label-font">
+      <i class="fa fa-flag" aria-hidden="true"></i>
+      タイトル
+    </p>
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <p class="label-font">
+      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+      本文
+    </p>
+    <%= f.text_area :body, size: "20x10", class:"form-control" %>
+  </div>
+  
+    <p class="label-font">
+    <i class="fa fa-camera" aria-hidden="true"></i>
+      写真添付
+    </p>
+  <%= f.attachment_field :review_images_images, multiple: true, class:"btn-flat-simple"%>
+  <br>
+  
+  <div class="text-center my-3 ">
+    <%= button_tag type: "submit", class: "btn-submit" do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      投稿する
+    <% end %>
+  </div>
+<% end %>
