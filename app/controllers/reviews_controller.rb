@@ -2,11 +2,12 @@ class ReviewsController < ApplicationController
   before_action :validate_user, only:[:edit, :update, :destroy]
   def index
     @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(5)
+    
   end
 
   def show
-    @comments = @review.comments
     @comment = Comment.new 
+    @comments = @review.comments.page(params[:page]).per(5)
   end
 
   def new
