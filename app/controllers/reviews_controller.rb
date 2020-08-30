@@ -47,6 +47,14 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def search
+    if params[:search].blank?
+      redirect_back fallback_location: root_path, notice: "検索キーワードを入力"
+    else
+      @reviews = Review.search(params[:search]).order(created_at: "DESC").page(params[:page]).per(3)
+    end
+  end
+  
   private
 
   def review_params
