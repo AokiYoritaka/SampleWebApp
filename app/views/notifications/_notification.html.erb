@@ -1,0 +1,31 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<div class="col-md-6.mx-auto">
+  <div class="form-inline">
+    <span>
+      <%= link_to profile_path(id: visitor.id) do %>
+        <%= render 'layouts/profile_icon', profile: visitor.profile %>
+        <%= visitor.profile.name %>
+      <% end %>
+      さんが
+      <% case notification.action %>
+        <% when 'like' then %>
+          <%= link_to 'あなたの投稿', school_review_path(
+            school_id: notification.review.school_id,
+            id: notification.review.id
+          ),
+          style: "font-weight: bold;" %>にいいねしました
+        <% when 'comment' then %>
+          <%= link_to "あなたの投稿", school_review_path(
+            school_id: notification.review.school_id,
+            id: notification.review.id
+          ),
+          style: "font-weight: bold;" %>にコメントしました
+      <% end %>
+    </span>
+  </div>
+  <div class="small text-muted text-right">
+    <%= time_ago_in_words(notification.created_at).upcase %>
+  </div>
+  <hr>
+</div>
