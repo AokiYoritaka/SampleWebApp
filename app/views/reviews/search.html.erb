@@ -1,9 +1,8 @@
+<% provide(:title, "「#{params[:search]}」の検索結果")  %>
 <div class="container">
-  <% if params[:search].present? %>
-    <% provide(:title, "「#{params[:search]}」の検索結果")  %>
-  <% end %>
   <div class="row">
     <div class="col-md-12">
+      <h1 class="title-h1">「<%= "#{params[:search]}" %>」の検索結果</h1>
       <%= render "layouts/review_index", reviews: @reviews %>
     </div>
   </div>
