@@ -23,6 +23,21 @@
     </p>
     <%= f.text_field :tag_list, value: @review.tag_list.join(','), class:"form-control", placeholder: "" %>
   </div>
+
+  <div class="category-form">
+    <span class="category-form-title">
+      チェックポイント
+    </span>
+    <br>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
+      <%= category.label do %>
+        <%= category.check_box %>
+        <%= category.text %>
+      <% end %>
+    <% end %>
+  </div>
+
+
   
     <p class="label-font">
     <i class="fa fa-camera" aria-hidden="true"></i>
