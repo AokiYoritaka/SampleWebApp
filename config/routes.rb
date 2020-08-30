@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :likes, only: [:destroy, :create]
   
   get 'reviews/index'
-  root "top#index"
+  root 'static_pages#home'
   #devise 
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks",
