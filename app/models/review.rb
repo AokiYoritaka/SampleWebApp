@@ -8,6 +8,7 @@ class Review < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
+
   def like_rev(user)
     likes.create(user_id: user.id)
   end
@@ -20,4 +21,11 @@ class Review < ApplicationRecord
     like_rev_users.include?(user)
   end
 
+  def self.search(search)
+    if search
+      Review.where(['body LIKE ? OR title LIKE ?', "%#{search}%", "%#{search}%"])
+    else
+      Review.all
+    end
+  end
 end
