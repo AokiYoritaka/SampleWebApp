@@ -10,10 +10,13 @@
     <div class="col-sm-6">
       <%= render "schools/school_photo_slide", school: school %>
     </div>
-
     <div class="col-sm-6">
       <p><i class="fa fa-home" aria-hidden="true"></i> <%= school.address %></p>
       <p><i class="fa fa-phone" aria-hidden="true"></i> <%= school.tell %></p>
+      <% if school.opentime.present? %>
+        <p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= school.opentime %></p>
+      <% end %>
+      <p><%= render "schools/genre", school: school %></p>
     </div>
   </div>
   </div>
