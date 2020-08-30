@@ -28,4 +28,6 @@ class Review < ApplicationRecord
       Review.all
     end
   end
+
+  
 end
