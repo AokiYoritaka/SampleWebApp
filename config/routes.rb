@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
   resources :notifications
   get "search", to: 'reviews#search'
+  get "alltags", to: "static_pages#alltags"
 end
