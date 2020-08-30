@@ -1,6 +1,8 @@
 class CreateReviewCategoryRelations < ActiveRecord::Migration[5.2]
   def change
     create_table :review_category_relations do |t|
+      t.integer :review_id
+      t.integer :category_id
 
       t.timestamps
     end
