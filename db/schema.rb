@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_031200) do
+ActiveRecord::Schema.define(version: 2020_08_30_050012) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -87,6 +87,11 @@ ActiveRecord::Schema.define(version: 2020_08_30_031200) do
     t.text "image_url_b"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longtitude"
+    t.string "prefecture"
+    t.string "opentime"
+    t.string "subgenre"
   end
 
   create_table "users", force: :cascade do |t|
