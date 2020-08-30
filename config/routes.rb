@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   end
     
   resources :profiles, only: [:show, :edit, :update]
+  resources :notifications
 end
