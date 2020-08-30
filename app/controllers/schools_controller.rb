@@ -21,7 +21,24 @@ class SchoolsController < ApplicationController
   end
 
   def create
-    
+    @school = School.new(      
+      name: params[:name],
+      address: params[:address],
+      tell: params[:tell],
+      latitude: params[:latitude],
+      longitude: params[:longitude],
+      image_url_a: params[:image_url_a],
+      image_url_b: params[:image_url_b],
+      genre: params[:genre],
+      subgenre: params[:subgenre],
+      prefecture: params[:prefecture],
+      opentime: params[:opentime]
+    )
+    if @school.save
+      puts "保存しました"
+    else
+      puts "すでに保存されています"
+    end
   end
 
   private
