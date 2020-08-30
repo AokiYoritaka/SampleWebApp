@@ -11,6 +11,7 @@
       <%= render "photo_slide", review: @review %>
       <br>
     </div>
+
     <!-- タグと投稿者と本文 -->
     <div class="col-sm-12 col-md-6 col-lg-8">
       <div class="mt-4">
@@ -23,7 +24,7 @@
       </div>
     </div>
     <% else %>
-    <!-- 画像が添付されていない場合、本文を全表示 -->
+  
     <div class="col-12">
       <div class="mt-4">
         <%= render "reviews/tag_list", tag_list: @review.tag_list %>
