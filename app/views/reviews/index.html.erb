@@ -1,7 +1,6 @@
 <% provide(:title, "口コミ一覧")  %>
 
 <div class="container">
-
   <%= link_to root_path, class:"btn-back" do %>
     <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
   <% end %>
@@ -15,11 +14,10 @@
           <div class="webkit-center hidden_box">
             <label for="label1">
               <i class="fa fa-search icon-link" id="icon-link" aria-hidden="true"></i>
+              <p class="pt-3 search_icon_text">キーワードから検索して探す</p>
             </label>
             <input type="checkbox" id="label1"/>
             <div class="hidden_show pl-5">
-            <%= render "layouts/search_form" %>
-
             </div>
           </div>
         </div>
