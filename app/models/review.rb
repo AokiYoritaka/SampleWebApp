@@ -9,7 +9,6 @@ class Review < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
-
   def like_rev(user)
     likes.create(user_id: user.id)
   end
@@ -30,6 +29,9 @@ class Review < ApplicationRecord
     end
   end
 
+
+
+
   def create_notification_like!(current_user)
     temp = notification.where(["visitor_id = ? and visited_id = ? and review_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
     if temp.blank?
@@ -43,6 +45,9 @@ class Review < ApplicationRecord
       end
         notification.save if notification.valid?
     end
+  end
+
+
 
   def create_notification_comment!(current_user, comment_id)
     temp_ids = Comment.select(:user_id).where(review_id: id).where.not(user_id: current_user.id).distinct
@@ -51,6 +56,8 @@ class Review < ApplicationRecord
     end
     save_notification_comment!(current_user, comment_id, user_id) if temp_ids.blank?
   end
+
+
 
   def save_notification_comment!(current_user, comment_id, visited_id)
     notification = current_user.active_notifications.new(
