@@ -44,5 +44,13 @@ class Review < ApplicationRecord
         notification.save if notification.valid?
     end
 
+  def create_notification_comment!(current_user, comment_id)
+    temp_ids = Comment.select(:user_id).where(review_id: id).where.not(user_id: current_user.id).distinct
+    temp_ids.each do |temp_id|
+      save_notification_comment!(current_user, comment_id, temp_id['user_id'])
+    end
+    save_notification_comment!(current_user, comment_id, user_id) if temp_ids.blank?
+  end
+
   
 end
