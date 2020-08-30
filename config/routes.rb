@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :notifications
   get "search", to: 'reviews#search'
   get "alltags", to: "static_pages#alltags"
+  resources :category
 end
