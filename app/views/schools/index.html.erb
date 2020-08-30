@@ -1,17 +1,51 @@
-  <div class="container">
-    <h1 class="title-1">
-      登録学校一覧
-    </h1>
-    <div class="row">
-
+<% provide(:title, "学校一覧")  %>
+<div class="container">
+  <h1 class="title-h1">
+    登録学校一覧
+  </h1>
+  <div class="row">
+    <div class="cp_iptxt col-md-4">
+      <%= form_with(scope: :search, url: schools_path, method: :get, local: true) do |f| %>
+      <%= f.text_field :name, value: @search_params[:name], placeholder: "学校を検索してください" %>
     </div>
-    <div class="row">
-      <% @schools.each do |school| %>
-        <%= link_to school_path(id: school.id) do %>
-        <% end %>
+
+    <div class="cp_ipselect cp_sl04 col-md-4">
+      <%= f.select(:genre, @genres, include_blank: "ジャンルを選択して下さい") %>
+    </div>
+    <div class="btn-search-area float-right">
+      <%= button_tag type: "submit", class: "btn btn-outline-success" do %>
+      <i class="fa fa-search" aria-hidden="true"></i>
+      検索
       <% end %>
     </div>
-    <div class="kaminari_paginate">
-      <%= paginate @schools %>
   </div>
+  <% end %>
+  <div class="row">
+    <% @schools.each do |school| %>
+    <%= link_to school_path(id: school.id) do %>
+    <div class=" col-lg-4">
+      <div class="card mt-5" style="width: 20rem;">
+        <% if school.image_url_a.present? %>
+        <%= image_tag "#{school.image_url_a}", class: "card-img-top", size: "300x300" %>
+        <% else %>
+        <%= image_tag "no_image.png", class: "card-img-top", size: "300x300"  %>
+        <% end %>
+        <div class="card-body webkit-center">
+          <h4 class="title-h1"><%= school.name %></h4>
+          <span class="badge badge-success mr-1 mt-1 p-2">
+            <%= school.prefecture %>
+          </span>
+          <p class="card-text"><%= render "genre", school: school %></p>
+          <p class="rest-card-text">
+            <i class="fa fa-comments-o" aria-hidden="true"></i>
+            口コミ件数 <%= school.reviews.count %> 件</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
   </div>
+  <div class='kaminari_paginate'>
+    <%= paginate @schools %>
+  </div>
+</div>

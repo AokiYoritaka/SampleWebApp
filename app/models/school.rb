@@ -11,5 +11,4 @@ class School < ApplicationRecord
   scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
   scope :prefecture_is, -> (prefecture) { where('prefecture LIKE ?', "%#{prefecture}%") if prefecture.present? }
   scope :genre_is, -> (genre) { where('genre LiKE ? OR subgenre LIKE ?', "%#{genre}%", "%#{genre}%") if genre.present? }
-
 end
