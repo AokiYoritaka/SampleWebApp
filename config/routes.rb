@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :likes, only: [:destroy, :create]
-  
-  get 'reviews/index'
-  get "start", to: "static_pages#start"
   root 'static_pages#home'
+  get "start", to: "static_pages#start"
+  get 'likes/create'
+  get 'likes/destroy'
+  get 'reviews/index'
+
   #devise 
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks",
@@ -18,10 +19,11 @@ Rails.application.routes.draw do
       resources :comments
     end
   end
-    
+
+  resources :likes, only: [:destroy, :create]  
   resources :profiles, only: [:show, :edit, :update]
   resources :notifications
+  resources :categories, only: [:index, :show, :new, :create, :destroy]
   get "search", to: 'reviews#search'
   get "alltags", to: "static_pages#alltags"
-  resources :category
 end
