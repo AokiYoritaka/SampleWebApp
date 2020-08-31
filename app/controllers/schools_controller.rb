@@ -3,7 +3,7 @@ class SchoolsController < ApplicationController
 
   def index
     @search_params = school_search_params
-    @schools = school.search(@search_params).order(created_at: "DESC").page(params[:page]).per(6)
+    @schools = School.search(@search_params).order(created_at: "DESC").page(params[:page]).per(6)
     all_genre = School.pluck(:genre) + School.pluck(:subgenre)
     @genres = all_genre.uniq.reject(&:blank?)
     all_prefecture = School.pluck(:prefecture)
