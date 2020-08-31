@@ -1,5 +1,7 @@
 class School < ApplicationRecord
   has_many :review, dependent: :destroy
+  geocoded_by :address
+  after_validation :geocode
   scope :sorted, -> { order(created_at: :desc) }
   validates :name, presence: true
 

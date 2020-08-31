@@ -78,3 +78,5 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 gem "counter_culture"
 gem "acts-as-taggable-on", "~> 6.0"
+gem "geocoder"
+gem "http"

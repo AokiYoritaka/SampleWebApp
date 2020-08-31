@@ -7,6 +7,10 @@ class LikesController < ApplicationController
       @review.like_rev(current_user)
       @review.create_notification_like!(current_user)
       @review.reload
+      respond_to do |format|
+        format.html { redirect_to request.referrer || root_url }
+        format.js
+      end
     end
   end
 
@@ -15,6 +19,10 @@ class LikesController < ApplicationController
     if @review.like_rev?(current_user)
       @review.un_like_rev(current_user)
       @review.reload
+      respond_to do |format|
+        format.html { redirect_to request.referrer || root_url }
+        format.js
+      end
     end
   end
 end
