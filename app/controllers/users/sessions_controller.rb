@@ -20,6 +20,10 @@ class Users::SessionsController < Devise::SessionsController
 
   def new_guest
     user = User.guest
+    profile = Profile.new
+    profile.user_id = user.id
+    profile.name = user.username
+    profile.save
     sign_in user
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
