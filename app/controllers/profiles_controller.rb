@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:name, :age, :liveplace, :introduce)
+    params.require(:profile).permit(:name, :age, :liveplace, :introduce, :avatar)
   end
 
   def validate_user
