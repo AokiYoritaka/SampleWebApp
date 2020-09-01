@@ -1,4 +1,5 @@
 class SchoolsController < ApplicationController
+  include AjaxHelper
   before_action :sign_in_required, only: [:new]
 
   def index
@@ -41,8 +42,14 @@ class SchoolsController < ApplicationController
     )
     if @school.save
       puts "保存しました"
+      respond_to do |format|
+        format.js do
+          render ajax_redirect_to(new_school_review_path(school_id: @school.id))
+        end
+      end
     else
       puts "すでに保存されています"
+
     end
   end
 
