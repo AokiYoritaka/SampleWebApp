@@ -66,6 +66,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #gem 'therubyracer'
 #gem 'mini_racer'
 
+gem "aws-sdk-s3", require: false
+
 gem 'devise'
 gem "devise-i18n"
 gem "devise-i18n-views"
