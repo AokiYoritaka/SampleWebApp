@@ -1,9 +1,12 @@
 class School < ApplicationRecord
-  has_many :review, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   geocoded_by :address
   after_validation :geocode
   scope :sorted, -> { order(created_at: :desc) }
   validates :name, presence: true
+  validates :address, presence: :true
+  validates :res_id, uniquess: true
+  
 
   scope :search, -> (search_params) do
     return if search_params.blank?
