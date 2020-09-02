@@ -22,7 +22,8 @@
   </div>
 </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV["GOOGLEMAP_API_KEY"] %>&callback=initMap">
+<script async defer 
+src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAP_API_KEY"] %>&callback=initMap">
 </script>
 <script type="text/javascript">
   function initMap() {
