@@ -5,7 +5,6 @@
       <div class="rev-card-title col-12">
         <%= review.title %>
       </div>
-
       <div class="row">
         <!-- 画像 -->
         <div class="col-md-4 mt-2 text-center">
@@ -16,9 +15,10 @@
 
          <!-- 本文 -->
         <div class="col-md-8 mt-2" id="card-body">
+          <%= render "reviews/tag_list", tag_list: review.tag_list %>
           <%= truncate review.body, length: 70 do %>
           <% end %>
-          <%= link_to school_review_path(school_id: review.school.id, id: review.id), class: "btn-continue" do %>
+           <%= link_to school_review_path(school_id: review.school.id, id: review.id), class: "btn-continue" do %>
             <i class="fa fa-caret-right" aria-hidden="true"></i> 続きを見る
           <% end %>
         </div>
