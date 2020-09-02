@@ -23,13 +23,13 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @reviews.user_id = current_user.id
+    @review.user_id = current_user.id
     @review.school_id = @school.id
-     if @review.save
+    if @review.save
       flash[:notice] = "作成できました"
       redirect_to school_review_path(id: @review.id)
     else
-      flash.now[:alert] = "作成に失敗しました。"
+      flash.now[:alert] = "作成に失敗しました。詳細はタイトル入力欄上のエラーメッセージをご確認ください。"
       render :new
     end
   end
