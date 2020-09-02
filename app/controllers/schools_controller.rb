@@ -12,7 +12,7 @@ class SchoolsController < ApplicationController
   end
 
   def show
-    @schools = School.find(params[:id])
+    @school = School.find(params[:id])
     @reviews = @school.reviews.order(created_at: "DESC").page(params[:page]).per(3)
   end
 
