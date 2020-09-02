@@ -23,8 +23,5 @@ class AddLikesCountToReviews < ActiveRecord::Migration[5.2]
   end
 
   def _down
-    MigrationUser.reset_column_information
-
-    remove_column :microposts, :likes_count if column_exists? :microposts, :likes_count
   end
 end
