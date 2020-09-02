@@ -1,15 +1,17 @@
 class Review < ApplicationRecord
   acts_as_taggable
   belongs_to :user
-  belongs_to :school
+  belongs_to :restaurant
   validates :title, presence: true, length: { maximum: 50 }
   validates :body, presence: true
   has_many :review_images, dependent: :destroy
-  has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :like_rev_users, through: :likes, source: :user
+  has_many :comments, dependent: :destroy
+  accepts_attachments_for :review_images, attachment: :image
   has_many :notifications, dependent: :destroy
-  has_many :categories, through: :review_category_relations
   has_many :review_category_relations
+  has_many :categories, through: :review_category_relations
 
   def like_rev(user)
     likes.create(user_id: user.id)
@@ -30,8 +32,6 @@ class Review < ApplicationRecord
       Review.all
     end
   end
-
-
 
 
   def create_notification_like!(current_user)

@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_123639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
-    t.float "longtitude"
+    t.float "longitude"
     t.string "prefecture"
     t.string "opentime"
     t.string "subgenre"

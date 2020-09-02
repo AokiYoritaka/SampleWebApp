@@ -2,9 +2,21 @@
   <div class="container">
     <%= link_to :back, class:"btn-back" do %>
       <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
-    <% end %>
+    <% end %> 
+
     <%= render "school_details", school: @school %>
     <div class="row">
-
+    <%= link_to new_school_review_path(school_id: @school.id), class:"btn-new-review" do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      この学校の口コミを投稿する
+    <% end %>
     </div>
+    
+    <div class="row">
+    <div class="col-md-12">
+      <h1 class="title-h1"><%= @school.name %>の口コミ一覧</h1>
+      <%= render "layouts/review_index", reviews: @reviews %>
+    </div>
+  </div>
+  <%= paginate @reviews %>
   </div>

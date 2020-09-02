@@ -17,3 +17,13 @@
 @import "font-awesome";
 @import "bootstrap";
 @import "static_pages";
+
+
+.trim-image-to-circle {
+  background-image: url("app/assets/images/default.jpg");  
+  width:  180px;       
+  height: 180px;      
+  border-radius: 50%;  
+  background-position: left top;  
+  display: inline-block;        
+}

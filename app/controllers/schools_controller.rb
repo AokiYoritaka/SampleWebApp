@@ -1,4 +1,5 @@
 class SchoolsController < ApplicationController
+  include AjaxHelper
   before_action :sign_in_required, only: [:new]
 
   def index
@@ -11,7 +12,7 @@ class SchoolsController < ApplicationController
   end
 
   def show
-    @schools = School.find(params[:id])
+    @school = School.find(params[:id])
     @reviews = @school.reviews.order(created_at: "DESC").page(params[:page]).per(3)
   end
 
@@ -33,6 +34,7 @@ class SchoolsController < ApplicationController
       longitude: params[:longitude],
       image_url_a: params[:image_url_a],
       image_url_b: params[:image_url_b],
+      detail: params[:detail],
       genre: params[:genre],
       subgenre: params[:subgenre],
       prefecture: params[:prefecture],
@@ -41,8 +43,18 @@ class SchoolsController < ApplicationController
     )
     if @school.save
       puts "保存しました"
+      respond_to do |format|
+        format.js do
+          render ajax_redirect_to(new_school_review_path(school_id: @school.id))
+        end
+      end
     else
-      puts "すでに保存されています"
+      @school = School.find_by(res_id: @school.res_id)
+      respond_to do |format|
+        format.js do
+          render ajax_redirect_to(new_school_review_path(school_id: @school.id))
+        end
+      end
     end
   end
 

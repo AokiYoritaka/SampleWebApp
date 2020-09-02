@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
-
+  validates :username, presence: true
 
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
@@ -24,7 +24,7 @@ class User < ApplicationRecord
 
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
-      new(session["devise.user/attributes"]) do |user|
+      new(session["devise.user_attributes"]) do |user|
         user.attributes = params
       end
     else
