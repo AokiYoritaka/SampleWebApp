@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
   resources :notifications
   resources :categories, only: [:index, :show, :new, :create, :destroy]
-  get "search", to: 'reviews#search'
   get "alltags", to: "static_pages#alltags"
+  get "search", to: "reviews#search"
 end
