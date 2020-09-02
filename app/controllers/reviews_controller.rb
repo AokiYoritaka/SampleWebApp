@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
-  before_action :find_review
-  before_action :find_school
-  before_action :sign_in_required
+  before_action :find_review, only: [:show, :edit, :update, :destroy]
+  before_action :find_school, only: [:show, :new, :edit, :create, :update]
+  before_action :sign_in_required, only: [:new, :edit]
   before_action :validate_user, only:[:edit, :update, :destroy]
 
   def index
@@ -67,7 +67,7 @@ class ReviewsController < ApplicationController
   end
 
   def find_school
-    @review = School.find(params[:school_id])
+    @school = School.find(params[:school_id])
   end
 
   def review_params
