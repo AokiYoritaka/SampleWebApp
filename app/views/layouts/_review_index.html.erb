@@ -18,7 +18,7 @@
           <%= render "reviews/tag_list", tag_list: review.tag_list %>
           <%= truncate review.body, length: 70 do %>
           <% end %>
-           <%= link_to school_review_path(school_id: review.school.id, id: review.id), class: "btn-continue" do %>
+           <%= link_to school_review_path(school_id: review.school_id, id: review.id), class: "btn-continue" do %>
             <i class="fa fa-caret-right" aria-hidden="true"></i> 続きを見る
           <% end %>
         </div>
