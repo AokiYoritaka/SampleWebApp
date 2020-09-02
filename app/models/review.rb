@@ -7,6 +7,8 @@ class Review < ApplicationRecord
   has_many :review_images, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :like_rev_users, through: :likes, source: :user
+  accepts_attachments_for :review_images, attachment: :image
   has_many :notifications, dependent: :destroy
   has_many :categories, through: :review_category_relations
   has_many :review_category_relations
