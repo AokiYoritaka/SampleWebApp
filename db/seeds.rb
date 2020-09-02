@@ -8,7 +8,5 @@ School.create(name: "tak2", address: "osaka", tell: "080-33", latitude: "2", lon
 
 Review.create(name: "take", title: "hoge", body: "hoehoge", user_id: "1", school_id: "1", likes_count: "1")
 Review.create(name: "take", title: "hoge", body: "hoehoge", user_id: "2", school_id: "2", likes_count: "1")
-Review.create(name: "take", title: "hoge", body: "hoehoge", user_id: "3", school_id: "3", likes_count: "1")
-Review.create(name: "take", title: "hoge", body: "hoehoge", user_id: "4", school_id: "4", likes_count: "1")
-Review.create(name: "take", title: "hoge", body: "hoehoge", user_id: "5", school_id: "5", likes_count: "1")
-Review.create(name: "take", title: "hoge", body: "hoehoge", user_id: "6", school_id: "6", likes_count: "1")
+
+Tag.create(name: "ken", taggings_count: "1")
