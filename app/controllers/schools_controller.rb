@@ -34,6 +34,7 @@ class SchoolsController < ApplicationController
       longitude: params[:longitude],
       image_url_a: params[:image_url_a],
       image_url_b: params[:image_url_b],
+      detail: params[:detail],
       genre: params[:genre],
       subgenre: params[:subgenre],
       prefecture: params[:prefecture],
