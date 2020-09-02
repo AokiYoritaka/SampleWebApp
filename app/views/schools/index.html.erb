@@ -26,7 +26,6 @@
     <div class=" col-lg-4">
       <div class="card mt-5" style="width: 20rem;">
         <% if school.image_url_a.present? %>
-        <%= image_tag "#{school.image_url_a}", class: "card-img-top", size: "300x300" %>
         <% else %>
         <%= image_tag "no_image.png", class: "card-img-top", size: "300x300"  %>
         <% end %>
@@ -36,7 +35,7 @@
             <%= school.prefecture %>
           </span>
           <p class="card-text"><%= render "genre", school: school %></p>
-          <p class="rest-card-text">
+          <p class="school-card-text">
             <i class="fa fa-comments-o" aria-hidden="true"></i>
             口コミ件数 <%= school.reviews.count %> 件</p>
         </div>

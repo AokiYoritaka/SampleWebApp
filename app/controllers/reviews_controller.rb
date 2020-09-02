@@ -1,8 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :find_review, only: [:show, :edit, :update, :destroy]
+  before_action :find_school, only: [:show, :new, :edit, :create, :update]
+  before_action :sign_in_required, only: [:new, :edit]
   before_action :validate_user, only:[:edit, :update, :destroy]
+
   def index
     @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(5)
-    
   end
 
   def show
@@ -58,6 +61,14 @@ class ReviewsController < ApplicationController
   end
   
   private
+
+  def find_review
+    @review = Review.find(params[:id])
+  end
+
+  def find_school
+    @school = School.find(params[:school_id])
+  end
 
   def review_params
     params.require(:review).permit(:title, :body, :tag_list, review_images_images: [], category_ids: []) 

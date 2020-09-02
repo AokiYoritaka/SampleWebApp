@@ -1,0 +1,16 @@
+<% if school.genre == school.subgenre %>
+  <span class="badge badge-warning mr-1 mt-1 p-2">
+    <%= school.genre %>
+  </span>
+<% elsif school.subgenre.blank? %>
+  <span class="badge badge-warning mr-1 mt-1 p-2">
+    <%= school.genre %>
+  </span>
+<% else %>
+  <span class="badge badge-warning mr-1 mt-1 p-2">
+    <%= school.genre %>
+  </span>
+  <span class="badge badge-warning mr-1 mt-1 p-2">
+    <%= school.subgenre %>
+  </span>
+<% end %>
