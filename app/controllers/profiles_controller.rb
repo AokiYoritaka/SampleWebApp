@@ -32,5 +32,4 @@ class ProfilesController < ApplicationController
       redirect_back(fallback_location: profile_path(id: @profile.id))
     end
   end
-
 end

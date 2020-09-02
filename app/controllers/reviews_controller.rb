@@ -63,7 +63,7 @@ class ReviewsController < ApplicationController
   private
 
   def find_review
-    @review = Review.find(pramas[:id])
+    @review = Review.find(params[:id])
   end
 
   def find_school

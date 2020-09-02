@@ -1,4 +1,5 @@
 <% if profile.avatar.attached? %>
-  <%= image_tag.profile.avatar %>
+  <%= image_tag profile.avatar %>
 <% else %>
-  <% end %>  
+  <%= image_tag "default.jpg" %>
+<% end %>
