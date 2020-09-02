@@ -1,5 +1,9 @@
 class ReviewsController < ApplicationController
+  before_action :find_review
+  before_action :find_school
+  before_action :sign_in_required
   before_action :validate_user, only:[:edit, :update, :destroy]
+  
   def index
     @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(5)
     
