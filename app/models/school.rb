@@ -4,7 +4,7 @@ class School < ApplicationRecord
   after_validation :geocode
   validates :name, presence: true
   validates :address, presence: :true
-  validates :res_id, uniquess: true
+  validates :res_id, uniqueness: true
 
   scope :sorted, -> { order(created_at: :desc) }
   scope :search, -> (search_params) do
