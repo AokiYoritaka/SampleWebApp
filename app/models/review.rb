@@ -34,8 +34,6 @@ class Review < ApplicationRecord
   end
 
 
-
-
   def create_notification_like!(current_user)
     temp = notification.where(["visitor_id = ? and visited_id = ? and review_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
     if temp.blank?
