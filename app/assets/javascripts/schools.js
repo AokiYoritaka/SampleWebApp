@@ -71,7 +71,6 @@ $(function() {
         image_url_2: school[post_index].image_url.shop_image2,
         genre: school[post_index].code.category_name_l[0],
         subgenre: school[post_index].code.category_name_l[1],
-        prefecture: school[post_index].code.prefname,
         opentime: school[post_index].opentime
       }
     }).done(function(data) {

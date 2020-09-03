@@ -7,8 +7,6 @@ class SchoolsController < ApplicationController
     @schools = School.search(@search_params).order(created_at: "DESC").page(params[:page]).per(6)
     all_genre = School.pluck(:genre) + School.pluck(:subgenre)
     @genres = all_genre.uniq.reject(&:blank?)
-    all_prefecture = School.pluck(:prefecture)
-    @prefectures = all_prefecture.uniq.reject(&:blank?)
   end
 
   def show
@@ -37,7 +35,6 @@ class SchoolsController < ApplicationController
       detail: params[:detail],
       genre: params[:genre],
       subgenre: params[:subgenre],
-      prefecture: params[:prefecture],
       opentime: params[:opentime],
       res_id: params[:res_id],
     )
@@ -61,6 +58,6 @@ class SchoolsController < ApplicationController
   private
 
   def school_search_params
-    params.fetch(:search, {}).permit(:name, :prefecture, :genre)
+    params.fetch(:search, {}).permit(:name, :genre)
   end
 end
