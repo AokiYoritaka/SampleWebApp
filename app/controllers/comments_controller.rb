@@ -7,9 +7,8 @@ class CommentsController < ApplicationController
       @review.create_notification_comment!(current_user, @comment.id)
       render :index
     else
-      redirect_back(fallback_location: reviews_path)
+      render :error
     end
-    render :error
   end
 
   def destroy
@@ -22,8 +21,8 @@ class CommentsController < ApplicationController
   end
 
   private
-  def comment_params
-    params.require(:comment).permit(:body, :review_id)
-  end
 
+  def comment_params
+    params.permit(:body, :review_id)
+  end
 end

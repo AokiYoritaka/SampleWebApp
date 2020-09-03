@@ -21,12 +21,13 @@
       <i class="fa fa-tag" aria-hidden="true"></i>
       タグの入力
     </p>
-    <%= f.text_field :tag_list, value: @review.tag_list.join(','), class:"form-control", placeholder: "" %>
+    <%= f.text_field :tag_list, value: @review.tag_list.join(','), class:"form-control", placeholder: ",で区切るとタグを複数登録できます。" %>
   </div>
 
   <div class="category-form">
     <span class="category-form-title">
-      チェック
+      <i class="fa fa-check-square-o" aria-hidden="true"></i>
+      チェックポイント
     </span>
     <br>
     <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
@@ -37,10 +38,9 @@
     <% end %>
   </div>
 
-  
     <p class="label-font">
     <i class="fa fa-camera" aria-hidden="true"></i>
-      写真添付
+      写真を添付
     </p>
   <%= f.attachment_field :review_images_images, multiple: true, class:"btn-flat-simple"%>
   <br>
