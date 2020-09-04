@@ -3,12 +3,14 @@ $(function() {
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
     e.preventDefault();
+    const APIkey = $('#apikey').val();
     const name = $('#name').val();
 
     $.ajax({
       type:"GET",
       url:requestUrl,
       data:{
+        keyid: APIkey,
         name: name
       }
     }).done(function(data) {
@@ -76,7 +78,7 @@ $(function() {
       }
     }).done(function(data) {
     }).fail(function() {
-      alert('エラーが発生しました。詳細はkenose0328@gmail.comへお問い合わせください。');
+      alert('エラーが発生しました。詳細はaoki.memetaaa@gmail.comへお問い合わせください。');
     });
   });
   $('#name').on("keyup",function(e) {
