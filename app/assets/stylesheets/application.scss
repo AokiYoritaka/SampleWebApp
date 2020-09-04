@@ -27,3 +27,46 @@
   background-position: left top;  
   display: inline-block;        
 }
+
+.title-h1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+}
+
+#signup-form, #login-form {
+  width: 100%;
+}
+
+#signup-form input, #login-form input {
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
+.login-modal-wrapper,
+.signup-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display: none;
+}
+
+.log-modal {
+  position: absolute;
+  top: 5%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
