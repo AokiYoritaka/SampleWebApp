@@ -84,3 +84,6 @@ gem "counter_culture"
 gem "acts-as-taggable-on", "~> 6.0"
 gem "geocoder"
 gem "http"
+gem "pry-rails"
+gem 'roo'
+gem 'activerecord-import'
