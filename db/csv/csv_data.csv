@@ -1,0 +1,2 @@
+id, name, address, tell, genre, detail, image_url_a, image_url_b, created_at, updated_at, latitude, longitude, opentime, subgenre, res_id
+30, aa, aa, 080-0000-0000, 語学学校, 素晴らしい学校, /assets/pallete_a.png, /assets/pallete_b.png, 2020-09-03 10:36:22, 2020-09-03 10:36:22, 14.923757, 121.0083377, 7:00 18:00, 7, 30
