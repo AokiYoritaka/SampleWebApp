@@ -3,14 +3,10 @@ $(function() {
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
     e.preventDefault();
-    const APIkey = $('#apikey').val();
     const name = $('#name').val();
-
     $.ajax({
       type:"GET",
-      url:requestUrl,
       data:{
-        keyid: APIkey,
         name: name
       }
     }).done(function(data) {
@@ -22,7 +18,7 @@ $(function() {
             $('#school_lists').append(`
               <div class="col-lg-4">
                 <div class="card mt-5 mb-4" style="width: 20rem;">
-                  <img src="${e.image_url.school_imagea}" class="card-img-top" size="300x300">
+                  <img src="${e.image_url.school_image1}" class="card-img-top" size="300x300">
                   <div class="card-body webkit-center">
                     <h4 class="card-title">${e.name}</h4>
                     <span class="badge badge-success mr-1 mt-1 p-2">
@@ -70,8 +66,8 @@ $(function() {
         tell: school[post_index].tel,
         latitude: school[post_index].latitude,
         longitude: school[post_index].longitude,
-        image_url_a: school[post_index].image_url.school_imagea,
-        image_url_b: school[post_index].image_url.school_imageb,
+        image_url_a: school[post_index].image_url.school_image1,
+        image_url_b: school[post_index].image_url.school_image2,
         genre: school[post_index].code.category_name_l[0],
         subgenre: school[post_index].code.category_name_l[1],
         opentime: school[post_index].opentime
