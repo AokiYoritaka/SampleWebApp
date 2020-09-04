@@ -2,6 +2,7 @@ class ImportCsv < ApplicationRecord
   def self.import(path)
     CSV.foreach(path, headers: true) do |row|
       School.create(
+        id: row["id"],
         name: row["name"],
         address: row["address"],
         tell: row["tell"],

@@ -1,2 +1,2 @@
-name, address, tell, genre, detail, image_url_a, image_url_b, created_at, updated_at, latitude, longitude, opentime, subgenre, res_id
-Pallete School, GK Enchanted Farm, California St., Brgy Encanto, Angat, Bulacan, the Philippines, 080-0000-0000, 語学学校, 素晴らしい学校, app/assets/images/pallete_a.png, app/assets/images/pallete_b.png, 2020-09-03 10:36:22, 2020-09-03 10:36:22, 14.923757, 121.0083377, 7:00-18:00, NPO, 16
+id, name, address, tell, genre, detail, image_url_a, image_url_b, created_at, updated_at, latitude, longitude, opentime, subgenre, res_id
+11, Pallete School, GK Enchanted Farm, California St., Brgy Encanto, Angat, Bulacan, the Philippines, 080-0000-0000, 語学学校, 素晴らしい学校, /assets/pallete_a.png, /assets/pallete_b.png, 2020-09-03 10:36:22, 2020-09-03 10:36:22, 14.923757, 121.0083377, 7:00 18:00, 7, 11
