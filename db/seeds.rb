@@ -1,12 +1,1 @@
-
-
-Profile.create(user_id: 1, name: 'yori', age: '5', liveplace: 'Tokyo', introduce: 'aaaaa')
-Profile.create(user_id: 2, name: 'ori', age: 'f', liveplace: 'Tokyo', introduce: 'aaaaa')
-
-School.create(name: "taka", address: "osaka", tell: "080-33", latitude: "1", longitude: "2", genre: "2", subgenre: "3", prefecture: "osaka", opentime: "7", detail: "tako", image_url_a: "", image_url_b: ".png", res_id: "1")
-School.create(name: "tak2", address: "osaka", tell: "080-33", latitude: "2", longitude: "3", genre: "2", subgenre: "3", prefecture: "osaka", opentime: "7", detail: "tako", image_url_a: "", image_url_b: ".png", res_id: "2")
-
-Review.create(name: "take", title: "hoge", body: "hoehoge", user_id: "1", school_id: "1", likes_count: "1")
-Review.create(name: "take", title: "hoge", body: "hoehoge", user_id: "2", school_id: "2", likes_count: "1")
-
-Tag.create(name: "ken", taggings_count: "1")
+School.create!(id: "3", name: "Pallete School", address: "GK Enchanted Farm, California St., Brgy Encanto, Angat, Bulacan, the Philippines", tell: "080-0000-0000", genre: "語学学校", detail: "素晴らしい学校", image_url_a: "", image_url_b: "", latitude: "14.923757", longitude: "121.0083377", opentime: "7:00 18:00", subgenre: "4", res_id: "4")
