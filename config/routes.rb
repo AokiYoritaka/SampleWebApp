@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   resources :schools do
+    collection { resource :import, only: :create, controller: :import }
     resources :reviews do
       resources :comments
     end
