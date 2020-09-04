@@ -1,7 +1,10 @@
 class ImportCsv < ApplicationRecord
-  def self.import(path)
+  # CSVデータのパスを引数として受け取り、インポート処理を実行
+  def self.schools_data
+    path = File.join Rails.root, "db/csv_data/csv_data.csv"
+    list = []
     CSV.foreach(path, headers: true) do |row|
-      School.create(
+      list << {
         id: row["id"],
         name: row["name"],
         address: row["address"],
@@ -17,7 +20,15 @@ class ImportCsv < ApplicationRecord
         opentime: row["opentime"],
         subgenre: row["subgenre"],
         res_id: row["res_id"],
-      )
-      end
+      }
     end
+    puts "インポート処理を開始"
+    # インポートができなかった場合の例外処理
+    begin
+      School.create!(list)
+      puts "インポート完了!!"
+    rescue ActiveModel::UnknownAttributeError => invalid
+      puts "インポートに失敗：UnknownAttributeError"
+    end
+  end
 end
