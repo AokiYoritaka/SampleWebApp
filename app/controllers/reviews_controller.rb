@@ -26,10 +26,10 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.school_id = @school.id
     if @review.save
-      flash[:notice] = "作成できました"
+      flash[:notice] = "口コミを作成できました"
       redirect_to school_review_path(id: @review.id)
     else
-      flash.now[:alert] = "作成に失敗しました。詳細はタイトル入力欄上のエラーメッセージをご確認ください。"
+      flash.now[:alert] = "口コミの作成に失敗しました。詳細はタイトル入力欄上のエラーメッセージをご確認ください。"
       render :new
     end
   end
