@@ -104,3 +104,26 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
   border-radius:  1em;
 }
+
+
+//戻るボタン
+.btn-back {
+
+}
+
+.btn-back:hover{
+
+}
+.btn-new-review{
+    width: 180px;
+    height: 50px;
+    padding: 11px 8px;
+    background-color: #0367BF;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    left: 500px;
+    bottom: 10px;
+}
+
