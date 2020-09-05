@@ -1,40 +1,45 @@
-  <% if reviews.present? %>
-
+<% if reviews.present? %>
   <% reviews.each do |review| %>
-    <div class="rev-card px-2 pb-2">
-      <div class="rev-card-title col-12">
-        <%= review.title %>
-      </div>
-      <div class="row">
-        <!-- 画像 -->
-        <div class="col-md-4 mt-2 text-center">
-          <% if review.review_images.present? %>
-            <%= attachment_image_tag review.review_images.first, :image, :fill, 152, 114 %>
-          <% end %>
-        </div>
-
-         <!-- 本文 -->
-        <div class="col-md-8 mt-2" id="card-body">
-          <%= render "reviews/tag_list", tag_list: review.tag_list %>
-          <%= truncate review.body, length: 70 do %>
-          <% end %>
-           <%= link_to school_review_path(school_id: review.school_id, id: review.id), class: "btn-continue" do %>
-            <i class="fa fa-caret-right" aria-hidden="true"></i> 続きを見る
-          <% end %>
-        </div>
-
-        <!-- 投稿日 -->
-        <div class="post-date col-6">
-          <i class="fa fa-calendar" aria-hidden="true"></i> <%= review.created_at.strftime("%Y年%m月%d日") %>
-        </div>
-
-        <!-- 投稿者 -->
-        <div class="col-6">
-          <%= link_to profile_path(id: review.user.profile.id) do %>
-            <%= render 'layouts/profile_icon', profile: review.user.profile %>
-            <%= review.user.profile.name %>さん
-          <% end %>
-        </div>
+    <div class="card" style="width: 18rem;">
+      <!-- イメージ -->
+        <% if review.review_images.present? %>
+          <%= attachment_image_tag review.review_images.first, :image, :fill, 300, 150 %>
+         <% else %>
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">          
+            <title>Placeholder</title>
+            <rect fill="#CEDFF2" width="100%" height="100%"/>
+            <text fill="#FFFF" dy=".3em" x="38%" y="50%">No Image</text>
+          </svg>
+        <% end %>
+        <div class="card-body">
+          <!-- レビュータイトル -->
+          <h5 class="card-title">            
+            <%= review.title %>
+          </h5>
+          <!-- 本文 -->
+          <p class="card-text">
+            <%= truncate review.body, length: 70 do %>
+            <% end %>
+            <%= link_to school_review_path(school_id: review.school_id, id: review.id), class: "btn-continue" do %>
+              <i class="fa fa-caret-right" aria-hidden="true"></i> 続きを見る
+            <% end %>
+          </p>
+          <!-- 投稿者 -->
+          <p class="card-text">              
+            <%= link_to profile_path(id: review.user.profile.id) do %>
+              <%= render 'layouts/profile_icon', profile: review.user.profile %>
+              <%= review.user.profile.name %>さん
+            <% end %>
+          </p>
+          <!-- タグ -->
+          <p class="card-text">              
+            <%= render "reviews/tag_list", tag_list: review.tag_list %>
+          </p>
+          <!-- 投稿日 -->
+          <p class="card-text">              
+            <i class="fa fa-calendar" aria-hidden="true"></i> 
+            <%= review.created_at.strftime("%Y年%m月%d日") %>
+          </p>
       </div>
     </div>
   <% end %>
