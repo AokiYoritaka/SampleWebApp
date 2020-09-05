@@ -1,28 +1,15 @@
 <% provide(:title, "学校一覧")  %>
 <div class="container">
-
   <h1 class="title-h1">
     登録学校一覧
   </h1>
-
-  <div class="row">
-    <div class="cp_iptxt col-md-4">
-      <%= form_with(scope: :search, url: schools_path, method: :get, local: true) do |f| %>
-      <%= f.text_field :name, value: @search_params[:name], placeholder: "学校を検索してください" %>
+  
+    <div class="row">
+      <div class="col s12">
+        <%= render "search_form" %>
+      </div>
     </div>
 
-    <div class="cp_ipselect cp_sl04 col-md-4">
-      <%= f.select(:genre, @genres, include_blank: "ジャンルを選択して下さい") %>
-    </div>
-    <div class="btn-search-area float-right">
-      <%= button_tag type: "submit", class: "btn btn-outline-success" do %>
-      <i class="fa fa-search" aria-hidden="true"></i>
-      検索
-      <% end %>
-    </div>
-  </div>
-
-  <% end %>
   <div class="row">
     <% @schools.each do |school| %>
     <%= link_to school_path(id: school.id) do %>

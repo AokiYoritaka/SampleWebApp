@@ -1,0 +1,19 @@
+<nav class="search-box #fffde7 yellow lighten-5">
+  <div class="nav-wrapper row">
+    <div class="col s12">
+      <div class="col s12 m12 l3">
+        <%= form_with(scope: :search, url: schools_path, method: :get, local: true) do |f| %>
+      </div>
+      <div class="col m6 l3 search-form">
+        <%= f.text_field :name, value: @search_params[:name], placeholder: "学校を検索してください" %>
+      </div>
+      <div class="col m5 l2 search-form">
+        <%= f.select(:genre, @genres, include_blank: "ジャンルを選択して下さい") %>
+      </div>
+      <div class="col radiob">      
+        <%= f.submit "検索", class: 'btn #ffd600 yellow accent-4 search-btn'%>
+      </div>
+       <% end %>
+    </div>
+  </div>
+</nav>
