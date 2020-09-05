@@ -73,3 +73,34 @@
   height: auto;
   text-align: center;
 }
+
+.cp_cssslider input[name='cp_switch'] {
+  display: none;
+}
+
+// 口コミ写真
+.cp_cssslider label {
+  margin: 15px 5px 0 5px;
+  border: 2px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  opacity: 0.6;
+  border-radius: 3px;
+}
+.cp_cssslider label:hover {
+  opacity: 0.9;
+}
+.cp_cssslider label img {
+  display: block;
+  width: 40px;
+  border-radius: 2px;
+}
+
+// 枠
+.rev-card {
+  margin: 2em 0;
+  background: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+  border-radius:  1em;
+}
