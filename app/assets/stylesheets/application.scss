@@ -34,8 +34,7 @@
   text-align: left;
 }
 
-
-// サインイン、サインアップ画面
+// Signin, Signup photo
 
 #signup-form, #login-form {
   width: 100%;
@@ -46,7 +45,7 @@
   margin-bottom: 20px;
   font-size: 12px;
   padding: 12px 12px;
-  border: 1px solid #d0d5d8;
+  border: 1px solid #CEDFF2;
   border-radius: 5px;
 }
 
@@ -74,19 +73,42 @@
   text-align: center;
 }
 
+// Review Photo
+*, *:before, *:after { //余白やborderを内側に
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cp_cssslider { //サムネイルをクリックしたら切り替わるスライド
+  width: 300px;
+  padding-top: 270px; 
+  position: relative;
+  margin: 2em auto;
+  text-align: center;
+}
+.cp_cssslider > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 1s;
+}
 .cp_cssslider input[name='cp_switch'] {
   display: none;
 }
 
-// 口コミ写真
+.cp_cssslider input[name='cp_switch'] {
+  display: none;
+}
+
 .cp_cssslider label {
+  transition: all 0.5s ease;
+  opacity: 0.6;
+  border-radius: 3px;
   margin: 15px 5px 0 5px;
   border: 2px solid #ffffff;
   display: inline-block;
   cursor: pointer;
-  transition: all 0.5s ease;
-  opacity: 0.6;
-  border-radius: 3px;
+
 }
 .cp_cssslider label:hover {
   opacity: 0.9;
@@ -97,16 +119,30 @@
   border-radius: 2px;
 }
 
-// 枠
+.cp_cssslider input[name='cp_switch']:checked + label {
+  border: 2px solid #0367BF;
+  opacity: 1;
+}
+.cp_cssslider input[name='cp_switch'] ~ img {
+  opacity: 0;
+}
+.cp_cssslider input[name='cp_switch']:checked + label + img {
+  opacity: 1;
+}
+
+
+
+
+// 背景枠
 .rev-card {
   margin: 2em 0;
-  background: #f1f1f1;
+  background: #CEDFF2;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
   border-radius:  1em;
 }
 
 
-//戻るボタン
+//Back button
 .btn-back {
 
 }
