@@ -53,6 +53,19 @@ body{
   padding-top: 20px;
 }
 
+//schools index.html.erbのカードのタイトル
+.title-school-index {
+  font-size: 1.5rem;
+  text-align: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+//schools index.html.erbのカードのレビュー件数
+.school-card-text {
+  color:gray;
+}
+
 .title-h1 {
   font-size: 1rem;
   text-align: center;
@@ -60,11 +73,13 @@ body{
   padding-top: 20px;
 }
 
-.title-h2 {
-  font-size: 1rem;
+.title-rev {
+  font-size: 2rem;
+  font-weight: bold;
   text-align: left;
   padding-bottom: 20px;
   padding-top: 20px;
+  padding-right: 100px;
 }
 
 .title-school {
@@ -282,17 +297,15 @@ body{
   right:20px;
 }
 
-//Back button
 .btn-back {
   margin-top: 2em;
-  border-radius: 5px;
   position: relative;
   display: inline-block;
   font-weight: bold;
   padding: 0.5em 0.5em;
   text-decoration: none;
-  color: #00abff;
-  background: #f1f1f1;
+  color: gray;
+  background: #CEDFF2;
   transition: .4s;
   width: 80px;
   height: 40px;
@@ -300,7 +313,6 @@ body{
 }
 
 .btn-back:hover {
-  background: #00abff;
   color: white;
 }
 
@@ -510,7 +522,6 @@ body{
   position: relative;
   margin: 2em 0;
   padding: 0.5em 1em;
-  border-radius: 8px;
 }
 .category-area .category-area-title {
   position: absolute;
@@ -518,10 +529,9 @@ body{
   top: -13px;
   left: 10px;
   padding: 0 9px;
-  line-height: 1;
   font-size: 16px;
   background: #F1F1F1;
-  color: #fdafaf;
+  color: #00abff;
   font-weight: bold;
 }
 .category-area p {
@@ -789,7 +799,7 @@ img {
 .slides-image{
   position: relative;
   opacity: 0.7;
-  zoom:2;
+  width:100%;
 }
 
 .slides-text{
@@ -798,4 +808,56 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+// kaminariのページネーション
+
+.kaminari_paginate {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.pagination {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+
+
+//reviews index.html.erbのタグ
+.icon-link {
+  font-size: 10 px;
+  color: green;
+}
+
+.icon-link:hover {
+  color: yellow;
+}
+
+.hidden_box label {
+  cursor :pointer;
+}
+
+.hidden_box .hidden_show {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.hidden_box input:checked ~ .hidden_show {
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
+}
+
+#label1 {
+  display: none;
+}
+
+.keyword-search{
+  color:#047BFE;
+  font-weight: bold;
+  font-size: large;
 }
