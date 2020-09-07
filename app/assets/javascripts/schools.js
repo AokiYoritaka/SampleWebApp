@@ -70,7 +70,8 @@ $(function() {
         image_url_b: school[post_index].image_url.school_image2,
         genre: school[post_index].code.category_name_l[0],
         subgenre: school[post_index].code.category_name_l[1],
-        opentime: school[post_index].opentime
+        opentime: school[post_index].opentime,
+        nation: school[post_index].nation
       }
     }).done(function(data) {
     }).fail(function() {

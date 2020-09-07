@@ -22,12 +22,49 @@ body{
   background-color: #F0F8FF;
  }
 
+ //ナビゲーションバー
+ .navbar {
+  padding: 0.01rem 5rem 0.01rem 1rem;
+}
+
+.nav-rev-btn{
+  margin: 3px 10px 0px 0px;
+  font-weight: bold;
+} 
+.navbar .navbar-expand {
+  padding: 0.5rem 0.5rem;
+  font-size: large;
+}
+.navbar .navbar-expand1 {
+  padding: 0.5rem 1.5rem;
+  font-size: large;
+}
+
+.nav-item{
+  margin: 3px 10px 0px 0px;
+}
+
+
 //タイトル
+.title {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
 .title-h1 {
   font-size: 1rem;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.title-h2 {
+  font-size: 1rem;
   text-align: left;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .title-school {
@@ -100,7 +137,7 @@ body{
 .cp_cssslider input[name='cp_switch'] {
   display: none;
 }
-/* 口コミ写真サムネイル */
+/* レビュー写真サムネイル */
 .cp_cssslider label {
   margin: 15px 5px 0 5px;
   border: 2px solid #ffffff;
@@ -661,26 +698,104 @@ img {
 }
 
 //検索バー
-.cp_iptxt {
+.search-bar1 {
   position: relative;
   width: 80%;
   margin: 25px 16px;
 }
 
-.cp_iptxt input[type='text'] {
-  font: 15px/24px sans-serif;
-  box-sizing: border-box;
+.search-bar1 input[type='text'] {
   width: 100%;
+  text-indent: 0.03px;
+  font-size: 16px;
   padding: 0.3em;
   transition: 0.3s;
   letter-spacing: 1px;
-  color: #aaaaaa;
+  color: #C0C0C0;
   border: none;
   border-bottom: 2px solid #CEDFF2;
   background: transparent;
 }
 
-.cp_iptxt.col-md-4 {
+.search-bar1.col-md-4 {
   max-width: 300px;
   min-width: 300px;
+}
+
+.search-bar2 {
+  overflow: hidden;
+  margin: 1em 1em;
+  text-align: center;
+  height: 45px;
+}
+
+.search-bar2 select {
+  width: 100%;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.search-bar2 select::-ms-expand {
+  display: none;
+}
+.search-bar2.search-option {
+  position: relative;
+  border-bottom: 2px solid #CEDFF2;
+}
+
+.search-bar2.search-option::before {
+  position: absolute;
+  top: 0.8em;
+  right: 0.8em;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #CEDFF2;
+  pointer-events: none;
+}
+.search-bar2.search-option select {
+  padding: 8px 38px 8px 8px;
+  color: #aaaaaa;
+}
+
+.search-bar2.search-option.col-md-4 {
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.btn-search-area {
+  margin: 20px 32px;
+}
+
+.slider-text{
+  position: absolute;
+  z-index: 5;
+  top: 55%;
+  right: 45%;
+  color: white;
+}
+
+.slides-image{
+  position: relative;
+  opacity: 0.7;
+  zoom:2;
+}
+
+.slides-text{
+  color: white;
+  opacity: 0.7;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

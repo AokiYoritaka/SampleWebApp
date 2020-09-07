@@ -1,7 +1,7 @@
 <% provide(:title, @profile.name)  %>
 <div class="container">
   <%= link_to :back, class:"btn-back" do %>
-  <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
+  <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
   <% end %>
 
   <div class="row">
@@ -42,14 +42,14 @@
         </div>
         <% if @profile.user == current_user %>
         <%=link_to edit_profile_path(id: @profile.id), class:"btn-edit m-1 float-right" do %>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 編集する
+        <i class="fa fa-check-square-o" aria-hidden="true"></i> 編集する
         <% end %>
         <% end %>
       </div>
     </div>
   </div>
    <div class="row">
-      <h1 class="title-h1"><%= @profile.name %>さんの口コミ一覧</h1>
+      <h1 class="title-h1"><%= @profile.name %>さんのレビューリスト</h1>
       <%= render "layouts/review_index", reviews: @reviews %>
     </div>
   </div>
