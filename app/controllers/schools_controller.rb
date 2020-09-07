@@ -37,6 +37,7 @@ class SchoolsController < ApplicationController
       subgenre: params[:subgenre],
       opentime: params[:opentime],
       res_id: params[:res_id],
+      nation: params[:nation]
     )
     if @school.save
       puts "保存しました"
