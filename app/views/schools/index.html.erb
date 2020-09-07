@@ -1,14 +1,21 @@
-<% provide(:title, "学校一覧")  %>
+<% provide(:title, "学校リスト")  %>
 <div class="container">
-  <h1 class="title-h1">
-    登録学校一覧
-  </h1>
-  
-    <div class="row">
-      <div class="col s12">
-        <%= render "search_form" %>
-      </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= render "slide" %>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <%= render "search_form" %>
+    </div>
+  </div>
+  
+  <h1 class="title">
+    語学学校リスト
+  </h1>
 
   <div class="row">
     <% @schools.each do |school| %>
@@ -25,7 +32,7 @@
           <p class="card-text"><%= render "genre", school: school %></p>
           <p class="school-card-text">
             <i class="fa fa-comments-o" aria-hidden="true"></i>
-            口コミ件数 <%= school.reviews.count %> 件</p>
+            レビュー件数 <%= school.reviews.count %> 件</p>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
-<% provide(:title, "口コミ投稿")  %>
+<% provide(:title, "レビュー投稿")  %>
 <div class="container">
   <%= render "schools/school_details", school: @school %>
   <div class="col-md-12 rev-card">
     <div class="rev-card-title">
-      <i class="fa fa-pencil" aria-hidden="true"></i> 口コミを投稿する
+      <i class="fa fa-check" aria-hidden="true"></i> レビューを投稿する
     </div>
     <%= render "error_messages", review: @review %>
     <%= render "form", review: @review%>
