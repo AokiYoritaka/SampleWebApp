@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   before_action :validate_user, only:[:edit, :update, :destroy]
 
   def index
-    @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(5)
+    @reviews = Review.all.order(created_at: "DESC").page(params[:page]).per(6)
   end
 
   def show

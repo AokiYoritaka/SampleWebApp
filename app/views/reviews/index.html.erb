@@ -4,10 +4,11 @@
   <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
   <% end %>
 
-  <div class="row">
+  <div class="row"> <!-- タイトル -->
     <div class="col-md-12">
       <h1 class="title-h1">口コミ一覧</h1>
-        <div class="row">
+
+        <div class="row"> <!-- 検索バー -->
           <div class="col-md-4 pt-4">
             <div class="webkit-center hidden_box">
               <label for="label1">
@@ -31,7 +32,7 @@
         <i class="fa fa-cutlery" aria-hidden="true"></i>
         <% end %>
         <p class="search_icon_text">学校から探す</p>
-      </div>
+      </div> <!-- review index -->
           <%= render "layouts/review_index", reviews: @reviews %>
       </div>
     </div>

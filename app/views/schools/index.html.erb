@@ -16,13 +16,12 @@
     <div class=" col-lg-4">
       <div class="card mt-5" style="width: 20rem;">
         <% if school.image_url_a.present? %>
+          <%= image_tag "#{school.image_url_a}", class: "card-img-top", size: "300x300" %>
         <% else %>
-        <%= image_tag "no_image.png", class: "card-img-top", size: "300x300"  %>
-        <% end %>
+          <%= image_tag "no_image.png", class: "card-img-top", size: "200x200"  %>
+        <% end %>1  z
         <div class="card-body webkit-center">
           <h4 class="title-h1"><%= school.name %></h4>
-          <span class="badge badge-success mr-1 mt-1 p-2">
-          </span>
           <p class="card-text"><%= render "genre", school: school %></p>
           <p class="school-card-text">
             <i class="fa fa-comments-o" aria-hidden="true"></i>
