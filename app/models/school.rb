@@ -9,9 +9,10 @@ class School < ApplicationRecord
   scope :sorted, -> { order(created_at: :desc) }
   scope :search, -> (search_params) do
     return if search_params.blank?
-    name_like(search_params[:name]).genre_is(search_params[:genre])
+    name_like(search_params[:name]).nature_is(search_params[:nation]).genre_is(search_params[:genre])
   end
 
   scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
+  scope :nation_is, => (nation) { where('nation LIKE ?', "%{nation}%") if nation.present? }
   scope :genre_is, -> (genre) { where('genre LiKE ? OR subgenre LIKE ?', "%#{genre}%", "%#{genre}%") if genre.present? }
 end
