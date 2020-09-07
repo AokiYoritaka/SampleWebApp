@@ -1,4 +1,4 @@
-<h1>カテゴリー一覧</h1>
+<h1>カテゴリ一覧</h1>
 <% @categories.each do |category| %>
     <%= link_to category.name, category_path(id: category.id), method: :delete %>
 <% end %>

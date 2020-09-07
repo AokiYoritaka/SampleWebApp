@@ -1,7 +1,7 @@
 <% provide(:title, @review.title)  %>
 <div class="container">
   <%= link_to :back, class:"btn-back" do %>
-  <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
+  <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
   <% end %>
 
    <div class="rev-card row">
@@ -67,7 +67,7 @@
     <div class="col-4 mb-3 float-right">
       <% if @review.user == current_user %>
       <%=link_to edit_school_review_path, class:"btn-edit m-1" do %>
-      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 編集する
+      <i class="fa fa-check-square-o" aria-hidden="true"></i> 編集する
       <% end %>
       <%=link_to school_review_path, method: :delete, class:"btn-destory m-1",data: {confirm: "本当にこの投稿を削除しますか？" } do %>
       <i class="fa fa-trash-o" aria-hidden="true"></i> 削除する

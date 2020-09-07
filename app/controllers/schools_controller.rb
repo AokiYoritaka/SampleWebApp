@@ -7,6 +7,8 @@ class SchoolsController < ApplicationController
     @schools = School.search(@search_params).order(created_at: "DESC").page(params[:page]).per(6)
     all_genre = School.pluck(:genre) + School.pluck(:subgenre)
     @genres = all_genre.uniq.reject(&:blank?)
+    all_nation = School.pluck(:nation)
+    @nations = all_nation.uniq.reject(&:blank?)
   end
 
   def show
@@ -37,6 +39,7 @@ class SchoolsController < ApplicationController
       subgenre: params[:subgenre],
       opentime: params[:opentime],
       res_id: params[:res_id],
+      nation: params[:nation]
     )
     if @school.save
       puts "保存しました"
@@ -58,6 +61,6 @@ class SchoolsController < ApplicationController
   private
 
   def school_search_params
-    params.fetch(:search, {}).permit(:name, :genre)
+    params.fetch(:search, {}).permit(:name, :nation, :genre)
   end
 end
