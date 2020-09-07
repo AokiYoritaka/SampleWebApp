@@ -1,31 +1,31 @@
-<nav class="search-box #fffde7 yellow lighten-5">
+<nav class="search-box navbar-dark" style="background-color:#e3f2fd;">
   <div class="nav-wrapper row">
     <div class="col s12">
 
       <div class="row">
         <!-- 学校名検索バー -->
-        <div class="cp_iptxt col-md-4">
+        <div class="search-bar1 col-md-4">
           <%= form_with(scope: :search, url: schools_path, method: :get, local: true) do |f| %>
           <%= f.text_field :name, value: @search_params[:name], placeholder: "学校を検索してください" %>
         </div>
 
         <!-- 国検索バー -->
-        <div class="cp_ipselect cp_sl04 col-md-4">
+        <div class="search-bar2 search-option col-md-4">
           <%= f.select(:nation, @nations, include_blank: "国を選択して下さい") %>
         </div>
 
         <!-- ジャンル選択バー -->
-        <div class="cp_ipselect cp_sl04 col-md-4">
+        <div class="search-bar2 search-option col-md-4">
           <%= f.select(:genre, @genres, include_blank: "ジャンルを選択して下さい") %>
         </div>
         
         <!-- 検索ボタン -->
-          <div class="btn-search-area float-right">
-            <%= button_tag type: "submit", class: "btn btn-outline-success" do %>
+        <div class="btn-search-area float-right">
+          <%= button_tag type: "submit", class: "btn btn-outline-success" do %>
             <i class="fa fa-search" aria-hidden="true"></i>
             検索
-            <% end %>
-          </div>
+          <% end %>
+        </div>
       </div>
       <% end %>
 
