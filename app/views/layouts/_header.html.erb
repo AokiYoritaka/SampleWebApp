@@ -1,39 +1,50 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light font-weight-bold">
-    <%= link_to "LocalPlan", root_path, class:"navbar-brand  text-black" %>
-    <button type="button" class="navbar-toggler hamburger" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="Navber">
-      <ul class="navbar-nav mr-auto  text-black">
-        <li class="nav-item"><%= link_to "学校一覧", schools_path, class:"nav-link text-black" %></li>
-        <li class="nav-item"><%= link_to "口コミ一覧", reviews_index_path, class:"nav-link text-black" %></li>
-      </ul>
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to new_school_path, class: "btn btn-warning nav-rev-btn text-black" do %>
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>口コミ投稿
-          <% end %>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="" class="nav-link dropdown-toggle text-black" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.profile.name %>
-          </a>
-           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "プロフィール", profile_path(id: current_user.profile.id), class: "dropdown-item" %>
-            <%= render "notifications/circle" %>
-            <%= link_to "アカウント情報の編集", edit_user_registration_path, class:"dropdown-item" %>
-            <div class="dropdown-divider"></div>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"dropdown-item", id: "log_out" %>
-          </div>
-        </li>
-        <% else %>
-        <li class="nav-item nav-link pointer text-black" id="signup-show">新規登録</li>
-        <li class="nav-item nav-link pointer text-black" id="login-show">ログイン</li>
-        <% end %>
-      </ul>
+  <nav class="navbar navbar-expand-md text-light" style="background-color:#4689FF;">  
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav4">
+      <a class="navbar-brand" href="/"><img src="/assets/Local-Plan-logo.png" alt="LocalPlanlogo" style="widht:auto; height:70px;"></a>
     </div>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav4">
+          <ul class="navbar-nav">
+            <li class="navbar navbar-expand">
+                <%= link_to "学校リスト", schools_path, class:"nav-link text-light" %>
+            </li>
+            <li class="navbar navbar-expand1">
+              <%= link_to "レビューリスト", reviews_index_path, class:"nav-link text-light" %>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+              <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to new_school_path, class: "btn btn-info nav-rev-btn text-black" do %>
+              <i class="fa fa-check" aria-hidden="true"></i>レビュー投稿
+              <% end %>
+            </li>
+              <button type="button" class="navbar-toggler hamburger" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <li class="nav-item dropdown">
+              <a href="" class="nav-link dropdown-toggle text-light" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= render 'layouts/profile_icon', profile: current_user.profile %>
+                <%= current_user.profile.name %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "プロフィール", profile_path(id: current_user.profile.id), class: "dropdown-item" %>
+                <%= render "notifications/circle" %>
+                <%= link_to "アカウント情報の編集", edit_user_registration_path, class:"dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"dropdown-item", id: "log_out" %>
+              </div>
+            </li>
+            <% else %>
+              <li class="nav-item nav-link pointer text-black" id="signup-show">
+                新規登録
+              </li>
+              <li class="nav-item nav-link pointer text-black" id="login-show">
+                ログイン
+              </li>
+            <% end %>
+          </ul>
+        </div>  
   </nav>
 </header>
