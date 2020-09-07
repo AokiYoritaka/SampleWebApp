@@ -24,16 +24,7 @@
                   <% end %>
                 </span>
               </div>
-              <div class="profile-intro-box">
-                <span class="profile-intro-label">都道府県</span>
-                <span class="profile-intro">
-                  <% if @profile.liveplace.present? %>
-                  <%= @profile.liveplace %>
-                  <% else %>
-                  未登録
-                  <% end %>
-                </span>
-              </div>
+              
             </div>
             <div class="box26">
               <span class="box-title">
@@ -58,7 +49,6 @@
     </div>
   </div>
    <div class="row">
-    <div class="col-md-12">
       <h1 class="title-h1"><%= @profile.name %>さんの口コミ一覧</h1>
       <%= render "layouts/review_index", reviews: @reviews %>
     </div>
