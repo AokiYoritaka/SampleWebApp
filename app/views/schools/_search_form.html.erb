@@ -6,7 +6,7 @@
         <!-- 学校名検索バー -->
         <div class="search-bar1 col-md-4">
           <%= form_with(scope: :search, url: schools_path, method: :get, local: true) do |f| %>
-          <%= f.text_field :name, value: @search_params[:name], placeholder: "学校を検索してください" %>
+          <%= f.text_field :name, value: @search_params[:name], placeholder: "学校名を検索してください" %>
         </div>
 
         <!-- 国検索バー -->
