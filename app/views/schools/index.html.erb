@@ -1,23 +1,23 @@
 <% provide(:title, "学校リスト")  %>  
 <%= render "slide" %>
 <%= render "search_form" %>
-<div class="container">
-  
+
+<div class="container">  
   <div class="row">
     <% @schools.each do |school| %>
     <%= link_to school_path(id: school.id) do %>
     <div class=" col-lg-4">
-      <div class="card mt-5" style="width: 20rem;">
+      <div class="card mt-5 shadow-sm" style="width: 20rem;">
         <% if school.image_url_a.present? %>
           <%= image_tag "#{school.image_url_a}", class: "card-img-top", size: "300x300" %>
         <% else %>
           <%= image_tag "no_image.png", class: "card-img-top", size: "200x200"  %>
         <% end %>
         <div class="card-body webkit-center">
-          <h4 class="title-h1"><%= school.name %></h4>
+          <h4 class="title-school-index"><%= school.name %></h4>
           <p class="card-text"><%= render "genre", school: school %></p>
           <p class="school-card-text">
-            <i class="fa fa-comments-o" aria-hidden="true"></i>
+            <i class="fa fa-comment" aria-hidden="true"></i>
             レビュー件数 <%= school.reviews.count %> 件</p>
         </div>
       </div>
