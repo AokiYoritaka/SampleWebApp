@@ -1,56 +1,52 @@
+<div class="row">
 <% if reviews.present? %>
   <% reviews.each do |review| %>
-   <div class = "container">
-     <div class="row">
-      <div class="col-sm">
-          <!-- イメージ -->
-          <div class="col-md-4 mt-2 text-center">
-            <% if review.review_images.present? %>
-              <%= attachment_image_tag review.review_images.first, :image, :fill, 300, 150 %>
-            <% else %>
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">          
-                <title>Placeholder</title>
-                <rect fill="#CEDFF2" width="100%" height="100%"/>
-                <text fill="#FFFF" dy=".3em" x="38%" y="50%">No Image</text>
-              </svg>
-            <% end %>
-          </div>
-          <!-- レビュータイトル -->
-          <div class="rev-card-title col-12">
-            <%= review.title %>
-          </div>
-          <!-- 本文 -->
-          <div class="col-md-8 mt-2" id="card-body">
-            <div class="post-date col-6">
-              <%= truncate review.body, length: 70 do %>
-              <% end %>
-              <%= link_to school_review_path(school_id: review.school_id, id: review.id), class: "btn-continue" do %>
-                <i class="fa fa-caret-right" aria-hidden="true"></i> 続きを見る
-              <% end %>
+      <div class="card-deck">
+        <div class = "col s12 m12 l4">
+          <div class="card mt-4" style="width: 20rem;">
+            <div class="card-body">
+              <!-- イメージ -->
+              <% if review.review_images.present? %>
+                <%= attachment_image_tag review.review_images.first, :image, :fill, 280, 280 %>
+              <% else %>
+                <img class="card-img-top" src="/assets/default.jpg" alt="no_image" width="270px" height="280px" %>
+              <% end %>     
+              <!-- レビュータイトル -->
+              <h5 class="card-title"><%= review.title %></h5> 
+              <!-- 本文 -->
+              <p class="card-text">
+                <%= truncate review.body, length: 70 do %>
+                <% end %>
+                <%= link_to school_review_path(school_id: review.school_id, id: review.id), class: "btn-continue" do %>
+                  <i class="fa fa-caret-right" aria-hidden="true"></i> 続きを見る
+                <% end %>
+                </p>
+
+              <!-- 投稿者 -->
+                <p class="card-text">
+                <%= link_to profile_path(id: review.user.profile.id) do %>
+                  <%= render 'layouts/profile_icon', profile: review.user.profile %>
+                  <%= review.user.profile.name %>さん
+                <% end %>
+                </p>
+              <!-- タグ -->
+                <p class="card-text">
+                <%= render "reviews/tag_list", tag_list: review.tag_list %>
+                </p>
+              <!-- 投稿日 -->
+              <div class="card-time"><small class="text-muted">
+                <i class="fa fa-calendar" aria-hidden="true"></i> 
+                <%= review.created_at.strftime("%Y年%m月%d日") %>
+              </small></div>
             </div>
           </div>
-          <!-- 投稿者 -->
-          <div class="col-6">
-            <%= link_to profile_path(id: review.user.profile.id) do %>
-              <%= render 'layouts/profile_icon', profile: review.user.profile %>
-              <%= review.user.profile.name %>さん
-            <% end %>
-          </div>
-          <!-- タグ -->
-          <div class="col-md-8 mt-2">
-            <%= render "reviews/tag_list", tag_list: review.tag_list %>
-          </div>
-          <!-- 投稿日 -->
-          <div class="card-time text-muted">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 
-              <%= review.created_at.strftime("%Y年%m月%d日") %>
-          </div>
+        </div>
       </div>
-    </div>
   <% end %>
 <% else %>
 
-<div class="text-center p-5">
-  <p>投稿はありません</p>
+  <div class="text-center p-5">
+    <p>投稿はありません</p>
+  </div>
+  <% end %>
 </div>
-<% end %>
