@@ -87,3 +87,4 @@ gem "http"
 gem "pry-rails"
 gem 'roo'
 gem 'activerecord-import'
+gem 'rails-i18n'

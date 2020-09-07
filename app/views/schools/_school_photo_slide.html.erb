@@ -1,6 +1,5 @@
-  
 <div class="cp_cssslider_school">
-  <%if school.image_url_a.present? && school.image_url_b.present? %>
+  <% if school.image_url_a.present? && school.image_url_b.present? %>
     <input type="radio" name="cp_switch_school" id="school_photo1" checked/>
     <label for="school_photo1">
       <img src="<%= school.image_url_a %>"/>

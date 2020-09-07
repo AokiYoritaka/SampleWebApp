@@ -4,19 +4,24 @@
       <i class="fa fa-arrow-left" aria-hidden="true"></i> 戻る
     <% end %> 
 
+    <!-- 学校の詳細ページ -->
     <%= render "school_details", school: @school %>
+
+    <!-- 口コミ投稿ボタン -->
     <div class="row">
-    <%= link_to new_school_review_path(school_id: @school.id), class:"btn-new-review" do %>
-      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-      この学校の口コミを投稿する
-    <% end %>
+      <%= link_to new_school_review_path(school_id: @school.id), class:"btn-new-review" do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        学校の口コミ投稿
+      <% end %>
     </div>
-    
-    <div class="row">
-    <div class="col-md-12">
-      <h1 class="title-h1"><%= @school.name %>の口コミ一覧</h1>
-      <%= render "layouts/review_index", reviews: @reviews %>
+
+    <!-- 口コミ一覧 -->
+    <div class="row"> 
+      <div class="col">
+        <h1 class="title-h1"><%= @school.name %>の口コミ一覧</h1>
+        <%= render "layouts/review_index", reviews: @reviews %>
+      </div>
     </div>
+
   </div>
-  <%= paginate @reviews %>
-  </div>
+
