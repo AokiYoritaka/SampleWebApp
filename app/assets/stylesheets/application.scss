@@ -546,10 +546,34 @@ padding: 15px 0px;
 }
 
 //カテゴリ
+.category-form {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #fdafaf;
+  border-radius: 8px;
+}
+.category-form .category-form-title {
+  position: absolute;
+  display: inline-block;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 16px;
+  background: #F1F1F1;
+  color: #fdafaf;
+  font-weight: bold;
+}
+.category-form p {
+  margin: 0;
+  padding: 0;
+}
 .category-area {
   position: relative;
   margin: 2em 0;
   padding: 0.5em 1em;
+  border-radius: 8px;
 }
 .category-area .category-area-title {
   position: absolute;
@@ -557,15 +581,17 @@ padding: 15px 0px;
   top: -13px;
   left: 10px;
   padding: 0 9px;
+  line-height: 1;
   font-size: 16px;
   background: #F1F1F1;
-  color: #00abff;
+  color: #fdafaf;
   font-weight: bold;
 }
 .category-area p {
   margin: 0;
   padding: 0;
 }
+
 
 //image
 
