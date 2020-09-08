@@ -2,20 +2,20 @@
 <% if reviews.present? %>
   <% reviews.each do |review| %>
       <div class="card-deck">
-        <div class = "col s12 m12 l4">
-          <div class="card mt-4 shadow-sm" style="width: 20rem;">
+        <div class ="col s12 m12 l4">
+          <div class="card mt-4 shadow-sm" style="width: 15rem; height: 38rem;">
             <div class="card-body">
               <!-- イメージ -->
               <% if review.review_images.present? %>
-                <%= attachment_image_tag review.review_images.first, :image, :fill, 280, 280 %>
+                <%= attachment_image_tag review.review_images.first, :image, :fill, 200, 200 %>
               <% else %>
-                <img class="card-img-top" src="/assets/default.jpg" alt="no_image" width="270px" height="280px" %>
+                <img class="card-img-top" src="/assets/default.jpg" alt="no_image" width="200px" height="200px" %>
               <% end %>     
               <!-- レビュータイトル -->
               <h5 class="card-title"><%= review.title %></h5> 
               <!-- 本文 -->
               <p class="card-text">
-                <%= truncate review.body, length: 70 do %>
+                <%= truncate review.body, length: 13 do %>
                 <% end %>
                 <%= link_to school_review_path(school_id: review.school_id, id: review.id), class: "btn-continue" do %>
                   <i class="fa fa-caret-right" aria-hidden="true"></i> 続きを見る
@@ -24,15 +24,15 @@
 
               <!-- 投稿者 -->
                 <p class="card-text">
-                <%= link_to profile_path(id: review.user.profile.id) do %>
-                  <%= render 'layouts/profile_icon', profile: review.user.profile %>
-                  <%= review.user.profile.name %>さん
-                <% end %>
+                  <%= link_to profile_path(id: review.user.profile.id) do %>
+                    <%= render 'layouts/profile_icon', profile: review.user.profile %>
+                    <%= review.user.profile.name %>さん
+                  <% end %>
                 </p>
               <!-- タグ -->
-                <p class="card-text">
-                <%= render "reviews/tag_list", tag_list: review.tag_list %>
-                </p>
+                <div class="card-tag">
+                  <%= render "reviews/tag_list", tag_list: review.tag_list %>
+                </div>
               <!-- 投稿日 -->
               <div class="card-time"><small class="text-muted">
                 <i class="fa fa-calendar" aria-hidden="true"></i> 
