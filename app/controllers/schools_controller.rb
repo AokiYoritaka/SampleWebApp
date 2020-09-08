@@ -49,6 +49,7 @@ class SchoolsController < ApplicationController
         end
       end
     else
+      puts "すでに保存されてます"
       @school = School.find_by(res_id: @school.res_id)
       respond_to do |format|
         format.js do
