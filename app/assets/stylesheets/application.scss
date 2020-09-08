@@ -232,13 +232,10 @@ body{
 .rev-card .rev-card-title {
   padding: 0.2em 0.5em;
   margin: 1em 0;
-  color: #ffffff;
+  color: black;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  background-color: #ffa6a6;
-  box-shadow: 0px 0px 0px 10px #ffa6a6;
-  border: dashed 2px #ffc3c3;
   border-radius: 1px;
 }
 .rev-card p {
@@ -550,19 +547,17 @@ padding: 15px 0px;
   position: relative;
   margin: 2em 0;
   padding: 0.5em 1em;
-  border: solid 3px #fdafaf;
-  border-radius: 8px;
+  background-color: white;
 }
 .category-form .category-form-title {
   position: absolute;
   display: inline-block;
-  top: -13px;
+  top: -23px;
   left: 10px;
   padding: 0 9px;
   line-height: 1;
-  font-size: 16px;
-  background: #F1F1F1;
-  color: #fdafaf;
+  font-size: 20px;
+  color: gray;
   font-weight: bold;
 }
 .category-form p {
@@ -583,15 +578,14 @@ padding: 15px 0px;
   padding: 0 9px;
   line-height: 1;
   font-size: 16px;
-  background: #F1F1F1;
-  color: #fdafaf;
+  background: #13A3B8;
+  color: #DDFFFF;
   font-weight: bold;
 }
 .category-area p {
   margin: 0;
   padding: 0;
 }
-
 
 //image
 
@@ -634,7 +628,7 @@ img {
 #submit-btn {
   display: inline-block;
   padding: 14px 140px;
-  background-color: #ffa6a6;
+  background-color: #13A3B8;
   border: none;
   border-radius: 3px;
   color: white;
@@ -675,7 +669,7 @@ img {
   border-right: none;
   border-bottom: 4px solid #aaa;
   background-image: none;
-  background-color: #fdafaf;
+  background-color: #11A4B8;
   font-size: 20px;
   font-weight: bold;
   color: #fff;
