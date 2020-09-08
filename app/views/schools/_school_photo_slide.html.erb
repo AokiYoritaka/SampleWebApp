@@ -1,18 +1,6 @@
-<div class="cp_cssslider_school">
-  <% if school.image_url_a.present? && school.image_url_b.present? %>
-    <input type="radio" name="cp_switch_school" id="school_photo1" checked/>
-    <label for="school_photo1">
-      <img src="<%= school.image_url_a %>"/>
-    </label>
-    <img src="<%= school.image_url_a %>"/>
-    <input type="radio" name="cp_switch_school" id="school_photo2" checked/>
-    <label for="school_photo2">
-      <img src="<%= school.image_url_b %>"/>
-    </label>
-    <img src="<%= school.image_url_b %>"/>
-  <% elsif school.image_url_a.present? %>
-    <img src="<%= school.image_url_a %>"/>
-  <% else %>
-    <%= image_tag("default.jpg") %>
-  <% end %>
+<div class="cp_cssslider">
+	<div class="cp_slidewrapper">
+    <div class="cp_slide_item"><img src="<%= school.image_url_a %>"></div>
+    <div class="cp_slide_item"><img src="<%= school.image_url_b %>"></div>
+  </div>
 </div>
