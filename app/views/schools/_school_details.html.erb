@@ -1,10 +1,10 @@
 <div class="row">
   <div class="rev-card-school-details col-12">
     <!-- 学校名 -->
-    <div class="col-sm-6">
-      <h1 class="title-school">
+    <div class="col">
+      <div class="title-school">
         <%= link_to school.name, school_path(id: school.id) %>
-      </h1>  
+      </div>  
     </div>
     <!-- 学校の説明 -->
     <div class="col-lg-6 float-left">
@@ -15,20 +15,13 @@
         <p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= school.opentime %></p>
       <% end %>
       <p><%= render "schools/genre", school: school %></p>
-        <!-- レビュー投稿ボタン -->
     </div>
-
     <!-- 学校写真 -->
     <div class="col-sm-6 float-right">
-        <%= render "schools/school_photo_slide", school: school %>
+      <%= render "schools/school_photo_slide", school: school %>
     </div>
-
-    <!-- 学校地図 -->
+    <div id="map"></div>   
   </div>
-      <div class="col">
-        <h1 class="title-school">Map</h1>
-      <div id="map"></div>   
-    </div>
 </div>
 
 <script type="text/javascript">

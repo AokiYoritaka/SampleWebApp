@@ -133,60 +133,26 @@ body{
   text-align: center;
 }
 
-//review サムネ写真
+.cp_cssslider2 {
+	width: 300px;
+	height: auto;
+	overflow: hidden;
+	margin: 2em auto;
+	border: 10px solid #ffffff;
+	box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+.cp_slide_item2 {
+	width: 300px;
+	height: auto;
+	float: left;
+	position: relative;
+}
+
+//サムネ写真
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   }
-  .cp_cssslider2 {
-  width: 300px;
-  padding-top: 200px; /* 画像の高さ */
-  position: relative;
-  margin: 2em auto;
-  text-align: center;
-  }
-  .cp_cssslider2 > img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 0.5s;
-  border-radius: 3px;
-  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.3);
-  }
-  .cp_cssslider2 input[name='cp_switch'] {
-  display: none;
-  }
-  /* サムネイル */
-  .cp_cssslider2 label {
-  margin: 15px 5px 0 5px;
-  border: 2px solid #ffffff;
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  opacity: 0.6;
-  border-radius: 3px;
-  }
-  .cp_cssslider2 label:hover {
-  opacity: 0.9;
-  }
-  .cp_cssslider2 label img {
-  display: block;
-  width: 40px;
-  border-radius: 2px;
-  }
-  .cp_cssslider2 input[name='cp_switch']:checked + label {
-  border: 2px solid #FF7043;
-  opacity: 1;
-  }
-  .cp_cssslider2 input[name='cp_switch'] ~ img {
-  opacity: 0;
-  }
-  .cp_cssslider2 input[name='cp_switch']:checked + label + img {
-  opacity: 1;
-  }
-
-
-//school サムネ写真
 .cp_cssslider {
 	width: 300px;
 	height: 200px;
@@ -202,64 +168,24 @@ body{
 	position: relative;
 }
 .cp_slidewrapper {
-	width: 500%;/* slideの枚数×100% */
+	width: 300%;/* slideの枚数×100% */
 	position: relative;
 	left: 0;
-	animation: slider 20s infinite ease;/* スピード */
+	animation: slider 10s infinite ease;/* スピード */
 }
 @-webkit-keyframes slider {
 	/* 100%を枚数で割った%に割り振る */
-	0% {
-	-webkit-transform: translateX(0);
-	transform: translateX(0);
-	}
-	20% {
-	-webkit-transform: translateX(-300px);
-	transform: translateX(-300px);
-	}
-	40% {
-	-webkit-transform: translateX(-600px);
-	transform: translateX(-600px);
-	}
-	60% {
-	-webkit-transform: translateX(-900px);
-	transform: translateX(-900px);
-	}
-	80% {
-	-webkit-transform: translateX(-1200px);
-	transform: translateX(-1200px);
-	}
-	100% {
-	-webkit-transform: translateX(0);
-	transform: translateX(0);
-	}
+  20% {
+    -webkit-transform: translateX(-300px);
+    transform: translateX(-300px);
+    }
 }
 @keyframes slider {
-	/* 100%を枚数で割った%に割り振る */
-	0% {
-	-webkit-transform: translateX(0);
-	transform: translateX(0);
-	}
-	20% {
-	-webkit-transform: translateX(-300px);
-	transform: translateX(-300px);
-	}
-	40% {
-	-webkit-transform: translateX(-600px);
-	transform: translateX(-600px);
-	}
-	60% {
-	-webkit-transform: translateX(-900px);
-	transform: translateX(-900px);
-	}
-	80% {
-	-webkit-transform: translateX(-1200px);
-	transform: translateX(-1200px);
-	}
-	100% {
-	-webkit-transform: translateX(0);
-	transform: translateX(0);
-	}
+  /* 100%を枚数で割った%に割り振る */
+  20% {
+    -webkit-transform: translateX(-300px);
+    transform: translateX(-300px);
+    }
 }
 
 // review card 
@@ -290,8 +216,10 @@ body{
   margin: 0.25em 0;
   background: #CEDFF2;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-  height: 400px;
+  height: auto;
+  width: auto;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .rev-card-school-details-map{
@@ -380,7 +308,8 @@ padding: 15px 0px;
   text-align: center;
   position: relative;
   float:left;
-  bottom: 10px;
+  top: 20px;
+  bottom: 2¥30px;
 }
 
 //tag
@@ -396,22 +325,20 @@ padding: 15px 0px;
 	display: inline-block;
 }
 .tag_card a {
-	line-height: 30px;
+	line-height: 26px;
 	position: relative;
 	display: inline-block;
-	height: 30px;
+	height: 26px;
 	margin: 0 0px 10px 10px;
 	padding: 0 20px 0 23px;
 	-webkit-transition: color 0.2s;
 	        transition: color 0.2s;
 	text-decoration: none;
-	color: #ffffff;
+	color: white;
 	border-radius: 0 3px 3px 0;
-	background: #0367BF;
+	background: #047BFE;
 }
-.tag_card a::before, .tag_card a::after {
-	background: #f1f1f1;/*背景色*/
-}
+
 .tag_card a::before {
 	position: absolute;
 	top: 10px;
@@ -430,14 +357,14 @@ padding: 15px 0px;
 	content: '';
 	border-style: solid;
 	border-width: 14px 8px 14px 0;
-	border-color: transparent #0367BF transparent transparent;
+	border-color: transparent #047BFE transparent transparent;
 	border-radius: 4px;
 }
-.tag_card a:hover { //タグをクリックした時のエフェクト
-	background: #CEDFF2;
+.tag_card a:hover {
+	background: #555555;
 }
-.tag_card a:hover:after { //タグをクリックした時のエフェクト
-	border-color: transparent #CEDFF2 transparent transparent;
+.tag_card a:hover:after {
+	border-color: transparent #555555 transparent transparent;
 }
 
 // プロフィール
@@ -510,7 +437,7 @@ padding: 15px 0px;
  }
 
  //コメント
- .comments_area {
+ #comments_area {
   background-color: #f1f1f1;
   border-radius: 5px;
   padding: 0.5em 0em 0.5em 0em;
@@ -522,7 +449,7 @@ padding: 15px 0px;
   text-align: center;
   margin-top: 20px;
 }
- 
+
 .comment-area {
   width: auto;
   margin: 0.5em 1em 0.5em 1em;
@@ -532,6 +459,49 @@ padding: 15px 0px;
   width: auto;
   margin: auto;
   height: auto;
+}
+
+.box24:after {
+  position: absolute;
+  content: '';
+  top: 97%;
+  left: 14px;
+  border: 15px solid transparent;
+  border-top: 15px solid #d8d8d8;
+  width: 0;
+  height: 0;
+}
+.box24 p {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+.my-box24 {
+  border-radius: 1em;
+  max-width: max-content;
+  width: 80%;
+  height: auto;
+  position: relative;
+  padding: 0.5em 0.7em;
+  margin: 1em 0 1em auto;
+  background: #fde7e7;
+  color: #3a3a3a;
+  font-size: 13px;
+}
+.my-box24:after {
+  position: absolute;
+  content: '';
+  top: 97%;
+  right: 22px;
+  border: 15px solid transparent;
+  border-top: 15px solid #fde7e7;
+  width: 0;
+  height: 0;
+}
+.my-box24 p {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
 }
 
 .comment-destroy {
@@ -559,7 +529,7 @@ padding: 15px 0px;
   border-right: none;
   border-bottom: 4px solid #aaa;
   background-image: none;
-  background-color: #0367BF;
+  background-color: #11A4B8;
   font-size: 20px;
   color: #fff;
 }
@@ -567,6 +537,7 @@ padding: 15px 0px;
   border-bottom: none;
   background-color: #888;
 }
+
 
 //いいね
 .like {
@@ -720,48 +691,6 @@ img {
   background: #d8d8d8;
   color: #3a3a3a;
   font-size: 13px;
-}
-.box24:after {
-  position: absolute;
-  content: '';
-  top: 97%;
-  left: 14px;
-  border: 15px solid transparent;
-  border-top: 15px solid #d8d8d8;
-  width: 0;
-  height: 0;
-}
-.box24 p {
-  overflow-wrap: break-word;
-  margin: 0;
-  padding: 0;
-}
-.my-box24 {
-  border-radius: 1em;
-  max-width: max-content;
-  width: 80%;
-  height: auto;
-  position: relative;
-  padding: 0.5em 0.7em;
-  margin: 1em 0 1em auto;
-  background: #fde7e7;
-  color: #3a3a3a;
-  font-size: 13px;
-}
-.my-box24:after {
-  position: absolute;
-  content: '';
-  top: 97%;
-  right: 22px;
-  border: 15px solid transparent;
-  border-top: 15px solid #fde7e7;
-  width: 0;
-  height: 0;
-}
-.my-box24 p {
-  overflow-wrap: break-word;
-  margin: 0;
-  padding: 0;
 }
 
 //検索バー

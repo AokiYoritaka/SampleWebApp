@@ -4,81 +4,82 @@
   <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
   <% end %>
 
-   <div class="rev-card row">
-    <h1 class="col-12"><%= @review.title %></h1>
-    <% if @review.review_images.present? %>
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <%= render "photo_slide", review: @review %>
-      <br>
-    </div>
+  <div class="row">
+    <div class="rev-card-school-details col-12">
+       <!-- タイトル -->
+      <div class="title-school">
+        <%= @review.title %>
+      </div>
 
-    <!-- タグと投稿者と本文 -->
-    <div class="col-sm-12 col-md-6 col-lg-8">
-      <div class="mt-4">
-        <%= render "reviews/tag_list", tag_list: @review.tag_list %>
+      <!-- レビューに画像が添付されているか確認 -->
+      <div class="col-md-6 float-right">
+        <% if @review.review_images.present? %>
+            <%= render "photo_slide", review: @review %>
+        <% else %>
+          <div class="cp_cssslider2">
+            <div class="cp_slide_item2">
+                <img class="card-img-top" src="/assets/default.jpg" alt="no_image" width="200px" height="200px" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- レビュー本文 -->
+      <div class="col-md-6 float-left">
+        <div class="mt-4">
+          <p><%= safe_join(@review.body.split("\n"), tag(:br)) %></p>
+        </div>
+      </div>
+
+      <!-- ユーザー -->
+      <div class="col-md-6 float-left pt-4 pb-4">
         <%= link_to profile_path(id: @review.user.profile.id) do %>
         <%= render 'layouts/profile_icon', profile: @review.user.profile %>
         <%= @review.user.profile.name %>さん
         <% end %>
-        <p><%= safe_join(@review.body.split("\n"), tag(:br)) %></p>
       </div>
-    </div>
-    <% else %>
 
-    <div class="col-12">
-      <div class="mt-4">
+      <!-- タグ -->
+      <div class="col-md-6 float-left">
         <%= render "reviews/tag_list", tag_list: @review.tag_list %>
-        <%= link_to profile_path(id: @review.user.profile.id) do %>
-        <%= render 'layouts/profile_icon', profile: @review.user.profile %>
-        <%= @review.user.profile.name %>さん
-        <% end %>
-        <p><%= safe_join(@review.body.split("\n"), tag(:br)) %></p>
       </div>
-    </div>
-    <% end %>
 
-  <!-- カテゴリー -->
-    <div class="col-8">
-      <div class="category-area">
-        <span class="category-area-title">
-          <i class="fa fa-check-square-o" aria-hidden="true"></i>
-          当校のオススメポイント
-        </span>
-        <% @review.categories.each do |category| %>
-        <span class="badge badge-info m-1 p-2">
-          <%= link_to category_path(id: category.id), class: "text-black" do %>
+       <!-- カテゴリー -->
+       <div class="col-md-6 float-left">
+        <div class="category-area">
+          <span class="category-area-title"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+          <% @review.categories.each do |category| %>
+          <span class="badge badge-info m-1 p-2">
+            <%= link_to category_path(id: category.id), class: "text-black" do %>
+              <i class="fa fa-thumb-tack" aria-hidden="true"></i> <%= category.name %>z
+            <% end %>
+          </span>
           <% end %>
-        </span>
+        </div>
+      </div>
+
+      <!-- いいね -->
+      <div class="col float-left">
+        <%= render "likes/like", review: @review %>
+        <!-- 投稿日 -->
+          <i class="fa fa-calendar" aria-hidden="true"></i> <%= @review.created_at.strftime("%Y年%m月%d日") %>
+        <!-- レビューの編集・削除ボタン -->
+        <% if @review.user == current_user %>
+        <%=link_to edit_school_review_path, class:"btn-edit m-1" do %>
+        <i class="fa fa-check-square-o" aria-hidden="true"></i> レビューを編集する
+        <% end %>
+        <%=link_to school_review_path, method: :delete, class:"btn-destory m-1",data: {confirm: "本当にこの投稿を削除しますか？" } do %>
+        <i class="fa fa-trash-o" aria-hidden="true"></i> レビューを削除する
+        <% end %>
         <% end %>
       </div>
     </div>
-
-  <!-- いいね -->
-  <div class="col-4 ">
-    <%= render "likes/like", review: @review %>
   </div>
 
-  <!-- 投稿日 -->
-    <div class="post-date col-8">
-      <i class="fa fa-calendar" aria-hidden="true"></i> <%= @review.created_at.strftime("%Y年%m月%d日") %>
-    </div>
-
-  <!-- 編集・削除ボタン -->
-    <div class="col-4 mb-3 float-right">
-      <% if @review.user == current_user %>
-      <%=link_to edit_school_review_path, class:"btn-edit m-1" do %>
-      <i class="fa fa-check-square-o" aria-hidden="true"></i> 編集する
-      <% end %>
-      <%=link_to school_review_path, method: :delete, class:"btn-destory m-1",data: {confirm: "本当にこの投稿を削除しますか？" } do %>
-      <i class="fa fa-trash-o" aria-hidden="true"></i> 削除する
-      <% end %>
-      <% end %>
-    </div>
-
-
+      
   <!-- コメント -->
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
       <%= render partial: 'comments/index', locals: { comments: @comments } %>
     </div>
     <%= paginate @comments %>
@@ -90,5 +91,10 @@
     </div>
     <% end %>
   </div>
-  <%= render "schools/school_details", school: @school %>
-</div>
+
+  <div class="row">
+    <div class="col">
+     <%= render "schools/school_details", school: @school %>  
+    </div>
+  </div>
+

@@ -1,15 +1,7 @@
 <div class="cp_cssslider2">
   <% review.review_images.each do |image| %>
-  <input type="radio" name="cp_switch" id="photo1" checked/>
-  <label for="photo1"><img src="<%= image %>" /></label>
-  <img src="<%= image %>" />
-  
-  <input type="radio" name="cp_switch" id="photo2"/>
-  <label for="photo2"><img src="<%= image %>" /></label>
-  <% if review.review_images.present? %>
-  <img src="<%= image %>" />
-  <% else %>
-  <img src="/assets/no_image.png" />
-  <% end %>
+    <div class="cp_slide_item2">
+      <%= attachment_image_tag review.review_images.first, :image, :fill, 300, 200 %>
+    </div>
   <% end %>
 </div>
