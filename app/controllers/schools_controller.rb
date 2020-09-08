@@ -50,10 +50,10 @@ class SchoolsController < ApplicationController
       end
     else
       puts "すでに保存されてます"
-      @school = School.find_by(res_id: @school.res_id)
+      @sch = School.find_by(res_id: @school.res_id)
       respond_to do |format|
         format.js do
-          render ajax_redirect_to(new_school_review_path(school_id: @school.id))
+          render ajax_redirect_to(new_school_review_path(school_id: @sch.id))
         end
       end
     end

@@ -47,11 +47,11 @@
        <!-- カテゴリー -->
        <div class="col-md-6 float-left">
         <div class="category-area">
-          <span class="category-area-title"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+          <span class="category-area-title"><i class="fa fa-check-square-o" aria-hidden="true"></i>オススメポイント</span>
           <% @review.categories.each do |category| %>
           <span class="badge badge-info m-1 p-2">
             <%= link_to category_path(id: category.id), class: "text-black" do %>
-              <i class="fa fa-thumb-tack" aria-hidden="true"></i> <%= category.name %>z
+              <i class="fa fa-thumb-tack" aria-hidden="true"></i> <%= category.name %>
             <% end %>
           </span>
           <% end %>
