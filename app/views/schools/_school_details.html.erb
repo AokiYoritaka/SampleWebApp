@@ -1,38 +1,34 @@
 <div class="row">
-
   <div class="rev-card-school-details col-12">
     <!-- 学校名 -->
-    <div class="col-6">
+    <div class="col-sm-6">
       <h1 class="title-school">
         <%= link_to school.name, school_path(id: school.id) %>
       </h1>  
     </div>
     <!-- 学校の説明 -->
-    <div class="col-6">
+    <div class="col-lg-6 float-left">
       <p><i class="fa fa-home" aria-hidden="true"></i><%= school.detail %></p>
-    </div>
-    <!-- 学校写真 -->
-    <div class="col-6" style="left:530px; bottom:50px">
-        <%= render "schools/school_photo_slide", school: school %>
-    </div>
-  </div>
-
-    <!-- 学校の情報 -->
-  <div class="rev-card-school-details-map col-12">
-    <div class="col-6" style="top:20px;">
       <p><i class="fa fa-home" aria-hidden="true"></i> <%= school.address %></p>
       <p><i class="fa fa-phone" aria-hidden="true"></i> <%= school.tell %></p>
       <% if school.opentime.present? %>
         <p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= school.opentime %></p>
       <% end %>
       <p><%= render "schools/genre", school: school %></p>
+        <!-- レビュー投稿ボタン -->
     </div>
-    <!-- 学校地図 -->
-    <div class="col-6" style="bottom:170px; left:530px">
-        <div id="map"></div>
-    </div>
-  </div>
 
+    <!-- 学校写真 -->
+    <div class="col-sm-6 float-right">
+        <%= render "schools/school_photo_slide", school: school %>
+    </div>
+
+    <!-- 学校地図 -->
+  </div>
+      <div class="col">
+        <h1 class="title-school">Map</h1>
+      <div id="map"></div>   
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -67,15 +63,3 @@
 <script async defer
               src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLEMAP_API_KEY'] %>&callback=initMap">
 </script>
-
-<style type="text/css"> 
-  #map {
-  position:relative;
-  height: 400px;
-  width: auto;
-  margin-left:auto;
-  margin-right:10px;
-  text-align:left;
-}
-</style>
-<div id="map"></div>

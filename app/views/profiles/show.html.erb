@@ -28,7 +28,7 @@
             </div>
             <div class="box26">
               <span class="box-title">
-                <i class="fa fa-address-card-o" aria-hidden="true"></i>自己紹介
+                <i class="fa fa-user-o" aria-hidden="true"></i>自己紹介
               </span>
               <p>
                 <% if @profile.introduce.present? %>
@@ -41,7 +41,7 @@
           </div>
         </div>
         <% if @profile.user == current_user %>
-        <%=link_to edit_profile_path(id: @profile.id), class:"btn-edit m-1 float-right" do %>
+        <%=link_to edit_profile_path(id: @profile.id), class:"btn-edit m-1" do %>
         <i class="fa fa-check-square-o" aria-hidden="true"></i> 編集する
         <% end %>
         <% end %>
@@ -49,7 +49,7 @@
     </div>
   </div>
    <div class="row">
-      <h1 class="title-h1"><%= @profile.name %>さんのレビューリスト</h1>
+      <h1 class="title-rev-list"><%= @profile.name %>さんのレビューリスト</h1>
       <%= render "layouts/review_index", reviews: @reviews %>
     </div>
   </div>
