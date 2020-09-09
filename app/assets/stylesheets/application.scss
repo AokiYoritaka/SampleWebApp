@@ -399,9 +399,21 @@ padding: 15px 0px;
  .profile-card__inner{
   position: relative;
  }
+
+ .profile-thumb{
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border: #fff 5px solid;
+  border-radius: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  background: #fff;
+}
   
  .profile-thumb img{
-   display: block;
+     display: block;
      width: 100%;
      height: auto;
  }
@@ -919,7 +931,7 @@ img {
   position: relative;
   margin: 1em 60px;
   padding: 0.5em 1em;
-  border: solid 3px #C2EEFF;
+  border: solid 1px #C2EEFF;
 }
 .box26 .box-title {
   position: absolute;
@@ -1003,6 +1015,7 @@ color: #7b7b7b;
 
 #error_explanation {
   color: black;
+  background-color: red;
   ul {
     color: black;
     margin: 0 0 30px 0;
@@ -1047,5 +1060,19 @@ color: #7b7b7b;
       padding: 20px;
       border-radius: 10px;
     }
+  }
+}
+
+.notifications {
+  color: $white;
+  text-align: center;
+
+  .notice {
+    background-color: #00ECFF;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .alert {
+    background-color: #ff5e5e;
   }
 }

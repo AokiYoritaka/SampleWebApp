@@ -6,17 +6,17 @@
         <!-- 学校名検索バー -->
         <div class="search-bar1 col-md-4">
           <%= form_with(scope: :search, url: schools_path, method: :get, local: true) do |f| %>
-          <%= f.text_field :name, value: @search_params[:name], placeholder: "学校名を検索してください" %>
+          <%= f.text_field :name, value: @search_params[:name], placeholder: "学校の名前を検索" %>
         </div>
 
         <!-- 国検索バー -->
         <div class="search-bar2 search-option col-md-4">
-          <%= f.select(:nation, @nations, include_blank: "国を選択して下さい") %>
+          <%= f.select(:nation, @nations, include_blank: "学校のある国を選択") %>
         </div>
 
         <!-- ジャンル選択バー -->
         <div class="search-bar2 search-option col-md-4">
-          <%= f.select(:genre, @genres, include_blank: "ジャンルを選択して下さい") %>
+          <%= f.select(:genre, @genres, include_blank: "学校のジャンルを選択") %>
         </div>
         
         <!-- 検索ボタン -->
