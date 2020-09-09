@@ -11,12 +11,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
    def create
-     super
-     if resource
-      profile = Profile.new
-      profile.user_id = resource.id
-      profile.name = resource.username
-      profile.save
+     super do
+      resource.update(confirmed_at: Time .now.utc) 
      end
    end
 

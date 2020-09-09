@@ -53,6 +53,14 @@ body{
   padding-top: 20px;
 }
 
+.title-sign {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color:gray;
+}
+
 //schools index.html.erbのカードのタイトル
 .title-school-index {
   font-size: 1.5rem;
@@ -391,9 +399,21 @@ padding: 15px 0px;
  .profile-card__inner{
   position: relative;
  }
+
+ .profile-thumb{
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border: #fff 5px solid;
+  border-radius: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  background: #fff;
+}
   
  .profile-thumb img{
-   display: block;
+     display: block;
      width: 100%;
      height: auto;
  }
@@ -644,19 +664,17 @@ img {
   color: white;
   margin: 10px auto;
   cursor: pointer;
-  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 .guest-submit-btn {
   display: inline-block;
-  padding: 6px 70px;
+  padding: 8px 45px;
   background-color: #5d98ca;
   border: none;
   border-radius: 3px;
   color: white;
   margin: 10px auto;
   cursor: pointer;
-  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 #twitter-submit-btn {
@@ -913,7 +931,7 @@ img {
   position: relative;
   margin: 1em 60px;
   padding: 0.5em 1em;
-  border: solid 3px #C2EEFF;
+  border: solid 1px #C2EEFF;
 }
 .box26 .box-title {
   position: absolute;
@@ -993,4 +1011,68 @@ color: #7b7b7b;
 	vertical-align: middle;
   text-align: center;
   font-size: 30px;
+}
+
+#error_explanation {
+  color: black;
+  background-color: red;
+  ul {
+    color: black;
+    margin: 0 0 30px 0;
+  }
+}
+
+.alert {
+  background-color: red;
+}
+
+//start画面
+.top{
+  background-image: url(/assets/slide2.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 95vh;
+  width: 100%;
+  position: relative;
+}
+
+.contents{
+  text-shadow: 1px 2px 3px #808080;
+  &_title{
+    background-color:rgba(0,153,255,0.4);
+    color: white;
+    position: absolute;
+    width: 100%;
+    top: 30%;
+  & p{
+    font-size: 20px;
+  }
+}
+&_link{
+  width: 100%;
+  position: absolute;
+  top: 75%;
+    & a{
+      text-decoration: none;
+      color: white;
+      background-color:rgba(0,153,255,0.4);
+      font-size: 30px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.notifications {
+  color: $white;
+  text-align: center;
+
+  .notice {
+    background-color: #00ECFF;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .alert {
+    background-color: #ff5e5e;
+  }
 }

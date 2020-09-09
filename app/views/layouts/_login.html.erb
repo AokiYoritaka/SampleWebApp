@@ -4,7 +4,7 @@
       <i class="fa fa-2x fa-times"></i>
     </div>
     <div id="login-form">
-      <h2 class="title-h1">ログイン</h2>
+      <div class="title-sign">ログイン</div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-ctl", placeholder: "メールアドレス", id: "login_user_email" %>
         <%= f.password_field :password, autocomplete: "current-password", class:"form-ctl", placeholder: "パスワード", id: "login_user_password" %>

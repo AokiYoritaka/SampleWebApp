@@ -7,12 +7,15 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="Navber">
         <ul class="navbar-nav text-white">
+            <% if user_signed_in? %>
           <li class="nav-item"><%= link_to "学校リスト", schools_path, class:"nav-link text-light" %></li>
           <li class="nav-item"><%= link_to "レビューリスト", reviews_index_path, class:"nav-link text-light" %></li>
           <li class="navbar-nav">
+            <% end %>
+          
             <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to new_school_path, class: "btn btn-info nav-rev-btn text-black" do %>
+            <%= link_to new_school_path, class: "btn btn-info nav-rev-btn text-white" do %>
             <i class="fa fa-check" aria-hidden="true"></i>レビュー投稿
             <% end %>
           </li>
@@ -31,8 +34,8 @@
             </div>
           </li>
           <% else %>
-            <li class="nav-item nav-link pointer text-black" id="signup-show">新規登録</li>
-            <li class="nav-item nav-link pointer text-black" id="login-show">ログイン</li>
+            <li class="nav-item nav-link text-white" id="signup-show" style="cursor:pointer">新規登録</li>
+            <li class="nav-item nav-link text-white" id="login-show" style="cursor:pointer">ログイン</li>
           <% end %>
         </ul>
       </div>  
