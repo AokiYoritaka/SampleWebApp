@@ -49,10 +49,11 @@ class SchoolsController < ApplicationController
         end
       end
     else
-      @school = School.find_by(res_id: @school.res_id)
+      puts "すでに保存されてます"
+      @sch = School.find_by(res_id: @school.res_id)
       respond_to do |format|
         format.js do
-          render ajax_redirect_to(new_school_review_path(school_id: @school.id))
+          render ajax_redirect_to(new_school_review_path(school_id: @sch.id))
         end
       end
     end
