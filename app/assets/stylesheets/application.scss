@@ -79,6 +79,7 @@ body{
   text-align: center;
   padding-bottom: 20px;
   padding-top: 20px;
+  color: gray;
 }
 
 .title-rev {
@@ -706,7 +707,6 @@ img {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
-  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 .btn-submit-account:active{
   border-bottom: none;
@@ -889,7 +889,7 @@ img {
 }
 
 .label-font-account {
-  font-size: 20px;
+  font-size: １0px;
   color: gray;
   font-weight: bold;
 }
@@ -913,7 +913,7 @@ img {
   position: relative;
   margin: 1em 60px;
   padding: 0.5em 1em;
-  border: solid 3px #00CCFF;
+  border: solid 3px #C2EEFF;
 }
 .box26 .box-title {
   position: absolute;
@@ -924,7 +924,7 @@ img {
   line-height: 1;
   font-size: 19px;
   background: #FFF;
-  color: #00CCFF;
+  color: #C2EEFF;
   font-weight: bold;
 }
 .box26 p {
@@ -941,7 +941,7 @@ color: #7b7b7b;
   padding: 0.25em 0.5em;
   text-decoration: none;
   color: gray;
-  background: #CEDFF2;
+  background: #C2EEFF;
   transition: .4s;
 }
 .btn-edit:hover {
@@ -956,7 +956,7 @@ color: #7b7b7b;
   padding: 0.25em 0.5em;
   text-decoration: none;
   color: gray;
-  background: #CEDFF2;
+  background: #C2EEFF;
   transition: .4s;
 }
 .btn-destory:hover {
