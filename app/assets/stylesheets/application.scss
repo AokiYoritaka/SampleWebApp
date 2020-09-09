@@ -53,6 +53,14 @@ body{
   padding-top: 20px;
 }
 
+.title-sign {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color:gray;
+}
+
 //schools index.html.erbのカードのタイトル
 .title-school-index {
   font-size: 1.5rem;
@@ -644,19 +652,17 @@ img {
   color: white;
   margin: 10px auto;
   cursor: pointer;
-  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 .guest-submit-btn {
   display: inline-block;
-  padding: 6px 70px;
+  padding: 8px 45px;
   background-color: #5d98ca;
   border: none;
   border-radius: 3px;
   color: white;
   margin: 10px auto;
   cursor: pointer;
-  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 #twitter-submit-btn {
