@@ -1,5 +1,24 @@
-<button type="button" name="button" id="signup-show-button">新規登録</button>
-<button type="button" name="button" id="login-show-button">ログイン</button>
 
- <h1 class="title-h1">最近のレビュー</h1>
-  <%= render "layouts/review_index", reviews: @reviews %>
+<div class="top text-center">
+  <div class="contents center">
+    <div class="contents_title">
+      <h2>LocalPlan</h2>
+      <P>フィリピン／オーストラリアの<br>語学学校情報とレビューを閲覧・投稿できるサイトです。</P>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col mx-auto">
+      <div class="title-rev">最新のレビュー投稿</div>
+        <%= render "layouts/review_index", reviews: @reviews %>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col pt-10">
+      <button type="button" class="btn btn-lg btn-info mt-5 mb-5 mr-5" name="button" id="signup-show-button">新規登録</button>
+      <button type="button" class="btn btn-lg btn-primary mt-5 mb-5 mr-5" name="button" id="login-show-button">ログイン</button>
+    </div>
+  </div>
+</div>
