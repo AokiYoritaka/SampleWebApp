@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      redirect_to school_review_path(id: @review.id), notice: "更新できました"
+      redirect_to school_review_path(id: @review.id), notice: "更新しました"
     else
       flash.now[:alert] = "更新に失敗しました。"
       render :edit
@@ -45,7 +45,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     if @review.destroy
-      redirect_to root_path, notice: "削除に成功しました"
+      redirect_to root_path, notice: "削除しました"
     else
       flash[:alert] = "削除に失敗しました。"
       redirect_to school_review_path(id: @review.id)
@@ -54,7 +54,7 @@ class ReviewsController < ApplicationController
 
   def search
     if params[:search].blank?
-      redirect_back fallback_location: root_path, notice: "検索キーワードを入力"
+      redirect_back fallback_location: root_path, notice: "検索キーワードを入力してください"
     else
       @reviews = Review.search(params[:search]).order(created_at: "DESC").page(params[:page]).per(3)
     end
