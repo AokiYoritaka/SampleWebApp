@@ -3,7 +3,9 @@
     <% provide(:title, "「#{params[:search]}」の検索結果")  %>
   <% end %>
   <div class="row">
-      <%= render "layouts/review_index", reviews: @reviews %>
+    <div class="col-md-12">
+      <h1 class="title-rev">レビューリスト</h1>
+        <%= render "layouts/review_index", reviews: @reviews %>
     </div>
   </div>
   <%= paginate @reviews %>

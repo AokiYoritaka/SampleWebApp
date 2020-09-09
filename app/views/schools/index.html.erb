@@ -1,6 +1,8 @@
+
 <% provide(:title, "学校リスト")  %>  
 <%= render "slide" %>
 <%= render "search_form" %>
+
 <div class="container">  
   <div class="row">
     <% @schools.each do |school| %>
@@ -13,7 +15,7 @@
           <%= image_tag "no_image.png", class: "card-img-top", size: "200x200"  %>
         <% end %>
         <div class="card-body webkit-center">
-          <h4 class="title-school-index"><%= school.name %></h4>
+          <div class="title-school-index"><%= school.name %></div>
           <p class="card-text"><%= render "genre", school: school %></p>
           <p class="school-card-text">
             <i class="fa fa-comment" aria-hidden="true"></i>
@@ -27,4 +29,3 @@
   <div class='kaminari_paginate'>
     <%= paginate @schools %>
   </div>
-</div>
