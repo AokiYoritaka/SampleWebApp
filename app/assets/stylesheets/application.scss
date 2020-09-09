@@ -59,11 +59,19 @@ body{
   text-align: left;
   padding-bottom: 10px;
   padding-top: 10px;
+  color:gray;
 }
 
 //schools index.html.erbのカードのレビュー件数
 .school-card-text {
   color:gray;
+}
+.card-text{
+  color:gray;
+}
+
+.card-text-user{
+  font-size: 1.2rem;
 }
 
 .title-h1 {
@@ -71,19 +79,13 @@ body{
   text-align: center;
   padding-bottom: 20px;
   padding-top: 20px;
+  color: gray;
 }
 
 .title-rev {
   font-size: 2rem;
+  color:gray;
   font-weight: bold;
-  text-align: left;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-right: 100px;
-}
-
-.title-rev-list{
-  font-size: 1.5rem;
   text-align: left;
   padding-top: 30px;
 }
@@ -93,6 +95,7 @@ body{
   text-align: left;
   padding-bottom: 10px;
   padding-top: 10px;
+  color:gray;
 }
 
 // Signin, Signup photo
@@ -166,7 +169,7 @@ body{
 	height: 200px;
 	float: left;
 	position: relative;
-}
+} 
 .cp_slidewrapper {
 	width: 300%;/* slideの枚数×100% */
 	position: relative;
@@ -203,18 +206,21 @@ body{
 }
 
 .card-title{
+  color:gray;
+  font-size: 1.5rem;
+  font-weight:bold;
   margin-bottom: 0.75rem;
   margin-top: 0.75rem;
 }
 
 .rev-card {
   margin: 0.25em 0;
-  background: #CEDFF2;
+  background: #D7EEFF;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
 }
 .rev-card-school-details{
   margin: 0.25em 0;
-  background: #CEDFF2;
+  background: #D7EEFF;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
   height: auto;
   width: auto;
@@ -224,7 +230,7 @@ body{
 
 .rev-card-school-details-map{
   margin: 0.25em 0;
-  background: #CEDFF2;
+  background: #D7EEFF;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
   height: 450px;
 }
@@ -232,13 +238,10 @@ body{
 .rev-card .rev-card-title {
   padding: 0.2em 0.5em;
   margin: 1em 0;
-  color: #ffffff;
+  color: black;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  background-color: #ffa6a6;
-  box-shadow: 0px 0px 0px 10px #ffa6a6;
-  border: dashed 2px #ffc3c3;
   border-radius: 1px;
 }
 .rev-card p {
@@ -271,15 +274,13 @@ padding: 15px 0px;
   padding: 0.5em 0.5em;
   text-decoration: none;
   color: gray;
-  background: #CEDFF2;
   transition: .4s;
   width: 80px;
   height: 40px;
   text-align: center;
 }
-
 .btn-back:hover {
-  color: white;
+  color: #BAD3FF;
 }
 
 .btn-new-review{
@@ -294,6 +295,7 @@ padding: 15px 0px;
     position: relative;
     float:left;
     bottom: 10px;
+    box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 
@@ -301,6 +303,7 @@ padding: 15px 0px;
   width: 400px;
   height: 50px;
   padding: 11px 8px;
+  margin:20px 0px;
   background-color: #13A3B8;
   font-size: 16px;
   font-weight: bold;
@@ -308,8 +311,6 @@ padding: 15px 0px;
   text-align: center;
   position: relative;
   float:left;
-  top: 20px;
-  bottom: 2¥30px;
 }
 
 //tag
@@ -336,7 +337,7 @@ padding: 15px 0px;
 	text-decoration: none;
 	color: white;
 	border-radius: 0 3px 3px 0;
-	background: #047BFE;
+	background: #75A9FF;
 }
 
 .tag_card a::before {
@@ -357,14 +358,14 @@ padding: 15px 0px;
 	content: '';
 	border-style: solid;
 	border-width: 14px 8px 14px 0;
-	border-color: transparent #047BFE transparent transparent;
+	border-color: transparent #75A9FF transparent transparent;
 	border-radius: 4px;
 }
 .tag_card a:hover {
-	background: #555555;
+	background: #BAD3FF;
 }
 .tag_card a:hover:after {
-	border-color: transparent #555555 transparent transparent;
+	border-color: transparent #BAD3FF transparent transparent;
 }
 
 // プロフィール
@@ -383,8 +384,6 @@ padding: 15px 0px;
 .profile-card:before{
   width:120%;
   height:100px;
-  content:"";
-  background: #ffcccc; /*斜め背景の色*/
   position:  absolute;
   top:-8%;
  }  
@@ -441,6 +440,7 @@ padding: 15px 0px;
   background-color: #f1f1f1;
   border-radius: 5px;
   padding: 0.5em 0em 0.5em 0em;
+  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 .comments_title {
@@ -484,7 +484,7 @@ padding: 15px 0px;
   position: relative;
   padding: 0.5em 0.7em;
   margin: 1em 0 1em auto;
-  background: #fde7e7;
+  background: #C2EEFF;
   color: #3a3a3a;
   font-size: 13px;
 }
@@ -494,7 +494,6 @@ padding: 15px 0px;
   top: 97%;
   right: 22px;
   border: 15px solid transparent;
-  border-top: 15px solid #fde7e7;
   width: 0;
   height: 0;
 }
@@ -545,7 +544,38 @@ padding: 15px 0px;
   border-radius: 1em;
 }
 
+.review-form {
+  position: relative;
+  padding: 0.5em 1em;
+  background-color: white;
+  height:auto;
+  width:auto;
+}
+
 //カテゴリ
+.category-form {
+  position: relative;
+  margin-top: 4em;
+  padding: 0.5em 1em;
+  background-color: white;
+  height:auto;
+  width:auto;
+}
+.category-form .category-form-title {
+  position: absolute;
+  display: inline-block;
+  top: -23px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 20px;
+  color: gray;
+  font-weight: bold;
+}
+.category-form p {
+  margin: 0;
+  padding: 0;
+}
 .category-area {
   position: relative;
   margin: 2em 0;
@@ -557,9 +587,9 @@ padding: 15px 0px;
   top: -13px;
   left: 10px;
   padding: 0 9px;
+  line-height: 1;
   font-size: 16px;
-  background: #F1F1F1;
-  color: #00abff;
+  color: #13A3B8;
   font-weight: bold;
 }
 .category-area p {
@@ -608,12 +638,13 @@ img {
 #submit-btn {
   display: inline-block;
   padding: 14px 140px;
-  background-color: #ffa6a6;
+  background-color: #13A3B8;
   border: none;
   border-radius: 3px;
   color: white;
   margin: 10px auto;
   cursor: pointer;
+  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 .guest-submit-btn {
@@ -625,6 +656,7 @@ img {
   color: white;
   margin: 10px auto;
   cursor: pointer;
+  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 #twitter-submit-btn {
@@ -649,14 +681,16 @@ img {
   border-right: none;
   border-bottom: 4px solid #aaa;
   background-image: none;
-  background-color: #fdafaf;
+  background-color: #11A4B8;
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 .btn-submit:active{
   border-bottom: none;
   background-color: #888;
+  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 .btn-submit-account{
@@ -817,7 +851,7 @@ img {
 }
 
 .icon-link:hover {
-  color: yellow;
+  color: #BAD3FF;
 }
 
 .hidden_box label {
@@ -855,7 +889,7 @@ img {
 }
 
 .label-font-account {
-  font-size: 20px;
+  font-size: １0px;
   color: gray;
   font-weight: bold;
 }
@@ -870,7 +904,7 @@ img {
   transition: .4s;
 
   &:hover {
-    color: #ECECEC;
+    color: #BAD3FF;
   }
 
 }
@@ -879,7 +913,7 @@ img {
   position: relative;
   margin: 1em 60px;
   padding: 0.5em 1em;
-  border: solid 3px #00CCFF;
+  border: solid 3px #C2EEFF;
 }
 .box26 .box-title {
   position: absolute;
@@ -890,7 +924,7 @@ img {
   line-height: 1;
   font-size: 19px;
   background: #FFF;
-  color: #00CCFF;
+  color: #C2EEFF;
   font-weight: bold;
 }
 .box26 p {
@@ -907,11 +941,11 @@ color: #7b7b7b;
   padding: 0.25em 0.5em;
   text-decoration: none;
   color: gray;
-  background: #CEDFF2;
+  background: #C2EEFF;
   transition: .4s;
 }
 .btn-edit:hover {
-  color: white;
+  color: #BAD3FF;
 }
 
 .btn-destory{
@@ -922,11 +956,11 @@ color: #7b7b7b;
   padding: 0.25em 0.5em;
   text-decoration: none;
   color: gray;
-  background: #CEDFF2;
+  background: #C2EEFF;
   transition: .4s;
 }
 .btn-destory:hover {
-  color: white;
+  color: #BAD3FF;
 
 }
 
@@ -938,4 +972,25 @@ color: #7b7b7b;
   margin-right:auto;
   text-align:left; 
   margin-bottom: 40px;
+}
+
+.cover-img {
+	height: 250px;
+	display: table;
+	width: 100%;
+	background-size: cover;
+}
+
+/* ワイドスクリーン用のCSS */
+@media only screen and (min-width: 1500px) {
+	.cover-img {
+		height: 250px;
+	}
+}
+
+.cover-text {
+	display: table-cell;
+	vertical-align: middle;
+  text-align: center;
+  font-size: 30px;
 }

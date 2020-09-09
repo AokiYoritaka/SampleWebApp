@@ -27,16 +27,22 @@
       <!-- レビュー本文 -->
       <div class="col-md-6 float-left">
         <div class="mt-4">
+         <div class="review-form">
           <p><%= safe_join(@review.body.split("\n"), tag(:br)) %></p>
+         </div>
         </div>
       </div>
 
       <!-- ユーザー -->
       <div class="col-md-6 float-left pt-4 pb-4">
+        <div class="card-text-user">
+
         <%= link_to profile_path(id: @review.user.profile.id) do %>
         <%= render 'layouts/profile_icon', profile: @review.user.profile %>
         <%= @review.user.profile.name %>さん
         <% end %>
+        </div>
+
       </div>
 
       <!-- タグ -->
@@ -47,11 +53,11 @@
        <!-- カテゴリー -->
        <div class="col-md-6 float-left">
         <div class="category-area">
-          <span class="category-area-title"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+          <span class="category-area-title"><i class="fa fa-check-square-o" aria-hidden="true"></i>オススメポイント</span>
           <% @review.categories.each do |category| %>
-          <span class="badge badge-info m-1 p-2">
+          <span class="badge badge-light">
             <%= link_to category_path(id: category.id), class: "text-black" do %>
-              <i class="fa fa-thumb-tack" aria-hidden="true"></i> <%= category.name %>z
+              <i class="fa fa-thumb-tack" aria-hidden="true"></i> <%= category.name %>
             <% end %>
           </span>
           <% end %>

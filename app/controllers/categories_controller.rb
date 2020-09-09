@@ -22,10 +22,10 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @category = Category.find(params[:id])
-    if @category.destory
-      redirect_to categories_path, notice: "削除しました"
+    if @category.destroy
+      redirect_to categories_path, notice: "削除に成功しました"
     else
       redirect_to categories_path, alert: "削除できませんでした"
     end

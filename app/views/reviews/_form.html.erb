@@ -2,7 +2,6 @@
   
   <div class="form-group mt-3">
     <p class="label-font">
-      <i class="fa fa-flag" aria-hidden="true"></i>
       タイトル
     </p>
     <%= f.text_field :title, class:"form-control" %>
@@ -10,7 +9,6 @@
 
   <div class="form-group">
     <p class="label-font">
-      <i class="fa fa-file-text-o" aria-hidden="true"></i>
       本文
     </p>
     <%= f.text_area :body, size: "20x10", class:"form-control" %>
@@ -18,7 +16,6 @@
 
   <div class="form-group">
     <p class="label-font">
-      <i class="fa fa-tag" aria-hidden="true"></i>
       タグの入力
     </p>
     <%= f.text_field :tag_list, value: @review.tag_list.join(','), class:"form-control", placeholder: ",で区切るとタグを複数登録できます。" %>
@@ -27,7 +24,7 @@
   <div class="category-form">
     <span class="category-form-title">
       <i class="fa fa-check-square-o" aria-hidden="true"></i>
-      チェックポイント
+      オススメポイント
     </span>
     <br>
     <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
@@ -39,7 +36,6 @@
   </div>
 
     <p class="label-font">
-    <i class="fa fa-camera" aria-hidden="true"></i>
       写真を添付
     </p>
   <%= f.attachment_field :review_images_images, multiple: true, class:"btn-flat-simple"%>
