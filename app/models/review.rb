@@ -2,8 +2,6 @@ class Review < ApplicationRecord
   acts_as_taggable
   belongs_to :user
   belongs_to :school
-  validates :title, presence: true, length: { maximum: 50 }
-  validates :body, presence: true
   has_many :review_images, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_rev_users, through: :likes, source: :user
