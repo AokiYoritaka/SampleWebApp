@@ -3,9 +3,12 @@ $(function() {
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
     e.preventDefault();
+    const requestUrl = 'db/csv_data/csc_data.csv';
     const name = $('#name').val();
+
     $.ajax({
       type:"GET",
+      url:requestUrl,
       data:{
         name: name
       }
@@ -22,7 +25,7 @@ $(function() {
                   <div class="card-body webkit-center">
                     <h4 class="card-title">${e.name}</h4>
                     <span class="badge badge-success mr-1 mt-1 p-2">
-                      ${e.code.prefname}
+                      ${e.code.nationname}
                     </span>
                     <p class="card-text">
                       <span class="badge badge-warning mr-1 mt-1 p-2">
@@ -71,11 +74,11 @@ $(function() {
         genre: school[post_index].code.category_name_l[0],
         subgenre: school[post_index].code.category_name_l[1],
         opentime: school[post_index].opentime,
-        nation: school[post_index].nation
+        nation: school[post_index].code.nationname
       }
     }).done(function(data) {
     }).fail(function() {
-      alert('エラーが発生しました。詳細はaoki.memetaaa@gmail.comへお問い合わせください。');
+      alert('エラーが発生しました。詳細はao@gmail.comへお問い合わせください。');
     });
   });
   $('#name').on("keyup",function(e) {
