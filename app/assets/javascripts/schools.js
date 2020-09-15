@@ -2,9 +2,10 @@ $(function() {
   var school = null;
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
-    
+
     e.preventDefault();
     const requestUrl = 'db/csv_data/csc_data.csv';
+    debugger;
     const name = $('#name').val();
       binding.pry
     $.ajax({
