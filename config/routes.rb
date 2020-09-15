@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get "alltags", to: "static_pages#alltags"
   get "search", to: "reviews#search"
   root 'static_pages#home'
-  get '/homes', to: 'homes#index'
-  get '/auth/:provider/callback', to: 'sessions#create'
   resources :schools do
     resources :reviews do
       resources :comments
