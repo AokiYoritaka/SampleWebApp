@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: [:twitter]
-  
+  before_save :create_profile
 
   has_one :profile, dependent: :destroy
   has_many :review, dependent: :destroy
@@ -40,4 +40,11 @@ class User < ApplicationRecord
       user.confirmed_at = Time.now 
     end
   end
+
+  private
+
+  def create_profile
+    build_profile
+  end
+
 end
