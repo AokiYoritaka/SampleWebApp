@@ -20,8 +20,11 @@ class SchoolsController < ApplicationController
     @school = School.new
     @user = User.last
     respond_to do |format|
+      binding.pry
       format.html
+      binding.pry
       format.json
+      binding.pry
     end
   end
 
