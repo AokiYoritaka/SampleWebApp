@@ -4,8 +4,7 @@ $(document).on('turbolinks:load', function() {
   $('#school_search').on("click",function(e) {
     e.preventDefault();
     debugger;
-    const requestUrl = 'db/csv_data/csc_data.csv';
-    debugger;
+    const requestUrl = '/schools/new';
     const name = $('#name').val();
     $.ajax({
       type:"GET",
