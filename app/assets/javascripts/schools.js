@@ -3,12 +3,10 @@ $(document).on('turbolinks:load', function() {
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
     e.preventDefault();
-    const requestUrl = '/schools';
-
     const name = $('#name').val();
     $.ajax({
-      type:"GET",
-      url:requestUrl,
+      type:'GET',
+      url:'/schools',
       data:{
         name: name
       }
