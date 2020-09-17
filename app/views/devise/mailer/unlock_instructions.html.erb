@@ -1,7 +1,7 @@
-<p>Hello <%= @resource.email %>!</p>
+<p>こんにちは！ <%= @resource.email %></p>
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+<p>誤ったパスワードにより複数回ログインがなされたため、安全性を考慮しお客様のアカウントを凍結しております。</p>
 
-<p>Click the link below to unlock your account:</p>
+<p>以下のURLをクリックして凍結を解除していただきますようよろしくお願いします。</p>
 
 <p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
