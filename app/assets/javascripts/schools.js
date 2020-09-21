@@ -6,7 +6,6 @@ $(document).on('turbolinks:load', function() {
     const name = $('#name').val();
     $.ajax({
       type:'GET',
-      url:'/schools',
       data:{
         name: name
       }
