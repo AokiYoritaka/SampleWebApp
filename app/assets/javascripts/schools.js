@@ -84,5 +84,3 @@ $(document).on('turbolinks:load', function() {
     cancelFlag = 0;
   });
 });
-
-te
