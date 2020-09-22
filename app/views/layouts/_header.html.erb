@@ -14,13 +14,13 @@
             <% end %>
           
             <% if user_signed_in? %>
-          <li class="nav-item">
+          <li class="nav-item pl-2">
             <%= link_to new_school_path, class: "btn btn-info nav-rev-btn text-white" do %>
             <i class="fa fa-check" aria-hidden="true"></i>レビュー投稿
             <% end %>
           </li>
           
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown pr-2 pl-5">
           <a href="" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= render 'layouts/profile_icon', profile: current_user.profile %>
               <%= current_user.profile.name %>
