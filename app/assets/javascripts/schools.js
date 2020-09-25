@@ -6,15 +6,17 @@ $(document).on('turbolinks:load', function() {
     const name = $('#name').val();
     $.ajax({
       type:'GET',
-      url:'/schools/new',
+      url:'/schools/search_by_name',
       data:{ name: name },
       dataType:'json'
-    }).done(function(data) {
+    })
+    
+    .done(function(data) {
       if (data != null){
         if(cancelFlag == 0){
           cancelFlag = 1;
-          school = data.school
-          school.forEach(function(e){
+          schools = data.school
+          schools.forEach(function(e){
             $('#school_lists').append(`
               <div class="col-lg-4">
                 <div class="card mt-5 mb-4" style="width: 20rem;">
@@ -37,7 +39,8 @@ $(document).on('turbolinks:load', function() {
           })
         }
       }
-    }).fail(function() {
+    })
+    .fail(function() {
       if(cancelFlag == 0){
         cancelFlag = 1;
         $('.result').append(`
