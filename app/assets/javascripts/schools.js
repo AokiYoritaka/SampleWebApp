@@ -6,9 +6,9 @@ $(document).on('turbolinks:load', function() {
     const name = $('#name').val();
     $.ajax({
       type:'GET',
-      data:{
-        name: name
-      }
+      url:'/schools/new',
+      data:{ name: name },
+      dataType:'json'
     }).done(function(data) {
       if (data != null){
         if(cancelFlag == 0){
