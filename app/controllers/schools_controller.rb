@@ -16,14 +16,6 @@ class SchoolsController < ApplicationController
     @reviews = @school.reviews.order(created_at: "DESC").page(params[:page]).per(4)
   end
   
-  def search_by_name
-    @school = School.find(params[:name])
-      respond_to do |format|
-        format.html
-        format.json
-      end
-  end
-
   def new
     @school = School.new
     @user = User.last
