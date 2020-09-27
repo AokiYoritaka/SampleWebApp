@@ -1028,12 +1028,27 @@ color: #7b7b7b;
 
 //start画面
 .top{
-  background-image: url(/assets/slide2.jpg);
+  background-image: url(/images/slide2.jpg);
   background-size: cover;
   background-position: center;
   min-height: 95vh;
   width: 100%;
   position: relative;
+}
+
+.top2{
+  background-image: url(/images/slide6.jpg);
+  background-color:rgba(255,255,255,0.3); 
+  background-blend-mode:lighten;
+	height: 250px;
+	display: table;
+	width: 100%;
+	background-size: cover;
+}
+@media only screen and (min-width: 1500px) {
+	.top2 {
+		height: 250px;
+	}
 }
 
 .contents{
