@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function() {
     const name = $('#name').val();
     $.ajax({
       type:'GET',
-      url:'/schools/search_by_name',
+      url:'/schools/new',
       data:{ name: name },
       dataType:'json'
     })
@@ -78,12 +78,10 @@ $(document).on('turbolinks:load', function() {
       }
     }).done(function(data) {
     }).fail(function() {
-      alert('エラーが発生しました。詳細はao@gmail.comへお問い合わせください。');
+      alert('エラーが発生しました。詳細はaoki.memetaaa@gmail.comへお問い合わせください。');
     });
   });
   $('#name').on("keyup",function(e) {
-    $('#school_lists').empty();
-    $('.result').empty();
     cancelFlag = 0;
   });
 });
