@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function() {
   var school = null;
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
-    debugger;
     e.preventDefault();
     const name = $('#name').val();
     $.ajax({
