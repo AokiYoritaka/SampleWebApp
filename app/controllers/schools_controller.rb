@@ -17,7 +17,7 @@ class SchoolsController < ApplicationController
   end
   
   def new
-    @school = School.new
+    @school = School.find_by(name: params[:name])
     @user = User.last
     respond_to do |format|
       format.html
