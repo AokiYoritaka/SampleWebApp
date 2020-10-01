@@ -12,6 +12,7 @@ $(document).on('turbolinks:load', function() {
     })
     
     .done(function(data) {
+      debugger
       if (data != null){
         if(cancelFlag == 0){
           cancelFlag = 1;
