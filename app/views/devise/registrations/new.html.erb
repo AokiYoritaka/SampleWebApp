@@ -36,9 +36,7 @@
     <%= link_to 'ゲストユーザーでログイン', users_guest_sign_in_path, method: :post, class: "guest-submit-btn" %>
     <br>
 
-    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-      <%= link_to "確認メールが届かない", new_confirmation_path(resource_name) %><br />
-    <% end %>
+
 
         <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
