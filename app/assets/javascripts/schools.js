@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(function() {
   var school = null;
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
@@ -10,7 +10,6 @@ $(document).on('turbolinks:load', function() {
       data:{ name: name },
       dataType:'json'
     })
-    
     .done(function(data) {
       debugger
       if (data != null){
