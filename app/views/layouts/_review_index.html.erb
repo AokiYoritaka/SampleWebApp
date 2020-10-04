@@ -9,7 +9,7 @@
               <% if review.review_images.present? %>
                 <%= attachment_image_tag review.review_images.first, :image, :fill, 200, 200 %>
               <% else %>
-                <img class="card-img-top" src="/assets/default.jpg" alt="no_image" width="200px" height="200px" %>
+                <img class="card-img-top2" src="/assets/default.jpg" alt="no_image" width="200px" height="200px" %>
               <% end %>     
               <!-- レビュータイトル -->
               <div class="card-title"><%= review.title %></div> 
