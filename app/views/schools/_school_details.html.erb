@@ -8,18 +8,14 @@
     </div>
     <!-- 学校の説明 -->
     <div class="col-lg-6 float-left">
-      <p><i class="fa fa-home" aria-hidden="true"></i><%= school.detail %></p>
-      <p><i class="fa fa-home" aria-hidden="true"></i> <%= school.address %></p>
-      <p><i class="fa fa-phone" aria-hidden="true"></i> <%= school.tell %></p>
-      <% if school.opentime.present? %>
-        <p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= school.opentime %></p>
-      <% end %>
+      <h4><%= school.tell %></h4>
+      <h6><i class="fa fa-comment" aria-hidden="true"></i> <%= school.detail %></h6>
+      <p style="color: gray"><i class="fa fa-home" aria-hidden="true" ></i> <%= school.address %></p>
+      <p style="color: gray"><i class="fa fa-circle-o" aria-hidden="true"></i> <%= school.opentime %></p>
       <p><%= render "schools/genre", school: school %></p>
     </div>
     <!-- 学校写真 -->
-    <div class="col-sm-6 float-right">
       <%= render "schools/school_photo_slide", school: school %>
-    </div>
     <div id="map"></div>   
   </div>
 </div>

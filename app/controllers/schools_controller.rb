@@ -18,7 +18,6 @@ class SchoolsController < ApplicationController
   
   def new
     @school = School.find_by(name: params[:name])
-    binding.pry
     @user = User.last
     respond_to do |format|
       format.html
