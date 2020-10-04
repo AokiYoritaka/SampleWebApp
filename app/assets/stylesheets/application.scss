@@ -63,16 +63,18 @@ body{
 
 //schools index.html.erbのカードのタイトル
 .title-school-index {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-align: left;
   padding-bottom: 10px;
-  padding-top: 10px;
   color:gray;
 }
 
 //schools index.html.erbのカードのレビュー件数
 .school-card-text {
   color:gray;
+  position: absolute;
+  bottom: 5px;
+  right:20px;
 }
 .card-text{
   color:gray;
@@ -213,7 +215,7 @@ body{
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  height: 500px;
+  height: 450px;
 }
 
 .card-title{
@@ -326,6 +328,12 @@ padding: 15px 0px;
   float:left;
 }
 
+.card-img-top{
+  object-fit:fill;
+  width:318px;
+  height:auto;
+  border-radius: 0px;
+}
 
 //tag
 .tag_card {
@@ -336,6 +344,8 @@ padding: 15px 0px;
 	top: 50%;
 	left: 50%;
 }
+
+
 .tag_card li {
 	display: inline-block;
 }
@@ -753,6 +763,7 @@ img {
 
 //検索バー
 .search-bar1 {
+  color: gray;
   position: relative;
   width: 80%;
   margin: 25px 16px;
@@ -765,7 +776,7 @@ img {
   padding: 0.3em;
   transition: 0.3s;
   letter-spacing: 1px;
-  color: #C0C0C0;
+  color: gray;
   border: none;
   border-bottom: 2px solid #CEDFF2;
   background: transparent;
@@ -820,7 +831,7 @@ img {
 }
 .search-bar2.search-option select {
   padding: 8px 38px 8px 8px;
-  color: #aaaaaa;
+  color: gray;
 }
 
 .search-bar2.search-option.col-md-4 {
