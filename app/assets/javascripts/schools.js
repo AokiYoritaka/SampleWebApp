@@ -7,7 +7,7 @@ $(function() {
     $.ajax({
       type:'GET',
       url:'/schools/new',
-      data:{ name: name },
+      data:{ name: 'CIP' },
       dataType:'json'
     })
     .done(function(data) {
