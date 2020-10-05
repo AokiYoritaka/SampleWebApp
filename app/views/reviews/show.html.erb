@@ -38,8 +38,8 @@
         <div class="card-text-user">
 
         <%= link_to profile_path(id: @review.user.profile.id) do %>
-        <%= render 'layouts/profile_icon', profile: @review.user.profile %>
-        <%= @review.user.profile.name %>さん
+        <h6 style="color:black;"><%= render 'layouts/profile_icon', profile: @review.user.profile %>
+        <%= @review.user.profile.name %>さん</h6>
         <% end %>
         </div>
 
