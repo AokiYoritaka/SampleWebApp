@@ -1,8 +1,9 @@
 # Local Plan
 URL: https://school-review.com/
+<img width="1237" alt="LocalPlan_Readme2" src="https://user-images.githubusercontent.com/61875210/95303841-b0ec0b80-08be-11eb-85ad-37d5252790dc.png">
+
 <img width="1618" alt="LocalPlan_Readme1" src="https://user-images.githubusercontent.com/61875210/95303819-a9c4fd80-08be-11eb-8967-f1abff31a11b.png">
 
-<img width="1237" alt="LocalPlan_Readme2" src="https://user-images.githubusercontent.com/61875210/95303841-b0ec0b80-08be-11eb-85ad-37d5252790dc.png">
 
 ## 概要
 Local Planは、留学エージェントの**Local Plan 合同会社**が運営するWebアプリです。
