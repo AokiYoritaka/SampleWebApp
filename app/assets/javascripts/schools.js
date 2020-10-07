@@ -4,6 +4,7 @@ $(function() {
   $('#school_search').on("click",function(e) {
     e.preventDefault();
     const name = $('#name').val();
+    debugger
     $.ajax({
       type:'GET',
       url:'/schools/new',
@@ -11,7 +12,6 @@ $(function() {
       dataType:'json'
     })
     .done(function(data) {
-      debugger
       if (data != null){
         if(cancelFlag == 0){
           cancelFlag = 1;
