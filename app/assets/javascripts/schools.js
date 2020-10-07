@@ -1,16 +1,16 @@
-$(document).on('turbolinks:load', function() {
+$(function() {
   var school = null;
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
     e.preventDefault();
     const name = $('#name').val();
+    debugger
     $.ajax({
       type:'GET',
       url:'/schools/new',
-      data:{ name: name },
+      data:{ name: 'CIP' },
       dataType:'json'
     })
-    
     .done(function(data) {
       if (data != null){
         if(cancelFlag == 0){
