@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
   include AjaxHelper
-  before_action :sign_in_required, only: [:new]
+#  before_action :sign_in_required, only: [:new]
 
   def index
     @search_params = school_search_params
