@@ -1,10 +1,10 @@
 class SchoolsController < ApplicationController
   include AjaxHelper
-  before_action :sign_in_required, only: [:new]
+#  before_action :sign_in_required, only: [:new]
 
   def index
     @search_params = school_search_params
-    @schools = School.search(@search_params).order(created_at: "DESC").page(params[:page]).per(6)
+    @schools = School.search(@search_params).order(created_at: "DESC").page(params[:page]).per(9)
     all_genre = School.pluck(:genre) + School.pluck(:subgenre)
     @genres = all_genre.uniq.reject(&:blank?)
     all_nation = School.pluck(:nation)

@@ -3,13 +3,13 @@
   <% reviews.each do |review| %>
       <div class="card-deck">
         <div class ="col s12 m12 l4">
-          <div class="card mt-4 shadow-sm" style="width: 15rem; height: 38rem;">
+          <div class="card mt-4 shadow-sm" style="width: 15rem; height: 35rem;">
             <div class="card-body">
               <!-- イメージ -->
               <% if review.review_images.present? %>
                 <%= attachment_image_tag review.review_images.first, :image, :fill, 200, 200 %>
               <% else %>
-                <img class="card-img-top" src="/assets/default.jpg" alt="no_image" width="200px" height="200px" %>
+                <img class="card-img-top2" src="/assets/default.jpg" alt="no_image" width="200px" height="200px" %>
               <% end %>     
               <!-- レビュータイトル -->
               <div class="card-title"><%= review.title %></div> 
@@ -25,8 +25,9 @@
               <!-- 投稿者 -->
                 <div class="card-text-user">
                   <%= link_to profile_path(id: review.user.profile.id) do %>
-                    <%= render 'layouts/profile_icon', profile: review.user.profile %>
+                    <h6 style="color:black;"><%= render 'layouts/profile_icon', profile: review.user.profile %>
                     <%= review.user.profile.name %>さん
+                    </h6>
                   <% end %>
                 </div>
               <!-- タグ -->

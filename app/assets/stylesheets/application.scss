@@ -63,16 +63,18 @@ body{
 
 //schools index.html.erbのカードのタイトル
 .title-school-index {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-align: left;
   padding-bottom: 10px;
-  padding-top: 10px;
   color:gray;
 }
 
 //schools index.html.erbのカードのレビュー件数
 .school-card-text {
   color:gray;
+  position: absolute;
+  bottom: 5px;
+  right:20px;
 }
 .card-text{
   color:gray;
@@ -160,43 +162,46 @@ body{
 }
 
 //サムネ写真
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.slide {
+  object-fit:fill;
+  position: relative;
+  left:100px;
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+}
+@keyframes slideshow{
+  0%{
+    opacity: 0;
   }
-.cp_cssslider {
-	width: 300px;
-	height: 200px;
-	overflow: hidden;
-	margin: 2em auto;
-	border: 10px solid #ffffff;
-	box-shadow:0px 0px 5px 0px rgba(0,0,0,0.5);
+  15%{
+    opacity: 1;
+  }
+  45%{
+    opacity: 1;
+  }
+  55%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
 }
-.cp_slide_item {
-	width: 300px;
-	height: 200px;
-	float: left;
-	position: relative;
-} 
-.cp_slidewrapper {
-	width: 300%;/* slideの枚数×100% */
-	position: relative;
-	left: 0;
-	animation: slider 10s infinite ease;/* スピード */
+.slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  animation :slideshow 16s linear infinite;
 }
-@-webkit-keyframes slider {
-	/* 100%を枚数で割った%に割り振る */
-  20% {
-    -webkit-transform: translateX(-300px);
-    transform: translateX(-300px);
-    }
+.slide img:nth-child(2){
+  animation-delay: 4s;
 }
-@keyframes slider {
-  /* 100%を枚数で割った%に割り振る */
-  20% {
-    -webkit-transform: translateX(-300px);
-    transform: translateX(-300px);
-    }
+.slide img:last-child{
+  animation-delay: 8s;
 }
 
 // review card 
@@ -210,7 +215,7 @@ body{
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
-  height: 500px;
+  height: 450px;
 }
 
 .card-title{
@@ -311,14 +316,23 @@ padding: 15px 0px;
   width: 400px;
   height: 50px;
   padding: 11px 8px;
-  margin:20px 0px;
+  margin: 20px 0px;
+  border-bottom: 4px solid #aaa;
+  background-image: none;
   background-color: #13A3B8;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   text-align: center;
   position: relative;
   float:left;
+}
+
+.card-img-top{
+  object-fit:fill;
+  width:318px;
+  height:auto;
+  border-radius: 0px;
 }
 
 //tag
@@ -330,6 +344,8 @@ padding: 15px 0px;
 	top: 50%;
 	left: 50%;
 }
+
+
 .tag_card li {
 	display: inline-block;
 }
@@ -747,6 +763,7 @@ img {
 
 //検索バー
 .search-bar1 {
+  color: gray;
   position: relative;
   width: 80%;
   margin: 25px 16px;
@@ -759,7 +776,7 @@ img {
   padding: 0.3em;
   transition: 0.3s;
   letter-spacing: 1px;
-  color: #C0C0C0;
+  color: gray;
   border: none;
   border-bottom: 2px solid #CEDFF2;
   background: transparent;
@@ -814,7 +831,7 @@ img {
 }
 .search-bar2.search-option select {
   padding: 8px 38px 8px 8px;
-  color: #aaaaaa;
+  color: gray;
 }
 
 .search-bar2.search-option.col-md-4 {
