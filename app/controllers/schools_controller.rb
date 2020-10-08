@@ -17,11 +17,20 @@ class SchoolsController < ApplicationController
   end
   
   def new
-    @school = School.find_by(name: params[:name])
+#    @school = School.find_by(name: params[:name])
+#    @user = User.last
+#    respond_to do |format|
+#      format.html
+#      format.json
+#    end
+  end
+
+  def search
+    @school = School.where(name: params[:name])
     @user = User.last
     respond_to do |format|
       format.html
-      format.json
+      format.json{render json:{school:@school}}
     end
   end
 

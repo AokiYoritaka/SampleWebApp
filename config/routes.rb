@@ -14,7 +14,11 @@
   get "alltags", to: "static_pages#alltags"
   get "search", to: "reviews#search"
   root 'static_pages#home'
+
   resources :schools do
+    collection do   
+      get :search
+    end
     resources :reviews do
       resources :comments
     end
