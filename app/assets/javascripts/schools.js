@@ -4,11 +4,10 @@ $(function() {
   $('#school_search').on("click",function(e) {
     e.preventDefault();
     const name = $('#name').val();
-    debugger
     $.ajax({
       type:'GET',
-      url:'/schools/new',
-      data:{ name: 'CIP' },
+      url:'/schools/search',
+      data:{ name: name },
       dataType:'json'
     })
     .done(function(data) {
@@ -20,15 +19,15 @@ $(function() {
             $('#school_lists').append(`
               <div class="col-lg-4">
                 <div class="card mt-5 mb-4" style="width: 20rem;">
-                  <img src="${e.image_url.school_image1}" class="card-img-top" size="300x300">
+                  <img src="${e.image_url_a}" class="card-img-top" size="300x300">
                   <div class="card-body webkit-center">
                     <h4 class="card-title">${e.name}</h4>
                     <span class="badge badge-success mr-1 mt-1 p-2">
-                      ${e.code.nationname}
+                      ${e.nation}
                     </span>
                     <p class="card-text">
                       <span class="badge badge-warning mr-1 mt-1 p-2">
-                        ${e.code.category_name_l[0]}
+                        ${e.genre}
                       </span>
                     </p>
                     <button type="button" name="button" class="btn btn-primary" id="submit">登録する</button>

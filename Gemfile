@@ -53,6 +53,7 @@ group :development do
   gem 'letter_opener_web', '~> 1.0 '
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rails-erd'
 end
 
 group :test do
@@ -77,7 +78,6 @@ gem "devise-i18n-views"
 gem "bootstrap"
 gem "font-awesome-rails"
 gem "kaminari"
-gem "jp_prefecture"
 gem 'omniauth'
 gem "omniauth-twitter"
 gem "jquery-rails"
