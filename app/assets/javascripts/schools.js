@@ -60,10 +60,19 @@ $(function() {
       type: "POST",
       url:  "/schools",
       data:{
-        image_url_a: school[post_index].image_url.school_image1,
         name: school[post_index].name,
-        genre: school[post_index].genre,
-        subgenre: school[post_index].subgenre,
+        address: school[post_index].address,
+        tell: school[post_index].tel,
+        genre: school[post_index].code.category_name_l[0],
+        detail: school[post_index].detail,
+        image_url_a: school[post_index].image_url.school_image1,
+        image_url_b: school[post_index].image_url.school_image2,
+        latitude: school[post_index].latitude,
+        longitude: school[post_index].longitude,
+        opentime: school[post_index].opentime,
+        subgenre: school[post_index].code.category_name_l[1],
+        res_id: school[post_index].id,
+        nation: school[post_index].code.nationname
       }
     }).done(function(data) {
     }).fail(function() {
