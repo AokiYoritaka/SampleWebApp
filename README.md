@@ -60,9 +60,7 @@ Local Planは、留学エージェントの**Local Plan 合同会社**が運営�
   - ActiveStorage
 
 ## ER図
-
-
-
+![SampleWebApp_ER](https://user-images.githubusercontent.com/61875210/95586375-8e532180-0a7b-11eb-918a-15acb316fe74.png)
 
 ## 開発者/お問い合わせ先
 青木亮隆　Aoki Yoritaka 
