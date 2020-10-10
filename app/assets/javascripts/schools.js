@@ -71,7 +71,7 @@ $(function() {
         longitude: school[post_index].longitude,
         opentime: school[post_index].opentime,
         subgenre: school[post_index].code.category_name_l[1],
-        res_id: school[post_index].id,
+        res_id: rest[post_index].id,
         nation: school[post_index].code.nationname
       }
     }).done(function(data) {
