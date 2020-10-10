@@ -24,7 +24,7 @@
     end
   end
   resources :likes, only: [:destroy, :create]  
-  resources :notifications
+  resources :notifications, only: :index
   resources :categories, only: [:index, :show, :new, :create, :destroy]
   resources :profiles, only: [:show, :edit, :update]
 end

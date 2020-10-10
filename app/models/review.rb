@@ -31,23 +31,20 @@ class Review < ApplicationRecord
     end
   end
 
-
   def create_notification_like!(current_user)
-    temp = notification.where(["visitor_id = ? and visited_id = ? and review_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and review_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
     if temp.blank?
-      notifiation = current_user.active_notifications.new(
+      notification = current_user.active_notifications.new(
         review_id: id,
         visited_id: user_id,
         action: 'like'
       )
-      if notification.visitor_id == notifications.visited_id
+      if notification.visitor_id == notification.visited_id
         notification.checked = true
       end
-        notification.save if notification.valid?
+      notification.save if notification.valid?
     end
   end
-
-
 
   def create_notification_comment!(current_user, comment_id)
     temp_ids = Comment.select(:user_id).where(review_id: id).where.not(user_id: current_user.id).distinct
@@ -56,8 +53,6 @@ class Review < ApplicationRecord
     end
     save_notification_comment!(current_user, comment_id, user_id) if temp_ids.blank?
   end
-
-
 
   def save_notification_comment!(current_user, comment_id, visited_id)
     notification = current_user.active_notifications.new(
