@@ -18,11 +18,6 @@ class SchoolsController < ApplicationController
   
   def new
     @school = School.new
-    @user = User.last
-    respond_to do |format|
-      format.html
-      format.json
-    end
   end
 
   def search
