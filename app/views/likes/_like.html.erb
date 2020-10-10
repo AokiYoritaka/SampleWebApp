@@ -1,5 +1,4 @@
-  
-<div class="like">
+  <div class="like">
   <% if review.like_rev?(current_user) %>
     <%= form_for(review.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
       <%= button_tag(class: "btn-flat-border") do %>
