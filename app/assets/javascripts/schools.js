@@ -57,8 +57,8 @@ $(function() {
     var post_index = $(".btn-primary").index(elm)-1;
     console.log(post_index);
     $.ajax({
-      type: "POST",
-      url:  "/schools",
+      type:"POST",
+      url:"/schools",
       data:{
         name: school[post_index].name,
         address: school[post_index].address,
