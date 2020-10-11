@@ -37,8 +37,7 @@ $(function() {
           })
         }
       }
-    })
-    .fail(function() {
+    }).fail(function() {
       if(cancelFlag == 0){
         cancelFlag = 1;
         $('.result').append(`
@@ -78,5 +77,10 @@ $(function() {
     }).fail(function() {
       alert('エラーが発生しました。詳細はaoki.memetaaa@gmail.comへお問い合わせください。');
     });
+  });
+  $('#name').on("keyup",function(e) {
+    $('#rest_lists').empty();
+    $('.result').empty();
+    cancelFlag = 0;
   });
 });
