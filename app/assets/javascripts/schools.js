@@ -79,7 +79,4 @@ $(function() {
       alert('エラーが発生しました。詳細はaoki.memetaaa@gmail.comへお問い合わせください。');
     });
   });
-  $('#name').on("keyup",function(e) {
-    cancelFlag = 0;
-  });
 });

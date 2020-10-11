@@ -1017,12 +1017,52 @@ color: #7b7b7b;
 	background-size: cover;
 }
 
-/* ワイドスクリーン用のCSS */
-@media only screen and (min-width: 1500px) {
-	.cover-img {
-		height: 250px;
-	}
-}
+@media screen and (max-width:639px) {
+  /*スマホ用のcssを記述*/
+    .log-modal {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        background-color: #e6ecf0;
+        padding: 20px 0 40px;
+        border-radius: 10px;
+        width: 450px;
+        height: auto;
+        text-align: center;
+    }
+  }
+  
+  @media only screen and (min-width:640px) and (max-width:1023px) {
+  /*tablet用のcssを記述*/
+    .log-modal {
+        position: absolute;
+        top: 5%;
+        left: 15%;
+        background-color: #e6ecf0;
+        padding: 20px 0 40px;
+        border-radius: 10px;
+        width: 450px;
+        height: auto;
+        text-align: center;
+    }
+  }
+  
+  @media screen and (min-width:1024px) {
+  /*pc用のcssを記述*/
+    .log-modal {
+        position: absolute;
+        top: 5%;
+        left: 34%;
+        background-color: #e6ecf0;
+        padding: 20px 0 40px;
+        border-radius: 10px;
+        width: 450px;
+        height: auto;
+        text-align: center;
+    }
+  }
+
+
 
 .cover-text {
 	display: table-cell;
