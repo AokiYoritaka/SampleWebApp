@@ -12,7 +12,7 @@ development:
   database: rails_tutorial
   pool: 5
   username: root
-  password:
+  password: 
   host: localhost
 
 test:
@@ -21,4 +21,7 @@ test:
 
 production:
   <<: *default
-#  database: db/production.sqlite3
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
