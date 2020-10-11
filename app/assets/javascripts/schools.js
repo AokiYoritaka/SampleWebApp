@@ -1,5 +1,4 @@
 $(function() {
-  var school = null;
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
     e.preventDefault();
