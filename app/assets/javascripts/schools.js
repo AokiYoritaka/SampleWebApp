@@ -1,4 +1,5 @@
 $(function() {
+  var schools = null;
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
     e.preventDefault();
@@ -59,19 +60,19 @@ $(function() {
       type:"POST",
       url:"/schools",
       data:{
-        name: school[post_index].name,
-        address: school[post_index].address,
-        tell: school[post_index].tell,
-        genre: school[post_index].code.genre,
-        detail: school[post_index].detail,
-        image_url_a: school[post_index].image_url.school_image1,
-        image_url_b: school[post_index].image_url.school_image2,
-        latitude: school[post_index].latitude,
-        longitude: school[post_index].longitude,
-        opentime: school[post_index].opentime,
-        subgenre: school[post_index].code.category_name_l[1],
-        res_id: rest[post_index].id,
-        nation: school[post_index].code.nationname
+        name: schools[post_index].name,
+        address: schools[post_index].address,
+        tell: schools[post_index].tell,
+        genre: schools[post_index].genre,
+        detail: schools[post_index].detail,
+        image_url_a: schools[post_index].image_url_a,
+        image_url_b: schools[post_index].image_url_a,
+        latitude: schools[post_index].latitude,
+        longitude: schools[post_index].longitude,
+        opentime: schools[post_index].opentime,
+        subgenre: schools[post_index].subgenre,
+        res_id: schools[post_index].res_id,
+        nation: schools[post_index].nation
       }
     }).done(function(data) {
     }).fail(function() {
