@@ -1,14 +1,13 @@
 $(function() {
-  var school = null;
+  var schools = null;
   var cancelFlag = 0;
   $('#school_search').on("click",function(e) {
     e.preventDefault();
     const name = $('#name').val();
-    debugger
     $.ajax({
       type:'GET',
-      url:'/schools/new',
-      data:{ name: 'CIP' },
+      url:'/schools/search',
+      data:{ name: name },
       dataType:'json'
     })
     .done(function(data) {
@@ -19,19 +18,18 @@ $(function() {
           schools.forEach(function(e){
             $('#school_lists').append(`
               <div class="col-lg-4">
-                <div class="card mt-5 mb-4" style="width: 20rem;">
-                  <img src="${e.image_url.school_image1}" class="card-img-top" size="300x300">
+                <div class="card mt-5 shadow-sm" style="width: 20rem;">
+                  <img src="${e.image_url_a}" class="card-img-top">
                   <div class="card-body webkit-center">
-                    <h4 class="card-title">${e.name}</h4>
-                    <span class="badge badge-success mr-1 mt-1 p-2">
-                      ${e.code.nationname}
+                    <div class="title-school-index">${e.name}</div>
+                    <span class="badge badge-info mr-1 mt-1 p-2">
+                      ${e.genre}
                     </span>
-                    <p class="card-text">
-                      <span class="badge badge-warning mr-1 mt-1 p-2">
-                        ${e.code.category_name_l[0]}
+                      <span class="badge badge-success mr-1 mt-1 p-2">
+                        ${e.subgenre}
                       </span>
                     </p>
-                    <button type="button" name="button" class="btn btn-primary" id="submit">登録する</button>
+                    <button type="button" name="button" class="btn btn-primary" id="submit">レビュー投稿</button>
                   </div>
                 </div>
               </div>
@@ -39,8 +37,7 @@ $(function() {
           })
         }
       }
-    })
-    .fail(function() {
+    }).fail(function() {
       if(cancelFlag == 0){
         cancelFlag = 1;
         $('.result').append(`
@@ -59,22 +56,22 @@ $(function() {
     var post_index = $(".btn-primary").index(elm)-1;
     console.log(post_index);
     $.ajax({
-      type: "POST",
-      url:  "/schools",
+      type:"POST",
+      url:"/schools",
       data:{
-        name: school[post_index].name,
-        address: school[post_index].address,
-        tell: school[post_index].tel,
-        genre: school[post_index].code.category_name_l[0],
-        detail: school[post_index].detail,
-        image_url_a: school[post_index].image_url.school_image1,
-        image_url_b: school[post_index].image_url.school_image2,
-        latitude: school[post_index].latitude,
-        longitude: school[post_index].longitude,
-        opentime: school[post_index].opentime,
-        subgenre: school[post_index].code.category_name_l[1],
-        res_id: school[post_index].id,
-        nation: school[post_index].code.nationname
+        name: schools[post_index].name,
+        address: schools[post_index].address,
+        tell: schools[post_index].tell,
+        genre: schools[post_index].genre,
+        detail: schools[post_index].detail,
+        image_url_a: schools[post_index].image_url_a,
+        image_url_b: schools[post_index].image_url_a,
+        latitude: schools[post_index].latitude,
+        longitude: schools[post_index].longitude,
+        opentime: schools[post_index].opentime,
+        subgenre: schools[post_index].subgenre,
+        res_id: schools[post_index].res_id,
+        nation: schools[post_index].nation
       }
     }).done(function(data) {
     }).fail(function() {
@@ -82,6 +79,8 @@ $(function() {
     });
   });
   $('#name').on("keyup",function(e) {
+    $('#rest_lists').empty();
+    $('.result').empty();
     cancelFlag = 0;
   });
 });

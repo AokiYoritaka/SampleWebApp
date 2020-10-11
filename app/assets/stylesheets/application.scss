@@ -497,47 +497,7 @@ padding: 15px 0px;
   height: auto;
 }
 
-.box24:after {
-  position: absolute;
-  content: '';
-  top: 97%;
-  left: 14px;
-  border: 15px solid transparent;
-  border-top: 15px solid #d8d8d8;
-  width: 0;
-  height: 0;
-}
-.box24 p {
-  overflow-wrap: break-word;
-  margin: 0;
-  padding: 0;
-}
-.my-box24 {
-  border-radius: 1em;
-  max-width: max-content;
-  width: 80%;
-  height: auto;
-  position: relative;
-  padding: 0.5em 0.7em;
-  margin: 1em 0 1em auto;
-  background: #C2EEFF;
-  color: #3a3a3a;
-  font-size: 13px;
-}
-.my-box24:after {
-  position: absolute;
-  content: '';
-  top: 97%;
-  right: 22px;
-  border: 15px solid transparent;
-  width: 0;
-  height: 0;
-}
-.my-box24 p {
-  overflow-wrap: break-word;
-  margin: 0;
-  padding: 0;
-}
+
 
 .comment-destroy {
   float: right;
@@ -760,6 +720,47 @@ img {
   color: #3a3a3a;
   font-size: 13px;
 }
+.box24:after {
+  position: absolute;
+  content: '';
+  top: 97%;
+  left: 14px;
+  border: 15px solid transparent;
+  width: 0;
+  height: 0;
+}
+.box24 p {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+.my-box24 {
+  border-radius: 1em;
+  max-width: max-content;
+  width: 80%;
+  height: auto;
+  position: relative;
+  padding: 0.5em 0.7em;
+  margin: 1em 0 1em auto;
+  background: #C2EEFF;
+  color: #3a3a3a;
+  font-size: 13px;
+}
+.my-box24:after {
+  position: absolute;
+  content: '';
+  top: 97%;
+  right: 22px;
+  border: 15px solid transparent;
+  width: 0;
+  height: 0;
+}
+.my-box24 p {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+
 
 //検索バー
 .search-bar1 {
@@ -1016,12 +1017,52 @@ color: #7b7b7b;
 	background-size: cover;
 }
 
-/* ワイドスクリーン用のCSS */
-@media only screen and (min-width: 1500px) {
-	.cover-img {
-		height: 250px;
-	}
-}
+@media screen and (max-width:639px) {
+  /*スマホ用のcssを記述*/
+    .log-modal {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        background-color: #e6ecf0;
+        padding: 20px 0 40px;
+        border-radius: 10px;
+        width: 450px;
+        height: auto;
+        text-align: center;
+    }
+  }
+  
+  @media only screen and (min-width:640px) and (max-width:1023px) {
+  /*tablet用のcssを記述*/
+    .log-modal {
+        position: absolute;
+        top: 5%;
+        left: 15%;
+        background-color: #e6ecf0;
+        padding: 20px 0 40px;
+        border-radius: 10px;
+        width: 450px;
+        height: auto;
+        text-align: center;
+    }
+  }
+  
+  @media screen and (min-width:1024px) {
+  /*pc用のcssを記述*/
+    .log-modal {
+        position: absolute;
+        top: 5%;
+        left: 34%;
+        background-color: #e6ecf0;
+        padding: 20px 0 40px;
+        border-radius: 10px;
+        width: 450px;
+        height: auto;
+        text-align: center;
+    }
+  }
+
+
 
 .cover-text {
 	display: table-cell;

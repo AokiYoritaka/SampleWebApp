@@ -14,13 +14,17 @@
   get "alltags", to: "static_pages#alltags"
   get "search", to: "reviews#search"
   root 'static_pages#home'
+
   resources :schools do
+    collection do   
+      get :search
+    end
     resources :reviews do
       resources :comments
     end
   end
   resources :likes, only: [:destroy, :create]  
-  resources :notifications
+  resources :notifications, only: :index
   resources :categories, only: [:index, :show, :new, :create, :destroy]
   resources :profiles, only: [:show, :edit, :update]
 end

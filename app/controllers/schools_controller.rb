@@ -5,7 +5,7 @@ class SchoolsController < ApplicationController
   def index
     @search_params = school_search_params
     @schools = School.search(@search_params).order(created_at: "DESC").page(params[:page]).per(9)
-    all_genre = School.pluck(:genre) + School.pluck(:subgenre)
+    all_genre = School.pluck(:subgenre)
     @genres = all_genre.uniq.reject(&:blank?)
     all_nation = School.pluck(:nation)
     @nations = all_nation.uniq.reject(&:blank?)
@@ -17,11 +17,15 @@ class SchoolsController < ApplicationController
   end
   
   def new
-    @school = School.find_by(name: params[:name])
+    @school = School.new
+  end
+
+  def search
+    @school = School.where(name: params[:name])
     @user = User.last
     respond_to do |format|
       format.html
-      format.json
+      format.json{render json:{school:@school}}
     end
   end
 
