@@ -10,13 +10,13 @@
       さんが
       <% case notification.action %>
         <% when 'like' then %>
-          <%= link_to 'あなたの投稿', school_review_path(
+          <%= link_to 'あなたのレビュー', school_review_path(
             school_id: notification.review.school_id,
             id: notification.review.id
           ),
           style: "font-weight: bold;" %>にいいねしました
         <% when 'comment' then %>
-          <%= link_to "あなたの投稿", school_review_path(
+          <%= link_to "あなたのレビュー", school_review_path(
             school_id: notification.review.school_id,
             id: notification.review.id
           ),
