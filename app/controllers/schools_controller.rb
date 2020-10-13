@@ -21,7 +21,7 @@ class SchoolsController < ApplicationController
   end
 
   def search
-    @school = School.where(name: params[:name])
+    @school = School.where('name like ?', "%#{params[:name]}%")
     @user = User.last
     respond_to do |format|
       format.html
