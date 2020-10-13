@@ -13,6 +13,8 @@ $(function() {
     .done(function(data) {
       if (data != null){
         if(cancelFlag == 0){
+          $('#school_lists').empty();
+          
           cancelFlag = 1;
           schools = data.school
           schools.forEach(function(e){
