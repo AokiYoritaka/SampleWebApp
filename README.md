@@ -6,7 +6,7 @@ URL: https://school-review.com/
 
 
 ## 概要
-Local Planは、留学エージェントの**Local Plan 合同会社**が運営するアプリです。
+Local Planは、留学エージェントの**Local Plan 合同会社**より依頼を受け開発したアプリです。
 
 フィリピン／オーストラリアにおける数十にも及ぶ語学学校のレビューを閲覧・投稿することができます。
 
@@ -67,5 +67,6 @@ Local Planは、留学エージェントの**Local Plan 合同会社**が運営�
 ![SampleWebApp_ER](https://user-images.githubusercontent.com/61875210/95586375-8e532180-0a7b-11eb-918a-15acb316fe74.png)
 
 ## 開発者/お問い合わせ先
-青木亮隆　Aoki Yoritaka 
+青木亮隆 Aoki Yoritaka 
+
 Email: aoki.memetaaa@gmail.com
