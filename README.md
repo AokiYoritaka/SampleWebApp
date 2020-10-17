@@ -56,6 +56,7 @@ Local Planは、留学エージェントの**Local Plan 合同会社**より依�
   - VPC
   - Route53
   - ALB
+  - IAM
 - その他
   - Git
   - GitHub
