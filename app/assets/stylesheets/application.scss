@@ -1086,7 +1086,7 @@ color: #7b7b7b;
 
 //start画面
 .top{
-  background-image: url(/images/slide2.jpg);
+  background-image: url(/images/slide8.png);
   background-size: cover;
   background-position: center;
   min-height: 95vh;
@@ -1109,32 +1109,7 @@ color: #7b7b7b;
 	}
 }
 
-.contents{
-  text-shadow: 1px 2px 3px #808080;
-  &_title{
-    background-color:rgba(0,153,255,0.4);
-    color: white;
-    position: absolute;
-    width: 100%;
-    top: 30%;
-  & p{
-    font-size: 20px;
-  }
-}
-&_link{
-  width: 100%;
-  position: absolute;
-  top: 75%;
-    & a{
-      text-decoration: none;
-      color: white;
-      background-color:rgba(0,153,255,0.4);
-      font-size: 30px;
-      padding: 20px;
-      border-radius: 10px;
-    }
-  }
-}
+
 
 .notifications {
   color: $white;
