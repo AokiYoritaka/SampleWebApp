@@ -77,10 +77,10 @@ body{
   right:20px;
 }
 .card-text{
-  color:gray;
+  color:black;
 }
 
-.card-text-user{
+.z1-user{
   font-size: 1.2rem;
 }
 
@@ -532,6 +532,22 @@ padding: 15px 0px;
   border-bottom: none;
   background-color: #888;
 }
+
+.btn-continue {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: lightskyblue;
+  transition: .4s;
+}
+
+.btn-continue:hover {
+  background: lightblue;
+  color: white;
+}
+
 
 
 //いいね
@@ -1125,8 +1141,32 @@ color: #7b7b7b;
   }
 }
 
-.footer {
-  background:#EEFFFF;
-  color:#CCCCCC;
-  height: 40px;
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  text-align: center;
 }
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin-left: 10px;
+} 
