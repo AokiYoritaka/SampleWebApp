@@ -67,7 +67,11 @@ School Reviewは、留学エージェントの**Local Plan 合同会社**より�
 ## ER図
 ![SampleWebApp_ER](https://user-images.githubusercontent.com/61875210/95586375-8e532180-0a7b-11eb-918a-15acb316fe74.png)
 
-## 開発者/お問い合わせ先
+## 開発者／コメント
 青木亮隆 Aoki Yoritaka 
+開発者である私自身も、フィリピン・マクタン島において1年間の英語学校インターンと留学を経験しています。
+渡航する前に、フィリピン留学を経験した人の生の声を聞いてみたかったのですが、そのような機会が無くインターン先や留学先を見つけることに苦労しました。
+本アプリを通じて、これから留学を行いたい方が現地の正しい情報を入手し、最適な留学先を見つけていただきたいと思っております
 
-Email: aoki.memetaaa@gmail.com
+## お問い合わせ先
+Email: y.aoki.job@gmail.com 
