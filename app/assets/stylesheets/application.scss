@@ -220,6 +220,7 @@ body{
 
 .card-title{
   color:gray;
+  text-align: left;
   font-size: 1.5rem;
   font-weight:bold;
   margin-bottom: 0.75rem;
@@ -267,6 +268,7 @@ body{
   font-weight: bold;
   text-align: center;
 }
+
 
 .card-time {
   position: absolute;
@@ -547,7 +549,6 @@ padding: 15px 0px;
   background: lightblue;
   color: white;
 }
-
 
 
 //いいね
@@ -929,7 +930,7 @@ img {
 }
 
 .keyword-search{
-  color:#047BFE;
+  color: lightskyblue;
   font-weight: bold;
   font-size: large;
 }
@@ -1143,9 +1144,17 @@ color: #7b7b7b;
 
 /* footer */
 
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
+  margin-top: auto;
+  margin-bottom: 15px;
+  padding-top: 15px;
   border-top: 1px solid #eaeaea;
   color: #999;
   text-align: center;
@@ -1159,14 +1168,6 @@ footer a:hover {
   color: #222;
 }
 
-footer small {
-  float: left;
+.footerpt{
+  padding-bottom: 30px;
 }
-
-footer ul {
-  list-style: none;
-}
-
-footer ul li {
-  margin-left: 10px;
-} 

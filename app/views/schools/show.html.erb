@@ -17,8 +17,10 @@
     <!-- レビューリスト -->
     <div class="row"> 
       <div class="col">
+        <div class="footerpt">
         <h1 class="title-rev"><%= @school.name %>のレビューリスト</h1>
         <%= render "layouts/review_index", reviews: @reviews %>
+      </div>
       </div>
     </div>
     <%= paginate @reviews %>

@@ -1,8 +1,10 @@
 <% provide(:title, "レビューリスト")  %>
 <div class="container">
+
   <%= link_to root_path, class:"btn-back" do %>
     <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
   <% end %>
+
   <div class="row"> 
     <div class="col-md-12">
       <h1 class="title-rev">レビューリスト</h1>
@@ -11,11 +13,11 @@
           <div class="col-4">
             <div class="webkit-center hidden_box">
               <label for="label1">
-                <span class="keyword-search">
+                <h5 class="keyword-search">
                   <i class="fa fa-search" aria-hidden="true">
                     キーワードからレビューを検索する
                   </i>
-                </span>
+                </h5>
               </label>
               <input type="checkbox" id="label1"/>
               <div class="hidden_show pl-5">
@@ -25,19 +27,19 @@
           </div>
 
           <div class="col-4">
-            <span class="keyword-search">
+            <h5 class="keyword-search">
               <i class="fa fa-hashtag" aria-hidden="true">
-                <%= link_to "タグからレビューを検索する", alltags_path %>
+                <%= link_to "タグからレビューを検索する", alltags_path, style:"color: lightskyblue;" %>
               </i>
-            </span>
+            </h5>
           </div>
 
-          <div class="col-4 pl-1">
-            <span class="keyword-search">
+          <div class="col-4">
+            <h5 class="keyword-search">
               <i class="fa fa-building" aria-hidden="true">
-                <%= link_to "学校からレビューを検索する", schools_path %>
+                <%= link_to "学校からレビューを検索する", schools_path, style:"color: lightskyblue;" %>
               </i>
-            </span>
+            </h5>
           </div>
         </div>
 

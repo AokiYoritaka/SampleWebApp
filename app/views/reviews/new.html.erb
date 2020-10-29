@@ -1,7 +1,12 @@
 <% provide(:title, "レビュー投稿")  %>
-<div class="container">
-  <%= render "schools/school_details", school: @school %>
 
+<div class="container">
+  <%= link_to schools_path, class:"btn-back" do %>
+  <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+<% end %>
+
+  <%= render "schools/school_details", school: @school %>
+  <div class="footerpt"> 
   <div class="row">
     <div class="col-md-12 rev-card">
       <div class="rev-card-title">
@@ -9,6 +14,7 @@
       </div>
       <%= render "error_messages", review: @review %>
       <%= render "form", review: @review%>
+      </div>
     </div>
   </div>
 </div>
