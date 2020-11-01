@@ -50,7 +50,11 @@ body{
 }
 
 .card-deck {
-  margin:auto;
+}
+@media screen and (max-width:600px) { 
+  .card-deck{
+      margin:auto;
+  }
 }
 
 
