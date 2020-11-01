@@ -51,8 +51,10 @@
   </div>
     <h1 class="title-rev"><%= @profile.name %>さんのレビューリスト</h1>
    <div class="row">
-      <div class="footerpt">
-      <%= render "layouts/review_index", reviews: @reviews %>
+    <div class="col">
+        <div class="footerpt">
+        <%= render "layouts/review_index", reviews: @reviews %>
+        </div>
       </div>
     </div>
   </div>

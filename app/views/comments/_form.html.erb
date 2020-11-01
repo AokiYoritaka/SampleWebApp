@@ -1,6 +1,6 @@
 <%= form_with(url: school_review_comments_path(review_id: review.id) ) do |form| %>
   <div id="comment_area">
-    <%= form.text_area :body, class:"form-control mt-5", style: "width: 30em;" %>
+    <%= form.text_area :body, class:"form-control mt-5", style: "width: 22em;" %>
     <%= form.hidden_field :review_id, value: review.id %><br>
   </div>
   <div class="actions">
