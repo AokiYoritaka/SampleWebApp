@@ -3,7 +3,7 @@
   <%= link_to root_path, class:"btn-back" do %>
   <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
 <% end %>
-  <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+  <% notifications = @nolaltifications.where.not(visitor_id: current_user.id) %>
   <h1 class="title">通知</h1>
 
   <% if notifications.exists? %>
