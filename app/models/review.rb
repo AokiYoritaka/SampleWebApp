@@ -10,6 +10,8 @@ class Review < ApplicationRecord
   has_many :notifications, dependent: :destroy
   has_many :review_category_relations
   has_many :categories, through: :review_category_relations
+  validates :title, presence: true, length: { maximum: 50 }
+  validates :body, presence: true
 
   def like_rev(user)
     likes.create(user_id: user.id)

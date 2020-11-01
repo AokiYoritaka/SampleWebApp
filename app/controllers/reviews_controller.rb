@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       redirect_to school_review_path(id: @review.id), notice: "更新しました"
     else
-      flash.now[:alert] = "更新に失敗しました。"
+      flash.now[:alert] = "更新に失敗しました。詳細はタイトル入力欄上のエラーメッセージをご確認ください。"
       render :edit
     end
   end
