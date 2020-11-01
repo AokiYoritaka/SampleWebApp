@@ -7,7 +7,7 @@
     <% @schools.each do |school| %>
     <div class=" col-lg-4">
     <%= link_to school_path(id: school.id) do %>
-      <div class="card mt-5 shadow-sm" style="width: 20rem;">
+      <div class="card mt-5 shadow-sm" style="width: 20rem; margin: auto;">
         <% if school.image_url_a.present? %>
           <%= image_tag "#{school.image_url_a}", class: "card-img-top"%>
         <% else %>

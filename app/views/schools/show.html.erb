@@ -8,7 +8,12 @@
       <div class="col">
         <!-- 学校の詳細ページ -->
         <%= render "school_details", school: @school %>
-          <%= link_to new_school_review_path(school_id: @school.id), class:"btn-new-review-show" do %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5">
+        <%= link_to new_school_review_path(school_id: @school.id), class:"btn-new-review-show" do %>
           <i class="fa fa-check" aria-hidden="true"></i>学校のレビュー投稿
         <% end %> 
       </div>
