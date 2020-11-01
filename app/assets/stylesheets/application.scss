@@ -50,6 +50,7 @@ body{
 }
 
 .card-deck {
+  padding:0.1px;
 }
 @media screen and (max-width:600px) { 
   .card-deck{
@@ -963,7 +964,7 @@ img {
 }
 
 .label-font-account {
-  font-size: １0px;
+  font-size: 10px;
   color: gray;
   font-weight: bold;
 }
@@ -976,6 +977,7 @@ img {
   padding: 0.25em 0.5em;
   background: #ffffff;
   transition: .4s;
+  width:300px;
 
   &:hover {
     color: #BAD3FF;
