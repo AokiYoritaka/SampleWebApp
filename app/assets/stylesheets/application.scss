@@ -145,7 +145,7 @@ body{
 
 .log-modal {
   position: absolute;
-  top: 5%;
+  top: 20%;
   left: 34%;
   background-color: #CEDFF2;
   padding: 20px 0 40px;
@@ -153,7 +153,6 @@ body{
   width: 450px;
   height: auto;
   text-align: center;
-  margin:auto;
 }
 
 .cp_cssslider2 {
@@ -655,7 +654,7 @@ img {
 }
 
 .form-ctl {
-  width: 320px;
+  width: 250px;
   margin-bottom: 20px;
   font-size: 12px;
   padding: 12px 12px;
@@ -668,7 +667,7 @@ img {
 
 #submit-btn {
   display: inline-block;
-  padding: 14px 140px;
+  padding: 14px 97px;
   background-color: #13A3B8;
   border: none;
   border-radius: 3px;
@@ -679,7 +678,7 @@ img {
 
 .guest-submit-btn {
   display: inline-block;
-  padding: 8px 45px;
+  padding: 10px 50px;
   background-color: #5d98ca;
   border: none;
   border-radius: 3px;
@@ -690,14 +689,14 @@ img {
 
 #twitter-submit-btn {
   display: inline-block;
-  padding: 8px 45px;
+  padding: 10px 70px;
   background-color: #1DA1F2;
   border: none;
   border-radius: 3px;
   color: white;
   margin: 10px auto;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .btn-submit{
